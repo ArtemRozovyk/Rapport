@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  21 MAY 2019 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  21 MAY 2019 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,29 +685,26 @@ Package caption Info: hyperref package is loaded.
 \c@lotdepth=\count157
 \sf@top=\skip65
 \sf@bottom=\skip66
-)
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Info: Redefining \degres on input line 52.
-LaTeX Info: Redefining \dots on input line 52.
-LaTeX Info: Redefining \up on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Info: Redefining \degres on input line 41.
+LaTeX Info: Redefining \dots on input line 41.
+LaTeX Info: Redefining \up on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -744,7 +741,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -754,9 +751,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -801,99 +798,43 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 (./title.tex
-<./logo.png, id=232, 1927.2pt x 1113.15875pt>
+<./logo.png, id=224, 1927.2pt x 1113.15875pt>
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
 Package pdftex.def Info: ./logo.png  used on input line 5.
 (pdftex.def)             Requested size: 169.29684pt x 97.78502pt.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 {\huge \bfseries \\
-                         Découverte du framwork Apache OFBiz.
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+ (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>])pdfTeX warnin
-g (ext4): destination with the same identifier (name{page.1}) has been already 
-used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>])
+(./main.tocpdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.65 \newpage
-              [1] (./abstract.texpdfTeX warning (ext4): destination with the sa
-me identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.12 \end{abstract}
-                    [1]) (./main.tocpdfTeX warning (ext4): destination with the
- same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.48 ... {1.1}Sous-partie 1}{16}{subsection.6.1.1}
+l.47 ... {1.2}Sous-partie 2}{15}{subsection.6.1.2}
                                                    [1
 
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [0]pdfTeX warning (ext4): destination with the same identifier (name{page.0}) 
-has been already used, duplicate ignored
+ [2] (./abstract.texpdfTeX warning (ext4): destination with the same identifier
+ (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \newpage
-              [0] (./presentation.tex
+l.8 \end{abstract}
+                   [1]) (./presentation.tex
 Chapitre 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-<presentation/schema.png, id=324, 799.06076pt x 431.6125pt>
-File: presentation/schema.png Graphic file (type png)
-<use presentation/schema.png>
-Package pdftex.def Info: presentation/schema.png  used on input line 15.
-(pdftex.def)             Requested size: 426.79134pt x 230.5383pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--29
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+) (./existant.texpdfTeX warning (ext4): destination with the same identifier (n
+ame{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \newpage
-              [1
+l.1 \chapter
+            {Analyse de l'existant} [1
 
- <./presentation/schema.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
-
- []
-
-) (./existant.tex [2]
+]
 Chapitre 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -910,23 +851,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-) (./besoins.tex [3
+) (./besoins.texpdfTeX warning (ext4): destination with the same identifier (na
+me{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Analyse des besoins} [2
 
 ]
 Chapitre 3.
-[4
+[3
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<besoins/rendu.png, id=363, 375.65344pt x 456.95718pt>
+<besoins/rendu.png, id=336, 375.65344pt x 456.95718pt>
 File: besoins/rendu.png Graphic file (type png)
 <use besoins/rendu.png>
 Package pdftex.def Info: besoins/rendu.png  used on input line 31.
 (pdftex.def)             Requested size: 233.91154pt x 284.52756pt.
-[5 <./besoins/rendu.png>]
+[4 <./besoins/rendu.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
@@ -936,27 +882,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-) (./autre_partie.tex [6]
+) (./autre_partie.tex [5]
 Chapitre 4.
-<autre_partie/image1.jpg, id=375, 475.02469pt x 399.74344pt>
+<autre_partie/image1.jpg, id=348, 475.02469pt x 399.74344pt>
 File: autre_partie/image1.jpg Graphic file (type jpg)
 <use autre_partie/image1.jpg>
 Package pdftex.def Info: autre_partie/image1.jpg  used on input line 13.
 (pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
-[7
+[6
 
  <./autre_partie/image1.jpg>]
-<autre_partie/image2.jpg, id=387, 475.02469pt x 399.74344pt>
+<autre_partie/image2.jpg, id=359, 475.02469pt x 399.74344pt>
 File: autre_partie/image2.jpg Graphic file (type jpg)
 <use autre_partie/image2.jpg>
 Package pdftex.def Info: autre_partie/image2.jpg  used on input line 29.
 (pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
- [8 <./autre_partie/image2.jpg>]
+ [7 <./autre_partie/image2.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
-<autre_partie/image3.jpg, id=396, 475.02469pt x 399.74344pt>
+<autre_partie/image3.jpg, id=369, 475.02469pt x 399.74344pt>
 File: autre_partie/image3.jpg Graphic file (type jpg)
 <use autre_partie/image3.jpg>
 Package pdftex.def Info: autre_partie/image3.jpg  used on input line 63.
@@ -971,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
-<autre_partie/image4.jpg, id=400, 475.02469pt x 399.74344pt>
+<autre_partie/image4.jpg, id=373, 475.02469pt x 399.74344pt>
 File: autre_partie/image4.jpg Graphic file (type jpg)
 <use autre_partie/image4.jpg>
 Package pdftex.def Info: autre_partie/image4.jpg  used on input line 89.
@@ -981,7 +927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-[9 <./autre_partie/image3.jpg> <./autre_partie/image4.jpg>]
+[8 <./autre_partie/image3.jpg> <./autre_partie/image4.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
@@ -991,12 +937,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--105
 
  []
 
-) (./resultats.tex [10]
+) (./resultats.tex [9]
 Chapitre 5.
-[11
+[10
 
 ]
-<resultats/gallerie.jpg, id=429, 184.43906pt x 296.60812pt>
+<resultats/gallerie.jpg, id=403, 184.43906pt x 296.60812pt>
 File: resultats/gallerie.jpg Graphic file (type jpg)
 <use resultats/gallerie.jpg>
 Package pdftex.def Info: resultats/gallerie.jpg  used on input line 44.
@@ -1017,7 +963,7 @@ File: resultats/gallerie.jpg Graphic file (type jpg)
 <use resultats/gallerie.jpg>
 Package pdftex.def Info: resultats/gallerie.jpg  used on input line 52.
 (pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-) (./bilan.tex [12 <./resultats/gallerie.jpg>]
+) (./bilan.tex [11 <./resultats/gallerie.jpg>]
 Chapitre 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -1034,16 +980,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
-[13
+[12
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-) (./annexes.tex [14] [15
+) (./annexes.tex [13] [14
 
-] (./annexe1.tex) (./annexe2.tex [16
+] (./annexe1.tex) (./annexe2.tex [15
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{section.6.1}
 ) has been already used, duplicate ignored
@@ -1065,9 +1011,10 @@ identifier (name{section.6.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.35 \section{Partie 2}
-                        [17
+                        [16
 
 ]
+<presentation/schema.png, id=438, 799.06076pt x 431.6125pt>
 File: presentation/schema.png Graphic file (type png)
 <use presentation/schema.png>
 Package pdftex.def Info: presentation/schema.png  used on input line 53.
@@ -1087,31 +1034,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-)) [18] (./main.bbl
+)) [17 <./presentation/schema.png>] (./main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-))
-[19
+)) [18
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E48D7BA15A632F42151034297BF845BC;3631.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+(rerunfilecheck)             Checksum: DCB1E16EC14654E003464AC8B6EF4D39;3470.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 20244 strings out of 492982
- 366104 string characters out of 6134896
- 457712 words of memory out of 5000000
- 23295 multiletter control sequences out of 15000+600000
+ 20235 strings out of 492982
+ 365995 string characters out of 6134896
+ 454813 words of memory out of 5000000
+ 23292 multiletter control sequences out of 15000+600000
  17737 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,96p,2100b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,96p,430b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1139,10 +1086,10 @@ per/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (25 pages, 502911 bytes).
+Output written on main.pdf (22 pages, 497813 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
- 120 named destinations out of 1000 (max. 500000)
- 509 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 479 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

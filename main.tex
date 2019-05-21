@@ -34,18 +34,7 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-\hypersetup{							% Information sur le document
-pdfauthor = {Premier Auteur,
-			Deuxième Auteur,
-			Troisième Auteur,
-    		Quatrième Auteur},			% Auteurs
-pdftitle = {Nom du Projet -
-			Sujet du Projet},			% Titre du document
-pdfsubject = {Mémoire de Projet},		% Sujet
-pdfkeywords = {Tag1, Tag2, Tag3, ...},	% Mots-clefs
-pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
-%pdfcreator = {MikTeX},% Logiciel qui a crée le document
-%pdfproducer = {}} % Société avec produit le logiciel
+
 
 %======================== DEBUT DU DOCUMENT ========================
 
@@ -56,33 +45,27 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 
 %page de garde
 \input{./title.tex}
-
-%page blanche
-\newpage
-~
 %ne pas numéroter cette page
-\thispagestyle{empty}
 \newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
 
 \input{./abstract.tex}
-
-\tableofcontents
-\thispagestyle{empty}
-\setcounter{page}{0}
-%ne pas numéroter le sommaire
-
 \newpage
+
+
+
 
 %espacement entre les lignes d'un tableau
 \renewcommand{\arraystretch}{1.5}
 
 %====================== INCLUSION DES PARTIES ======================
 
-~
-\thispagestyle{empty}
+
 %recommencer la numérotation des pages à "1"
-\setcounter{page}{0}
-\newpage
+
 
 \input{./presentation.tex}
 
