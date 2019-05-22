@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  21 MAY 2019 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  22 MAY 2019 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,7 +798,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 (./title.tex
-<./logo.png, id=224, 1927.2pt x 1113.15875pt>
+<./logo.png, id=368, 1927.2pt x 1113.15875pt>
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
 Package pdftex.def Info: ./logo.png  used on input line 5.
@@ -813,7 +813,7 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ge.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ... {1.2}Sous-partie 2}{15}{subsection.6.1.2}
+l.49 ...{3.6.2}Sous-partie 2}{5}{subsection.3.6.2}
                                                    [1
 
 ])
@@ -832,77 +832,68 @@ ame{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Analyse de l'existant} [1
+            {Contexte du stage} [1
 
 ]
 Chapitre 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-) (./besoins.texpdfTeX warning (ext4): destination with the same identifier (na
-me{page.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Analyse des besoins} [2
+l.44 V
+      oici un tableau (cf. fig. 2.1) récapitulatif de notre analyse de l'ex...
+[2
 
 ]
-Chapitre 3.
-[3
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<besoins/rendu.png, id=336, 375.65344pt x 456.95718pt>
+) (./besoins.tex [3]
+Chapitre 3.
+[4
+
+] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+<besoins/rendu.png, id=525, 375.65344pt x 456.95718pt>
 File: besoins/rendu.png Graphic file (type png)
 <use besoins/rendu.png>
-Package pdftex.def Info: besoins/rendu.png  used on input line 31.
+Package pdftex.def Info: besoins/rendu.png  used on input line 63.
 (pdftex.def)             Requested size: 233.91154pt x 284.52756pt.
-[4 <./besoins/rendu.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[6 <./besoins/rendu.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-) (./autre_partie.tex [5]
+) (./autre_partie.tex [7]
 Chapitre 4.
-<autre_partie/image1.jpg, id=348, 475.02469pt x 399.74344pt>
+<autre_partie/image1.jpg, id=537, 475.02469pt x 399.74344pt>
 File: autre_partie/image1.jpg Graphic file (type jpg)
 <use autre_partie/image1.jpg>
 Package pdftex.def Info: autre_partie/image1.jpg  used on input line 13.
 (pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
-[6
+[8
 
  <./autre_partie/image1.jpg>]
-<autre_partie/image2.jpg, id=359, 475.02469pt x 399.74344pt>
+<autre_partie/image2.jpg, id=548, 475.02469pt x 399.74344pt>
 File: autre_partie/image2.jpg Graphic file (type jpg)
 <use autre_partie/image2.jpg>
 Package pdftex.def Info: autre_partie/image2.jpg  used on input line 29.
 (pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
- [7 <./autre_partie/image2.jpg>]
+ [9 <./autre_partie/image2.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
-<autre_partie/image3.jpg, id=369, 475.02469pt x 399.74344pt>
+<autre_partie/image3.jpg, id=559, 475.02469pt x 399.74344pt>
 File: autre_partie/image3.jpg Graphic file (type jpg)
 <use autre_partie/image3.jpg>
 Package pdftex.def Info: autre_partie/image3.jpg  used on input line 63.
@@ -917,7 +908,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
-<autre_partie/image4.jpg, id=373, 475.02469pt x 399.74344pt>
+<autre_partie/image4.jpg, id=563, 475.02469pt x 399.74344pt>
 File: autre_partie/image4.jpg Graphic file (type jpg)
 <use autre_partie/image4.jpg>
 Package pdftex.def Info: autre_partie/image4.jpg  used on input line 89.
@@ -927,7 +918,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-[8 <./autre_partie/image3.jpg> <./autre_partie/image4.jpg>]
+[10 <./autre_partie/image3.jpg> <./autre_partie/image4.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
@@ -937,12 +928,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--105
 
  []
 
-) (./resultats.tex [9]
+) (./resultats.tex [11]
 Chapitre 5.
-[10
+[12
 
 ]
-<resultats/gallerie.jpg, id=403, 184.43906pt x 296.60812pt>
+<resultats/gallerie.jpg, id=593, 184.43906pt x 296.60812pt>
 File: resultats/gallerie.jpg Graphic file (type jpg)
 <use resultats/gallerie.jpg>
 Package pdftex.def Info: resultats/gallerie.jpg  used on input line 44.
@@ -963,7 +954,7 @@ File: resultats/gallerie.jpg Graphic file (type jpg)
 <use resultats/gallerie.jpg>
 Package pdftex.def Info: resultats/gallerie.jpg  used on input line 52.
 (pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-) (./bilan.tex [11 <./resultats/gallerie.jpg>]
+) (./bilan.tex [13 <./resultats/gallerie.jpg>]
 Chapitre 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -980,16 +971,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
-[12
+[14
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-) (./annexes.tex [13] [14
+) (./annexes.tex [15] [16
 
-] (./annexe1.tex) (./annexe2.tex [15
+] (./annexe1.tex) (./annexe2.tex [17
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{section.6.1}
 ) has been already used, duplicate ignored
@@ -1011,10 +1002,10 @@ identifier (name{section.6.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.35 \section{Partie 2}
-                        [16
+                        [18
 
 ]
-<presentation/schema.png, id=438, 799.06076pt x 431.6125pt>
+<presentation/schema.png, id=627, 799.06076pt x 431.6125pt>
 File: presentation/schema.png Graphic file (type png)
 <use presentation/schema.png>
 Package pdftex.def Info: presentation/schema.png  used on input line 53.
@@ -1034,28 +1025,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-)) [17 <./presentation/schema.png>] (./main.bbl
+)) [19 <./presentation/schema.png>] (./main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)) [18
+)) [20
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DCB1E16EC14654E003464AC8B6EF4D39;3470.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+(rerunfilecheck)             Checksum: B7A6786A1FE26360D1F06664C6D8AC3E;6230.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 20235 strings out of 492982
- 365995 string characters out of 6134896
+ 20309 strings out of 492982
+ 367253 string characters out of 6134896
  454813 words of memory out of 5000000
- 23292 multiletter control sequences out of 15000+600000
+ 23328 multiletter control sequences out of 15000+600000
  17737 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,10n,96p,430b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1086,10 +1077,10 @@ per/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (22 pages, 497813 bytes).
+Output written on main.pdf (24 pages, 519789 bytes).
 PDF statistics:
- 535 PDF objects out of 1000 (max. 8388607)
- 479 compressed objects within 5 object streams
- 114 named destinations out of 1000 (max. 500000)
- 493 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 733 PDF objects out of 1000 (max. 8388607)
+ 673 compressed objects within 7 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 781 words of extra memory for PDF output out of 10000 (max. 10000000)
 
