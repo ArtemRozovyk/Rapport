@@ -41,22 +41,29 @@ Avenir
 *Discussion communautaire*
 \subsection{Representational state transfer}
 \subsubsection{Histoire}
+Roy Fielding
 \subsubsection{Principe}
 *Détailles du cours de Maurizio: idempotence, navigabilité par hyperlink, 
 notion de ressource etc.
 \subsubsection{Avantages}
 \subsubsection{Examples d'API du style REST}
-Twitter, SoundCloud, Wiktionnaire
+API REST de Twitter, SoundCloud, Wiktionnaire,\\
+les différences entre la définition de Roy Fielding et l'implémentation de ces dernières
+
 \subsection{Implementations existantes}
 \subsubsection{Camel}
 \subsubsection{JAX-RS}
-Tentative d'intégration ---
+Tentative d'intégration ---\\
+ServletJaxRS fonctionnelle\\
+Particularités techniques (annotations) \\
+Conflit politique car n'est pas dans le même esprit de l'existant.\\
 
 
 
 
 
 \section{Réalisations techniques}
+
 \subsection{Librairie CXF}
 Problèmatique avec les dépendances supplementaires: 
 Tika contient déjà le CXF
@@ -66,12 +73,17 @@ description de classe
 \subsection{Choix d'intégration en parallèle avec le système existant }
 \subsection{Nouveau contrôleur}
 \subsubsection{Compromis pour les conflits d'URI}
-\subsection{Modification de la partie "Administration: gestion des entités" (entitymaint)  }
+
+\subsection{Modification de la partie "Administration: gestion des entités"\\ (entitymaint)  }
 \subsubsection{Choix de la partie illustrative}
 \subsubsection{PUT vs POST}
 \subsubsection{Clés composées}
 \subsubsection{Formulaires génériques }
 Create update dans un même formulaire.
+\subsection{Stateless}
+\subsubsection{Les réalisation par la communauté}
+
+Jaques Le Roux Token en gardant la session.
 \subsection{RESTClient pour la communauté}
 \subsubsection{Généralisation de code}
 \subsubsection{Correction d'incohérences}
