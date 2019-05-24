@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{pgfgantt}
+\begin{document}
+
+\title{Introduction to \LaTeX{}}
+\author{Author's Name}
+
+\maketitle
+
+\begin{abstract}
+The abstract text goes here.
+\end{abstract}
+
+\section{Introduction}
+Here is the text of your introduction.
+
+\begin{equation}
+    \label{simple_equation}
+    \alpha = \sqrt{ \beta }
+\end{equation}
+\begin{ganttchart}{1}{12}
+	\gantttitle{2019}{12} \\
+	\gantttitlelist{1,...,12}{1} \\
+	\ganttgroup{Analyse des besoins}{1}{7} \\
+	\ganttbar{Task 1}{1}{2} \\
+	\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+	\ganttmilestone{Milestone}{7} \ganttnewline
+	\ganttbar{Final Task}{8}{12}
+	\ganttlink{elem2}{elem3}
+	\ganttlink{elem3}{elem4}
+\end{ganttchart}
+
+\subsection{Subsection Heading Here}
+Write your subsection text here.
+
+\begin{figure}
+    \centering
+    \caption{Simulation Results}
+    \label{simulationfigure}
+\end{figure}
+
+\section{Conclusion}
+Write your conclusion here.
+
+\end{document}

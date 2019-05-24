@@ -2,6 +2,7 @@
 
 
 \section{Aperçu général}
+Voici la chronologie du travail réalisé en entreprise.\\
 \ganttset{%
 	calendar week text={%
 		\pgfcalendarmonthshortname{\startmonth}~\startday%
@@ -32,7 +33,7 @@
 \begin{ganttchart}[
 	hgrid,
 	vgrid,
-	x unit=3mm,
+	x unit=2.9mm,
 	time slot format=isodate,
 	inline,
 	bar/.append style={fill=blue!37},
@@ -63,6 +64,8 @@
 	\ganttlink[link type=f-m]{elem6}{elem7}
 \end{ganttchart}
 
+\newpage
+
 
 
 
@@ -73,15 +76,18 @@
 
 \section{Environnement}
 
-\subsection{Installation du l'environnement}
+\subsection{Installation de l'environnement}
+Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux \footnote{Une question qui a, apparemment, beaucoup d'importance.} , la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes \footnote{Contenaient, à mon avis, des information sensibles, mais cela s'explique par le principe de transparence \ref{activite} }
 
-Avant tout, mon intégration dans l'entreprise a commencé par l'installation du  poste de travail  
+
+
 \subsection{Conventions}
 \subsection{Formation développeur générale}
 \subsection{Jira}
 \subsection{Approfondissement de Git }
 \subsection{Découverte de communauté libre Apache}
 
+\newpage
 \section{Prise en main d'OFBiz}
 
 \subsection{Premier plugin}
@@ -95,12 +101,16 @@ Pierre et Antoine ont tout géré
 \subsection{Problématique vis-à-vis du développement}
 What is "fonctionnel"
 
+\newpage
+
 \section{Analyse de l'existant}
 \subsection{ControlServlet}
 \subsection{Mécanisme de résolution des URI}
 \subsection{Filtres}
 Delegateur et Dispatcher
 
+
+\newpage
 
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Structure générale des application web}
@@ -133,7 +143,7 @@ Conflit politique car n'est pas dans le même esprit de l'existant.\\
 
 
 
-
+\newpage
 
 \section{Réalisations techniques}
 
@@ -161,3 +171,101 @@ Jaques Le Roux Token en gardant la session.
 \subsubsection{Généralisation de code}
 \subsubsection{Correction d'incohérences}
 
+
+
+\iffalse
+\section{Besoins fonctionnels}
+
+Après une analyse des besoins fonctionnels du projet, nous avons défini deux sous catégories. D'un côté, les besoins [...], de l'autre, les besoins [...].
+
+\subsection{Sous-partie 1}
+
+Bla
+
+\subsection{Sous-partie 2}
+
+Bla
+
+\newpage
+
+\section{Besoins non-fonctionnels}
+
+Comme précédemment, nous avons choisi de distinguer deux catégories pour les besoins non-fonctionnels. D'une part, nous avons les besoins non-fonctionnels pour les [...], et d'autre part ceux pour [...]. Nous avons aussi pris en compte les contraintes de développement, que nous détaillerons à la fin de cette partie.
+
+\subsection{Sous-partie 1}
+
+Bla\\
+
+Aperçu du rendu souhaité :
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=10cm]{besoins/rendu}
+\end{center}
+\caption{Rendu attendu}
+\end{figure}
+
+\subsection{Sous-partie 2}
+
+Bla
+
+\newpage
+
+\section{Développement}
+
+Intro
+
+\subsection{Tâches}
+
+Bla\\
+
+
+%tableau à taille fixée sur certaines colonnes (param sur la ligne \begin{tabularx}, voir wiki pour plus d'info sur la syntaxe
+\begin{figure}[!h]
+\begin{center}
+\begin{tabularx}{17cm}{|c|p{6cm}|X|}
+  \hline
+  Priorité & Nom & Raison\\
+  \hline
+  1 & Tache 1 & Doit être vérifié en premier car sinon [...] \tabularnewline
+  2 & Tache 2 & On doit pouvoir [...] \tabularnewline
+  3 & Tache 3 & Comme les principales fonctionnalités permettant de tester sont opérationnelles, nous pouvons passer à cette tâche. \tabularnewline
+  4 & Tache 4 & Parce que [...] \tabularnewline
+  5 & Tache 5 & La tache 5 fait partie des principales [...]. \tabularnewline
+  6 & Tache 6 & Dernière fonctionnalité essentielle à mettre en place. \tabularnewline
+  7 & Tache 7 & Non-essentiel, mais apporterait un plus au projet. \tabularnewline
+  8 & Tache 8 & Non-essentiel, mais apporterait un plus au projet. \tabularnewline
+  \hline
+\end{tabularx}
+\end{center}
+\caption{Tableau récapitulatif des tâches}
+\end{figure}
+
+\subsection{Tests}
+
+Bla\\
+
+\begin{figure}[!h]
+\begin{center}
+\begin{tabularx}{17cm}{|p{6cm}|X|}
+  \hline
+  Fonctionnalité & Test\\
+  \hline
+  Fonction 1 & Quand [...], vérifier [...]. \tabularnewline
+  & Et quand [...], vérifier [...]. \tabularnewline
+  Fonction 2 & Vérifier [...]. \tabularnewline
+  Fonction 3 & Vérifier [...]. \tabularnewline
+  Fonction 4 & Avoir [...]. \tabularnewline
+  Fonction 5 & Accéder à [...]. \tabularnewline
+   & Vérifier que [...]. \tabularnewline
+  Fonction 6 & Accéder à [...]. \tabularnewline
+   & Et vérifier [...]. \tabularnewline
+  Fonction 7 & Installer [...]. \tabularnewline
+   & Vérifier [...]. \tabularnewline
+  Fonction 8 & Compter [...]. \tabularnewline
+  \hline
+\end{tabularx}
+\end{center}
+\caption{Tableau récapitulatif des tests}
+\end{figure}
+\fi
