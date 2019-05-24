@@ -1,5 +1,76 @@
 \chapter{Travail réalisé}
 
+
+\section{Aperçu général}
+\ganttset{%
+	calendar week text={%
+		\pgfcalendarmonthshortname{\startmonth}~\startday%
+	}%
+}
+\newganttlinktype{f-m}{
+	\ganttsetstartanchor{on right=1}
+	\ganttsetendanchor{on left=0}
+	\draw[/pgfgantt/link]
+	([xshift=-.2pt]\xLeft, \yUpper) --       % xshift to fit arrow
+	node[pos=.5, /pgfgantt/link label node] {\ganttlinklabel} 
+	(\xRight, \yLower);
+}
+
+
+%vgrid={*1{blue!30},
+%	*6{black,dotted},
+%	*1{red!30},
+%	*2{black,dotted},
+%	*1{blue!30},
+%	*{34}{black,dotted},
+%	*1{green!30},
+%	*1{red!30},
+%	*{10}{black,dotted},
+%	*1{green!30}},
+\setganttlinklabel{f-m}{}
+
+\begin{ganttchart}[
+	hgrid,
+	vgrid,
+	x unit=3mm,
+	time slot format=isodate,
+	inline,
+	bar/.append style={fill=blue!37},
+	group/.append style={draw=black, fill=black!50},
+	milestone/.append style={fill=green, rounded corners=6pt,scale=2},
+	milestone inline label node/.append style={right=1mm},
+	]{2019-03-28}{2019-05-25}
+	\gantttitlecalendar{year, month=name, week} \\
+	\ganttgroup{Analyse des besoins}{2019-03-29}{2019-04-7}\\
+	\ganttgroup{Réalisation technique}{2019-04-5}{2019-05-13}\\
+	\ganttgroup{Maintenance}{2019-05-13}{2019-05-24} \\
+	\ganttbar{OFBiz}{2019-04-01}{2019-04-11}\\
+	\ganttbar[
+	bar/.append style={ fill=red!50
+	}]{REST}{2019-04-08}{2019-04-28} \\
+	\ganttbar[
+	bar/.append style={ fill=orange!50
+	}]{Entitymaint}{2019-04-20}{2019-05-12} \\
+	
+	\ganttmilestone{Preuve de concept}{2019-05-12}] \\
+	\ganttbar[
+	bar/.append style={ fill=purple!40, dashed
+	}]{Revue de code}{2019-05-13}{2019-05-23} \\
+	\ganttlink{elem3}{elem4}
+	\ganttlink{elem4}{elem5}
+	\ganttlink[link type=f-m]{elem5}{elem6}
+	\ganttlink[link type=dr]{elem4}{elem6}
+	\ganttlink[link type=f-m]{elem6}{elem7}
+\end{ganttchart}
+
+
+
+
+
+
+
+
+
 \section{Environnement}
 
 \subsection{Installation du l'environnement}
