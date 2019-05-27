@@ -31,28 +31,29 @@ Voici la chronologie du travail réalisé en entreprise.\\
 \setganttlinklabel{f-m}{}
 
 \begin{ganttchart}[
-	hgrid,
-	vgrid,
-	x unit=2.9mm,
+	hgrid={*1{black!30,dotted}},
+	vgrid={*1{black!30,dotted}},
+	x unit=3mm,
 	time slot format=isodate,
 	inline,
 	bar/.append style={fill=blue!37},
+	bar height=.5,
 	group/.append style={draw=black, fill=black!50},
-	milestone/.append style={fill=green, rounded corners=6pt,scale=2},
+	milestone/.append style={fill=green!20, rounded corners=6pt,scale=2},
 	milestone inline label node/.append style={right=1mm},
 	]{2019-03-28}{2019-05-25}
 	\gantttitlecalendar{year, month=name, week} \\
-	\ganttgroup{Analyse des besoins}{2019-03-29}{2019-04-7}\\
+	\ganttgroup{Analyse des besoins}{2019-03-29}{2019-04-9}\\
 	\ganttgroup{Réalisation technique}{2019-04-5}{2019-05-13}\\
 	\ganttgroup{Maintenance}{2019-05-13}{2019-05-24} \\
-	\ganttbar{OFBiz}{2019-04-01}{2019-04-11}\\
+	\ganttbar[bar height=.5]{OFBiz}{2019-04-01}{2019-04-11}\\
 	\ganttbar[
 	bar/.append style={ fill=red!50
 	}]{REST}{2019-04-08}{2019-04-28} \\
 	\ganttbar[
 	bar/.append style={ fill=orange!50
 	}]{Entitymaint}{2019-04-20}{2019-05-12} \\
-	
+
 	\ganttmilestone{Preuve de concept}{2019-05-12}] \\
 	\ganttbar[
 	bar/.append style={ fill=purple!40, dashed
@@ -78,14 +79,26 @@ Voici la chronologie du travail réalisé en entreprise.\\
 
 \subsection{Installation de l'environnement}
 Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux \footnote{Une question qui a, apparemment, beaucoup d'importance.} , la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes \footnote{Contenaient, à mon avis, des information sensibles, mais cela s'explique par le principe de transparence \ref{activite} }
+IntelliJ qui facilite la navigation vu la specificté d'OFBIZ XML/JAVA
 
 
 
-\subsection{Conventions}
-\subsection{Formation développeur générale}
+
+\subsection{Formation générale}
+Découverte du fonctionnel basique, aperçu des techniques utilisés dans l'OFBIZ
+
 \subsection{Jira}
+Mécanisme de tickets pour les projets client, utilisé aussi par la communauté Apache...
 \subsection{Approfondissement de Git }
+dev à plusieurs
+git-branching.js
+
 \subsection{Découverte de communauté libre Apache}
+ OFbiz est maintenu par des contributeurs commiteurs et PMC (what is), indépendants, les entreprise n'ont pas de pouvoir ni d'obligation de contribuer (mais elles ont l'interet), à vocation personnelle. Licence Apache et GPL (oblig legale de distribuer en libre)
+
+
+
+
 
 \newpage
 \section{Prise en main d'OFBiz}
