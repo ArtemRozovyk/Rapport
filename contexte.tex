@@ -52,7 +52,10 @@ Décathlon
  rfid store, interface pour les achteurs et producteurs, dev front pour le store specifique au lieu d'écrans OFBiz, communication avec des API...
 
 Dejbox
-VOir avec Pierre
+\\
+Dejbox est une société de la foodTech qui propose aux salariés d’entreprise de leur livrer des repas directement sur leur lieu de travail. L’ensemble des vente est réalisé au travers d’un site e-commerce par lequel le salarié commande un repas.
+
+Le projet a pour objectif de mettre en œuvre un outil de type ERP afin de gérer la chaîne de réapprovisionnement en produit frais vendu en ligne. Il s’agit donc de créer un référentiel d’article et de fournisseur et de pouvoir saisir des commandes qui seront envoyées aux fournisseurs et réceptionnées suite à leur livraison. Enfin, il s’agit de mettre en place la sortie de stock en intégrant les consommations de produit provenant du site de vente en ligne.
 
 
 ....
@@ -66,11 +69,25 @@ Dépuis 2013 les dev remontantes à la communauté , parce que besoin de support
 \newpage
 \section{Framework OFBiz}
 \subsection{Vue d'ensemble }
-\emph{Open For Business (OFBiz)} est une suite d'applications pour la gestion de l'entreprise qui se base sur une architecture très couramment utilisé \emph{(MVC)} et qui implémente des composantes classiques de gestion des donnés, de logique d'entreprise générale, et du traitement spécialisé. Quant à leur structure, toutes les composantes sont étroitement liées entres elles, ce qui facilite la compréhension, l'utilisation et la personnalisation de ces dernières. 
-\\
-En plus d'une architecture qui encourage la customisation, OFBiz est entièrement distribué en tant que \emph{open source software}\footnote{Logiciel libre sous licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} ce qui donne le droit de personnaliser, d'étendre, de restructurer et de vendre le système concerné. } ce qui le rend 
+\emph{Open For Business (OFBiz)} est une suite d'applications pour la gestion de l'entreprise qui se base sur une architecture très couramment utilisé \emph{(MVC)} et qui implémente des composantes classiques de gestion des donnés, de logique métier, et de traitement spécialisé. 
 
-DSL en XML, servlettes, jdbc ...
+On peut notamment distinguer les modules génériques destinées à la gestion des tâches communes à la plupart des entreprises, telles que la gestion des stocks, la comptabilité, la facturation et bien d'autres. Quant à leur structure, toutes les composantes sont étroitement liées entres elles, ce qui facilite la compréhension, l'utilisation et la personnalisation de ces dernières. 
+
+
+En plus d'une architecture qui encourage la customisation, OFBiz est entièrement distribué en tant que \emph{open source software}\footnote{Logiciel libre sous licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} ce qui donne le droit de personnaliser, d'étendre, de restructurer et de vendre le système concerné. } ce qui le rend particulièrement intéressant car le logiciel développé à base d'OFBiz n'est pas soumis à la condition d'être libre comme c'est le cas de la licence GPL  \footnote{\href{http://www.gnu.org/licenses/gpl-3.0.html}{GNU General Public Licence}} par exemple.
+
+\subsection{Architecture }
+D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spé-cifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe HTTPServlet\cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
+
+Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques, notamment en matière de  communication réseau et d'interaction entre les différentes applications.
+Les principaux composants métier tels que la comptabilité, la gestion des stock, ou la facturation se trouvent dans la partie \emph{applications}. 
+Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne qui utilise des nombreuses applications  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
+
+\subsection{XML DSL}
+L'une des particularités d'OFBiz ce sont des fichiers XML qui servent à déclarer entre autres
+des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des services. Le principe est de transformer des informations sous format XML facilement compréhensibles par le développeur, en objets Java correspondantes. 
+
+
 \subsection{Composants }
 
 \subsection{Container}

@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+
+\bibitem{cite2}
+Auteur Ailleurs.
+\newblock Titre3.
+\newblock \url{<http://www.url2.org/>}, 2014.
+\newblock [Online; accessed 16-January-2014].
+
+\bibitem{chan2017servlet}
+authoe.
+\newblock Jdbc.
+\newblock https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/, date.
+
+\bibitem{JDBC}
+authoe.
+\newblock Jdbc.
+\newblock https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/, date.
+
+\bibitem{cite1}
+Auteur Autre.
+\newblock Titre2.
+\newblock \url{<http://www.url1.org/>}, 2014.
+\newblock [Online; accessed 16-January-2014].
+
+\bibitem{cite4}
+Auteur Elle.
+\newblock Titre5.
+\newblock \url{<http://www.url4.org/>}, 2014.
+\newblock [Online; accessed 16-January-2014].
+
+\bibitem{Groovy}
+groo.
+\newblock groovy.
+
+\bibitem{cite6}
+Auteur Livre1.
+\newblock {\em Titre Livre1}.
+\newblock Editeur1, 2014.
+
+\bibitem{cite3}
+Auteur Lui.
+\newblock Titre4.
+\newblock \url{<http://www.url3.org/>}, 2014.
+\newblock [Online; accessed 16-January-2014].
+
+\bibitem{cite0}
+Auteur Untel.
+\newblock Titre1.
+\newblock \url{<http://www.url0.org/>}, 2014.
+\newblock [Online; accessed 16-January-2014].
+
+\end{thebibliography}

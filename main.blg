@@ -3,44 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliographie.bib.bib
-You've used 6 entries,
+Warning--empty journal in Groovy
+Warning--empty year in Groovy
+You've used 9 entries,
             2118 wiz_defined-function locations,
-            523 strings with 4329 characters,
-and the built_in function-call counts, 1320 in all, are:
-= -- 129
-> -- 42
+            532 strings with 4438 characters,
+and the built_in function-call counts, 1935 in all, are:
+= -- 186
+> -- 63
 < -- 0
-+ -- 18
-- -- 12
-* -- 40
-:= -- 232
-add.period$ -- 23
-call.type$ -- 6
-change.case$ -- 23
++ -- 27
+- -- 18
+* -- 63
+:= -- 338
+add.period$ -- 31
+call.type$ -- 9
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 47
-empty$ -- 133
-format.name$ -- 12
-if$ -- 287
+cite$ -- 11
+duplicate$ -- 71
+empty$ -- 194
+format.name$ -- 18
+if$ -- 417
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 2
-newline$ -- 38
-num.names$ -- 12
-pop$ -- 48
+int.to.str$ -- 9
+missing$ -- 3
+newline$ -- 52
+num.names$ -- 18
+pop$ -- 72
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 27
 quote$ -- 0
-skip$ -- 36
+skip$ -- 56
 stack$ -- 0
-substring$ -- 30
-swap$ -- 6
+substring$ -- 45
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
-warning$ -- 0
-while$ -- 12
-width$ -- 7
-write$ -- 72
+type$ -- 34
+warning$ -- 2
+while$ -- 18
+width$ -- 10
+write$ -- 99
+(There were 2 warnings)
