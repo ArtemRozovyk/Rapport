@@ -9,9 +9,9 @@
 \BOOKMARK [1][-]{section.2.2}{Framework OFBiz}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.1}{Vue d'ensemble }{section.2.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.2}{Architecture }{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.3}{XML DSL}{section.2.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.4}{Composants }{section.2.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.5}{Container}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.3}{DSL XML}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.4}{Container}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.5}{Composants}{section.2.2}% 14
 \BOOKMARK [2][-]{subsection.2.2.6}{Web applications}{section.2.2}% 15
 \BOOKMARK [2][-]{subsection.2.2.7}{Entity engine}{section.2.2}% 16
 \BOOKMARK [2][-]{subsection.2.2.8}{Service engine}{section.2.2}% 17

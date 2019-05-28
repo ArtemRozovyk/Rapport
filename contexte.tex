@@ -77,20 +77,64 @@ On peut notamment distinguer les modules génériques destinées à la gestion d
 En plus d'une architecture qui encourage la customisation, OFBiz est entièrement distribué en tant que \emph{open source software}\footnote{Logiciel libre sous licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} ce qui donne le droit de personnaliser, d'étendre, de restructurer et de vendre le système concerné. } ce qui le rend particulièrement intéressant car le logiciel développé à base d'OFBiz n'est pas soumis à la condition d'être libre comme c'est le cas de la licence GPL  \footnote{\href{http://www.gnu.org/licenses/gpl-3.0.html}{GNU General Public Licence}} par exemple.
 
 \subsection{Architecture }
-D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spé-cifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe HTTPServlet\cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
+D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spé-cifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
 
 Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques, notamment en matière de  communication réseau et d'interaction entre les différentes applications.
 Les principaux composants métier tels que la comptabilité, la gestion des stock, ou la facturation se trouvent dans la partie \emph{applications}. 
-Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne qui utilise des nombreuses applications  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
+Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne qui utilise des nombreuses  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
 
-\subsection{XML DSL}
+\subsection{DSL XML}
 L'une des particularités d'OFBiz ce sont des fichiers XML qui servent à déclarer entre autres
-des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des services. Le principe est de transformer des informations sous format XML facilement compréhensibles par le développeur, en objets Java correspondantes. 
+des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des services. Le principe est de transformer des informations sous format XML facilement compréhensibles par le développeur, en objets Java correspondants. 
 
 
-\subsection{Composants }
-
+\definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \subsection{Container}
+L'interface container représenté sur la figure \ref{container} permet de définir des objets qui correspondent à des processus qui peuvent être initialisés, démarrés et arrêtés. L'intérêt est de pouvoir lancer un daemon spécifique en parallèle de l'execution d'OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des testes unitaires grâce à un mécanisme spécifique du framework. 
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\umlinterface[scale=0.9,x=0,y=5]{Container}{}{
+		\umlvirt{+ init(cmds : List<StartupCommand>, name : String,} \\
+		\umlvirt{\hspace{1,1cm}config : String) : void} \\
+		\umlvirt{+ start() : void} \\
+		\umlvirt{+ stop() : void} \\
+		\umlvirt{+ getName() : String}
+	}
+	\umlclass[ x=-5, y=-2]{EntityDataLoadContainer}{
+		- name : String \\
+		- module :String
+	}{
+		\umlvirt{+ getName() : String} \\
+		\umlvirt{+ createDbConstraints(...) : void}\\
+		\umlvirt{+ dropPrimaryKeys(...) : void}
+	}
+	\umlclass[ x=6, y=-2]{TestRunContainer}{
+		- name : String \\
+		- jsWrapper : JunitSuiteWrapper
+	}{
+		\umlvirt{+ getName() : String} \\
+		\umlvirt{+ createJunitXmlListener(...) : JunitXmlListener} \\
+		\umlvirt{+ logTestSuiteResults(...) : void} \\
+	}
+
+ \umldep[geometry=|-|, pos1=1.5, pos2=0.2 ,draw=dollarbill,  thick]{TestRunContainer}{Container}
+ \umldep[geometry=|-|, pos1=1.5, pos2=0.2 ,draw=dollarbill,  thick]{EntityDataLoadContainer}{Container}
+	\end{tikzpicture}
+	
+	
+	\caption{Définition du type container}
+	\label{container}
+\end{figure}
+\subsection{Composants}
+Les éléments constitutifs de OFBIZ sont des composants. Un composant est un regroupement des containers, des entités, des services, des vues (\emph{Écrans}) et des applications Web.
+
+
+L'exemple classique d'un composant est celui de \verb|webtools| qui assure la gestion technique de l'ensemble du système par l'administrateur via une application web, ce qui implique le fait que ce composant regroupe la plupart des éléments majeurs du framework.
+Nous en tant que développeurs avons la possibilité de définir nos propres composants, notamment des \emph{plugins}. 
+  
+
+
 \subsection{Web applications}
 \subsection{Entity engine}
 \subsection{Service engine}
