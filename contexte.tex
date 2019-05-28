@@ -163,9 +163,9 @@ Comme dans beaucoup d'autres frameworks, l'interaction avec les bases de donnée
 Les services web assurent les échanges d'information être les applications, communément via protocole \verb| HTTP|.   
 Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'évoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'information telles que \verb|SOAP|. 
 
-Les services OFBiz sont appelées en passant un contexte \footnote{Définis souvent dans les paramètres de la requête \verb|HTTP| } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
+Les services OFBiz sont appelées en passant un contexte \footnote{Définis souvent dans les paramètres de la requête HTTP } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
 
-On peut voir la définition d'un service sur \ref{servicedef} , qui montre notamment les attributs attendu par le services qui sont défini de deux manières: En utilisant le mécanisme de \verb|auto-attributes| qui génère des attributs en entrée (de paramètre \verb|IN|) à partir de l'ensemble des clés primaires de l'entité \verb|Stock|. L'autre manière de faire est de rajouter des attributs manuellement comme on peut le voir dans la suite de l'exemple. 
+On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui montre notamment la saisie des attributs attendu par le service qui sont définis de deux manières: En utilisant le mécanisme de \verb|auto-attributes| qui génère des attributs\footnote{Qui sont en l'occurence en entrée (de paramètre IN)} à partir de l'ensemble des clés primaires de l'entité \verb|Stock|. L'autre manière de faire est de rajouter des attributs manuellement comme on peut le voir dans la suite de l'exemple. 
 
 
 \begin{figure}
