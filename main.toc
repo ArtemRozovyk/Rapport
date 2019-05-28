@@ -13,66 +13,66 @@
 \contentsline {subsection}{\numberline {2.2.3}DSL XML}{4}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Container}{4}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Composants}{5}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Web applications}{6}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.6}Web applications}{5}{subsection.2.2.6}
 \contentsline {subsection}{\numberline {2.2.7}Entity engine}{6}{subsection.2.2.7}
 \contentsline {subsection}{\numberline {2.2.8}Service engine}{6}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Screen engine}{6}{subsection.2.2.9}
-\contentsline {subsection}{\numberline {2.2.10}Fonctionnel m\IeC {\'e}tier}{6}{subsection.2.2.10}
-\contentsline {section}{\numberline {2.3}Sujet de stage }{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}API REST au sein d'OFBiz}{7}{subsection.2.3.1}
-\contentsline {chapter}{\numberline {3}Travail r\IeC {\'e}alis\IeC {\'e}}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Aper\IeC {\c c}u g\IeC {\'e}n\IeC {\'e}ral}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Environnement}{9}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Installation de l'environnement}{9}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Formation g\IeC {\'e}n\IeC {\'e}rale}{9}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Jira}{9}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Approfondissement de Git }{9}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}D\IeC {\'e}couverte de communaut\IeC {\'e} libre Apache}{9}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}Prise en main d'OFBiz}{10}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Premier plugin}{10}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Projets existants et leur structure}{10}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}D\IeC {\'e}cathlon}{10}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}Dejbox}{10}{subsubsection.3.3.2.2}
-\contentsline {subsection}{\numberline {3.3.3}Probl\IeC {\'e}matique vis-\IeC {\`a}-vis du d\IeC {\'e}veloppement}{10}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Analyse de l'existant}{11}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}ControlServlet}{11}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}M\IeC {\'e}canisme de r\IeC {\'e}solution des URI}{11}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Filtres}{11}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Analyse des besoins et attentes de la ma\IeC {\^\i }trise d'ouvrage}{12}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Structure g\IeC {\'e}n\IeC {\'e}rale des application web}{12}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}API en cours}{12}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Controleur}{12}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Besoins d'\IeC {\'e}volution}{12}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Representational state transfer}{12}{subsection.3.5.5}
-\contentsline {subsubsection}{\numberline {3.5.5.1}Histoire}{12}{subsubsection.3.5.5.1}
-\contentsline {subsubsection}{\numberline {3.5.5.2}Principe}{12}{subsubsection.3.5.5.2}
-\contentsline {subsubsection}{\numberline {3.5.5.3}Avantages}{12}{subsubsection.3.5.5.3}
-\contentsline {subsubsection}{\numberline {3.5.5.4}Examples d'API du style REST}{12}{subsubsection.3.5.5.4}
-\contentsline {subsection}{\numberline {3.5.6}Implementations existantes}{12}{subsection.3.5.6}
-\contentsline {subsubsection}{\numberline {3.5.6.1}Camel}{12}{subsubsection.3.5.6.1}
-\contentsline {subsubsection}{\numberline {3.5.6.2}JAX-RS}{12}{subsubsection.3.5.6.2}
-\contentsline {section}{\numberline {3.6}R\IeC {\'e}alisations techniques}{13}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Librairie CXF}{13}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Choix vers URITemplate}{13}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}\textit {OverrideView()} et le conflit avec les URI segment\IeC {\'e}es}{13}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Choix d'int\IeC {\'e}gration en parall\IeC {\`e}le avec le syst\IeC {\`e}me existant }{13}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}Nouveau contr\IeC {\^o}leur}{13}{subsection.3.6.5}
-\contentsline {subsubsection}{\numberline {3.6.5.1}Compromis pour les conflits d'URI}{13}{subsubsection.3.6.5.1}
-\contentsline {subsection}{\numberline {3.6.6}Modification de la partie "Administration: gestion des entit\IeC {\'e}s" (entitymaint) }{13}{subsection.3.6.6}
-\contentsline {subsubsection}{\numberline {3.6.6.1}Choix de la partie illustrative}{13}{subsubsection.3.6.6.1}
-\contentsline {subsubsection}{\numberline {3.6.6.2}PUT vs POST}{13}{subsubsection.3.6.6.2}
-\contentsline {subsubsection}{\numberline {3.6.6.3}Cl\IeC {\'e}s compos\IeC {\'e}es}{13}{subsubsection.3.6.6.3}
-\contentsline {subsubsection}{\numberline {3.6.6.4}Formulaires g\IeC {\'e}n\IeC {\'e}riques }{13}{subsubsection.3.6.6.4}
-\contentsline {subsection}{\numberline {3.6.7}Stateless}{13}{subsection.3.6.7}
-\contentsline {subsubsection}{\numberline {3.6.7.1}Les r\IeC {\'e}alisation par la communaut\IeC {\'e}}{13}{subsubsection.3.6.7.1}
-\contentsline {subsection}{\numberline {3.6.8}RESTClient pour la communaut\IeC {\'e}}{13}{subsection.3.6.8}
-\contentsline {subsubsection}{\numberline {3.6.8.1}G\IeC {\'e}n\IeC {\'e}ralisation de code}{13}{subsubsection.3.6.8.1}
-\contentsline {subsubsection}{\numberline {3.6.8.2}Correction d'incoh\IeC {\'e}rences}{13}{subsubsection.3.6.8.2}
-\contentsline {chapter}{\numberline {4}Conclusion}{14}{chapter.4}
-\contentsline {section}{\numberline {4.1}Lien avec les connaissences obtenu lors de la formation universitaire}{14}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}MVC}{14}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Servlet}{14}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}FreeMarker -JSP}{14}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Notion d'enti\IeC {\'e} - Symfony}{14}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Routage}{14}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Gradle Maven}{14}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {2.2.9}Screen engine}{7}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}Fonctionnel m\IeC {\'e}tier}{7}{subsection.2.2.10}
+\contentsline {section}{\numberline {2.3}Sujet de stage }{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}API REST au sein d'OFBiz}{8}{subsection.2.3.1}
+\contentsline {chapter}{\numberline {3}Travail r\IeC {\'e}alis\IeC {\'e}}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Aper\IeC {\c c}u g\IeC {\'e}n\IeC {\'e}ral}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Environnement}{10}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Installation de l'environnement}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Formation g\IeC {\'e}n\IeC {\'e}rale}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Jira}{10}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Approfondissement de Git }{10}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}D\IeC {\'e}couverte de communaut\IeC {\'e} libre Apache}{10}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Prise en main d'OFBiz}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Premier plugin}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Projets existants et leur structure}{11}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}D\IeC {\'e}cathlon}{11}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}Dejbox}{11}{subsubsection.3.3.2.2}
+\contentsline {subsection}{\numberline {3.3.3}Probl\IeC {\'e}matique vis-\IeC {\`a}-vis du d\IeC {\'e}veloppement}{11}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Analyse de l'existant}{12}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}ControlServlet}{12}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}M\IeC {\'e}canisme de r\IeC {\'e}solution des URI}{12}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Filtres}{12}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Analyse des besoins et attentes de la ma\IeC {\^\i }trise d'ouvrage}{13}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Structure g\IeC {\'e}n\IeC {\'e}rale des application web}{13}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}API en cours}{13}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Controleur}{13}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Besoins d'\IeC {\'e}volution}{13}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Representational state transfer}{13}{subsection.3.5.5}
+\contentsline {subsubsection}{\numberline {3.5.5.1}Histoire}{13}{subsubsection.3.5.5.1}
+\contentsline {subsubsection}{\numberline {3.5.5.2}Principe}{13}{subsubsection.3.5.5.2}
+\contentsline {subsubsection}{\numberline {3.5.5.3}Avantages}{13}{subsubsection.3.5.5.3}
+\contentsline {subsubsection}{\numberline {3.5.5.4}Examples d'API du style REST}{13}{subsubsection.3.5.5.4}
+\contentsline {subsection}{\numberline {3.5.6}Implementations existantes}{13}{subsection.3.5.6}
+\contentsline {subsubsection}{\numberline {3.5.6.1}Camel}{13}{subsubsection.3.5.6.1}
+\contentsline {subsubsection}{\numberline {3.5.6.2}JAX-RS}{13}{subsubsection.3.5.6.2}
+\contentsline {section}{\numberline {3.6}R\IeC {\'e}alisations techniques}{14}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Librairie CXF}{14}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Choix vers URITemplate}{14}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}\textit {OverrideView()} et le conflit avec les URI segment\IeC {\'e}es}{14}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Choix d'int\IeC {\'e}gration en parall\IeC {\`e}le avec le syst\IeC {\`e}me existant }{14}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Nouveau contr\IeC {\^o}leur}{14}{subsection.3.6.5}
+\contentsline {subsubsection}{\numberline {3.6.5.1}Compromis pour les conflits d'URI}{14}{subsubsection.3.6.5.1}
+\contentsline {subsection}{\numberline {3.6.6}Modification de la partie "Administration: gestion des entit\IeC {\'e}s" (entitymaint) }{14}{subsection.3.6.6}
+\contentsline {subsubsection}{\numberline {3.6.6.1}Choix de la partie illustrative}{14}{subsubsection.3.6.6.1}
+\contentsline {subsubsection}{\numberline {3.6.6.2}PUT vs POST}{14}{subsubsection.3.6.6.2}
+\contentsline {subsubsection}{\numberline {3.6.6.3}Cl\IeC {\'e}s compos\IeC {\'e}es}{14}{subsubsection.3.6.6.3}
+\contentsline {subsubsection}{\numberline {3.6.6.4}Formulaires g\IeC {\'e}n\IeC {\'e}riques }{14}{subsubsection.3.6.6.4}
+\contentsline {subsection}{\numberline {3.6.7}Stateless}{14}{subsection.3.6.7}
+\contentsline {subsubsection}{\numberline {3.6.7.1}Les r\IeC {\'e}alisation par la communaut\IeC {\'e}}{14}{subsubsection.3.6.7.1}
+\contentsline {subsection}{\numberline {3.6.8}RESTClient pour la communaut\IeC {\'e}}{14}{subsection.3.6.8}
+\contentsline {subsubsection}{\numberline {3.6.8.1}G\IeC {\'e}n\IeC {\'e}ralisation de code}{14}{subsubsection.3.6.8.1}
+\contentsline {subsubsection}{\numberline {3.6.8.2}Correction d'incoh\IeC {\'e}rences}{14}{subsubsection.3.6.8.2}
+\contentsline {chapter}{\numberline {4}Conclusion}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Lien avec les connaissences obtenu lors de la formation universitaire}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}MVC}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Servlet}{15}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}FreeMarker -JSP}{15}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Notion d'enti\IeC {\'e} - Symfony}{15}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Routage}{15}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Gradle Maven}{15}{subsection.4.1.6}

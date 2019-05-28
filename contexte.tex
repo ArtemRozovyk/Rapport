@@ -103,7 +103,7 @@ L'interface container représenté sur la figure \ref{container} permet de défi
 	}
 	\umlclass[ x=-5, y=-2]{EntityDataLoadContainer}{
 		- name : String \\
-		- module :String
+		- module : String
 	}{
 		\umlvirt{+ getName() : String} \\
 		\umlvirt{+ createDbConstraints(...) : void}\\
@@ -136,8 +136,51 @@ Nous en tant que développeurs avons la possibilité de définir nos propres com
 
 
 \subsection{Web applications}
+Des composant OFBiz ne peuvent pas être accédés directement par les utilisateurs, ils servent simplement à organiser le framework en parties individuelles de chaque aspect de l'ERP afin de faciliter leur gestion. Les applications web \emph{(webapps)} sont destinées à fournir le front-end afin que les utilisateurs puissent interagir avec OFBiz. En ce qui concerne les routes HTTP, définis classiquement dans le fichier \verb|web.xml|, dans le cas de OFBiz leur gestion est délégué à un ficher \verb|controller.xml| qui à son tour associe des traitement spécifiques à chaque point d'entrée HTTP ainsi que la valeur de retour qui peut être une vue \emph{'un Écran)}, du type \verb|JSON| ou bien une redirection. Cela se fait au moyen d'une \verb|request-map| comme on peut voir sur \ref{reqmap}
+
+
+
+\lstset{language=XML}
+\begin{figure}
+\begin{lstlisting}
+<request-map uri="stock" method="get">
+    <event type="service" invoke="getStock"/>
+    <response name="success" type="view" value="stockScreen"/>
+</request-map>
+\end{lstlisting}
+	\caption{Association d'un point d'entrée et d'une réponse}
+\label{reqmap}
+\end{figure}
+
+
+
 \subsection{Entity engine}
+Comme dans beaucoup d'autres frameworks, l'interaction avec les bases de données à une place principale dans le OFBiz. Le moteur d'entités (\emph{Entity engine}) se charge de la communication avec les  bases de données à travers les déclarations uniformes, c'est à dire qui changent pas peu importe le choix de l'outil externe de gestion.
+
+
+
 \subsection{Service engine}
+Les services web assurent les échanges d'information être les applications, communément via protocole \verb| HTTP|.   
+Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'évoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'information telles que \verb|SOAP|. 
+
+Les services OFBiz sont appelées en passant un contexte \footnote{Définis souvent dans les paramètres de la requête \verb|HTTP| } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
+
+On peut voir la définition d'un service sur \ref{servicedef} , qui montre notamment les attributs attendu par le services qui sont défini de deux manières: En utilisant le mécanisme de \verb|auto-attributes| qui génère des attributs en entrée (de paramètre \verb|IN|) à partir de l'ensemble des clés primaires de l'entité \verb|Stock|. L'autre manière de faire est de rajouter des attributs manuellement comme on peut le voir dans la suite de l'exemple. 
+
+
+\begin{figure}
+\begin{lstlisting}
+<service name="getStock" engine="entity-auto" default-entity-name="Stock">
+  <auto-attributes include="pk" mode="IN" optional="false"/>
+  <attribute name="authKey" type="String" mode="IN" optional="true"/>
+  <attribute name="stockList" type="String" mode="OUT" optional="true"/>
+</service>
+\end{lstlisting}
+\caption{Association d'un point d'entrée et d'une réponse}
+\label{servicedef}
+\end{figure}
+
+
 \subsection{Screen engine}
 \subsection{Fonctionnel métier}
 
