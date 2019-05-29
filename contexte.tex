@@ -45,7 +45,7 @@ Transparence libre entreprise \\
 
 
 Integration(utilisation des briques en tant que telles) et
-Dévéloppement spécifique (adaptation d'OFBIZ pour les besoins ) plugins propres à la logique métier. Pas de forfait(contrat doit etre rempli, l'entreprise s'engage à ce qu'il soit livré dans les tepms), mais la régie (sont payé au temps de travail et pas à condition de remplir un ... ).  Pareil avec Décath 6 pers font de la régie...
+Dévéloppement spécifique (adaptation d'OFBIZ pour les besoins ) plugins propres à la logique métier. Pas de forfait(contrat doit etre rempli, l'entreprise s'engage à ce qu'il soit livré dans les tepms), mais la régie (sont payé au temps de travail et pas à condition de remplir un contrat ).  Pareil avec Décath 6 pers font de la régie...
 Administration système
 \subsection{Projets}
 Décathlon
@@ -143,7 +143,7 @@ Des composant OFBiz ne peuvent pas être accédés directement par les utilisate
 \lstset{language=XML}
 \begin{figure}
 \begin{lstlisting}
-<request-map uri="stock" method="get">
+<request-map uri="stock">
     <event type="service" invoke="getStock"/>
     <response name="success" type="view" value="stockScreen"/>
 </request-map>
@@ -160,8 +160,8 @@ Comme dans beaucoup d'autres frameworks, l'interaction avec les bases de donnée
 
 
 \subsection{Service engine}
-Les services web assurent les échanges d'information être les applications, communément via protocole \verb| HTTP|.   
-Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'évoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'information telles que \verb|SOAP|. 
+Les services web assurent les échanges d'information être les applications, communément via le protocole\verb| HTTP|.   
+Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'évoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'information tells que \verb|SOAP|. 
 
 Les services OFBiz sont appelées en passant un contexte \footnote{Définis souvent dans les paramètres de la requête HTTP } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
 
@@ -190,28 +190,28 @@ La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Scree
 \end{figure}
 
 \subsection{Fonctionnel métier}
-Le méta-composant \emph{Applications} comporte des composants métier prédéfinis, qui ont pour vocation de fournir des application fonctionnelles "prêtes à l'emploi". 
+Le méta-composant \emph{Applications} comporte des composants métier prédéfinis, qui ont pour vocation de fournir des solutions fonctionnelles "prêtes à l'emploi". 
 
 Ainsi on distingue parmi d'autres :
 \begin{labeling}{alligator}
 	\item [\textbf{accounting}] fournit l'ensemble de services et d'écrans de rendu pour la comptabilité.
 	\item [\textbf{datamodel}] s'occupe de la définition des entités et des relations entre elles.
 	\item [\textbf{humanres}] correspond à la gestion du personnel.
-	\item [\textbf{product}] permet la gestion du catalogue de produits et services fournis par l'organisme.
+	\item [\textbf{product}] permet la gestion du catalogue des produits et des services fournis par l'organisme.
 \end{labeling}
 
 \newpage
 \section{Sujet de stage }
-Comme mentionné avant, le sujet de stage est divisé en deux parties. La première partie consiste à prendre en main l'outil de développement concerné, le framework OFBiz. La deuxième partie du stage est la modification de certains éléments du framework, notamment les mécanismes de gestion de services afin d'assurer la conformité au style architectural REST.  
+Comme mentionné avant, le sujet de stage est divisé en deux parties. La première partie consiste à prendre en main l'outil de développement concerné, le framework OFBiz. La deuxième partie du stage est la modification de certains éléments du framework, notamment des mécanismes de gestion de services afin d'assurer la conformité au style architectural REST.  
 
 \subsection{Découverte OFBiz}
-Cette étape sert à se familiariser avec l'environnement du framework à travers des tutoriels et l'analyse des projets existants, afin de comprendre le fonctionnement général. Cela permet aussi repérer les points essentielles auxquelles il faut tenir compte lors de la deuxième phase de travail. 
+Cette étape sert à se familiariser avec l'environnement du framework à travers des tutoriels et l'analyse des projets existants, afin de comprendre le fonctionnement général. Cela permet aussi de repérer les points essentielles auxquelles il faut tenir compte lors de la deuxième phase de travail. 
 
 \subsection{API REST au sein d'OFBiz}
 
-Finalement, l'intérêt principal du stage est la mise en place d'un système de gestion des services REST. L'idée a été évoquée pour la première fois dans une \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion communautaire} Apache OFBiz, car le système en cours nécessitait l'évolution. Cette discussion a suscité des nombreuses remarques en terme de faisabilité et qui m'a notamment permis de retrouver des pistes à poursuivre lors de l'implémentation.  
+Finalement, l'intérêt principal du stage est la mise en place d'un système de gestion des services REST. L'idée a été évoquée pour la première fois dans une \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion communautaire} Apache OFBiz, car le mécanisme en cours nécessitait de l'évolution. Cette discussion a suscité des nombreuses remarques en terme de faisabilité et a permis de retrouver des pistes à poursuivre lors de l'implémentation.  
 
-Dans un premier temps on considère la possibilité d'intégration d'une solution externe notamment à travers des librairies JAX-RS de CXF, ainsi que Apache Camel. Malgré les premières prototypes fonctionnelles l'idée d'une solution externe a été abandonné pour des raisons expliqués plus tard. A sa place une implémentation de bas niveau a été adoptée. Une fois le système mis en route, l'étape suivante consistait à faire adopter la modification dans la branche principe du projet OFBiz. 
+Dans un premier temps on considère la possibilité d'intégration d'une solution externe notamment à travers des librairies JAX-RS de CXF, ainsi que Apache Camel. Malgré les premières prototypes fonctionnelles l'idée d'une solution externe a été abandonné pour des raisons expliqués plus loin dans le document. A sa place une implémentation de bas niveau a été adoptée. Une fois le système mis en route, l'étape suivante consistait à faire adopter la modification dans la branche principe du projet OFBiz. 
 
 Afin de prouver la conformité du nouveau système et démontrer les nouveaux fonctionnalités, la décision a été prise de modifier une partie front-end existante, notamment l'interface de gestion des entités \emph{entitymaint}. Finalement, l'ensemble de modification sous la forme des patchs a été soumis à la communauté afin d'être revus et potentiellement adoptés dans le framework. 
 
