@@ -74,14 +74,14 @@ Dépuis 2013 les dev remontantes à la communauté , parce que besoin de support
 On peut notamment distinguer les modules génériques destinées à la gestion des tâches communes à la plupart des entreprises, telles que la gestion des stocks, la comptabilité, la facturation et bien d'autres. Quant à leur structure, toutes les composantes sont étroitement liées entres elles, ce qui facilite la compréhension, l'utilisation et la personnalisation de ces dernières. 
 
 
-En plus d'une architecture qui encourage la customisation, OFBiz est entièrement distribué en tant que \emph{open source software}\footnote{Logiciel libre sous licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} ce qui donne le droit de personnaliser, d'étendre, de restructurer et de vendre le système concerné. } ce qui le rend particulièrement intéressant car le logiciel développé à base d'OFBiz n'est pas soumis à la condition d'être libre comme c'est le cas de la licence GPL  \footnote{\href{http://www.gnu.org/licenses/gpl-3.0.html}{GNU General Public Licence}} par exemple.
+En plus d'une architecture qui encourage la customisation, OFBiz est entièrement distribué en tant que \emph{open source software}\footnote{Logiciel libre sous licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} ce qui donne le droit de personnaliser, d'étendre, de restructurer et de vendre le système concerné. } ce qui le rend particulièrement intéressant car le logiciel développé à base de OFBiz n'est pas soumis à la condition d'être libre comme c'est le cas de la licence GPL  \footnote{\href{http://www.gnu.org/licenses/gpl-3.0.html}{GNU General Public Licence}} par exemple.
 
 \subsection{Architecture }
-D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spé-cifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
+D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spécifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
 
-Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques, notamment en matière de  communication réseau et d'interaction entre les différentes applications.
+Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques, notamment en matière de  communication réseau et d'interaction entre les éléments qui forment OFBiz.
 Les principaux composants métier tels que la comptabilité, la gestion des stock, ou la facturation se trouvent dans la partie \emph{applications}. 
-Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne qui utilise des nombreuses  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
+Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne interagit avec des nombreuses  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
 
 \subsection{DSL XML}
 L'une des particularités d'OFBiz ce sont des fichiers XML qui servent à déclarer entre autres
@@ -90,18 +90,18 @@ des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des servi
 
 \definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \subsection{Container}
-L'interface container représenté sur la figure \ref{container} permet de définir des objets qui correspondent à des processus qui peuvent être initialisés, démarrés et arrêtés. L'intérêt est de pouvoir lancer un daemon spécifique en parallèle de l'execution d'OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des testes unitaires grâce à un mécanisme spécifique du framework. 
+L'interface container représenté sur la figure \ref{container} permet de définir des objets qui correspondent à des processus qui peuvent être initialisés, démarrés et arrêtés. L'intérêt est de pouvoir lancer un daemon spécifique en parallèle de l'execution d'OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des testes unitaires grâce à un mécanisme propre au framework. 
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-	\umlinterface[scale=0.9,x=0,y=5]{Container}{}{
+	\umlinterface[scale=0.8,x=0,y=5]{Container}{}{
 		\umlvirt{+ init(cmds : List<StartupCommand>, name : String,} \\
 		\umlvirt{\hspace{1,1cm}config : String) : void} \\
 		\umlvirt{+ start() : void} \\
 		\umlvirt{+ stop() : void} \\
 		\umlvirt{+ getName() : String}
 	}
-	\umlclass[ x=-5, y=-2]{EntityDataLoadContainer}{
+	\umlclass[ x=-5, y=-1,scale=0.8]{EntityDataLoadContainer}{
 		- name : String \\
 		- module : String
 	}{
@@ -109,7 +109,7 @@ L'interface container représenté sur la figure \ref{container} permet de défi
 		\umlvirt{+ createDbConstraints(...) : void}\\
 		\umlvirt{+ dropPrimaryKeys(...) : void}
 	}
-	\umlclass[ x=6, y=-2]{TestRunContainer}{
+	\umlclass[ x=6, y=-1,scale=0.8]{TestRunContainer}{
 		- name : String \\
 		- jsWrapper : JunitSuiteWrapper
 	}{
@@ -136,7 +136,7 @@ Nous en tant que développeurs avons la possibilité de définir nos propres com
 
 
 \subsection{Web applications}
-Des composant OFBiz ne peuvent pas être accédés directement par les utilisateurs, ils servent simplement à organiser le framework en parties individuelles de chaque aspect de l'ERP afin de faciliter leur gestion. Les applications web \emph{(webapps)} sont destinées à fournir le front-end afin que les utilisateurs puissent interagir avec OFBiz. En ce qui concerne les routes HTTP, définis classiquement dans le fichier \verb|web.xml|, dans le cas de OFBiz leur gestion est délégué à un ficher \verb|controller.xml| qui à son tour associe des traitement spécifiques à chaque point d'entrée HTTP ainsi que la valeur de retour qui peut être une vue \emph{'un Écran)}, du type \verb|JSON| ou bien une redirection. Cela se fait au moyen d'une \verb|request-map| comme on peut voir sur \ref{reqmap}
+Des composant OFBiz ne peuvent pas être accédés directement par les utilisateurs, ils servent simplement à organiser le framework en parties individuelles de chaque aspect de l'ERP afin de faciliter leur gestion. Les applications web \emph{(webapps)} sont destinées à fournir un front-end afin que les utilisateurs puissent interagir avec OFBiz. En ce qui concerne les routes HTTP, définis classiquement dans le fichier \verb|web.xml|, dans le cas de OFBiz leur gestion est délégué à un ficher \verb|controller.xml| qui à son tour associe des traitement spécifiques à chaque point d'entrée HTTP ainsi que la valeur de retour qui peut être une vue \emph{(Écran)}, du type \verb|JSON| ou bien une redirection. Cela se fait au moyen d'une \verb|request-map| comme on peut voir sur l'extrait de code suivant \ref{reqmap}
 
 
 
@@ -176,19 +176,50 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
   <attribute name="stockList" type="String" mode="OUT" optional="true"/>
 </service>
 \end{lstlisting}
-\caption{Association d'un point d'entrée et d'une réponse}
+\caption{Définition d'un service}
 \label{servicedef}
 \end{figure}
 
 
 \subsection{Screen engine}
+La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkt| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe du fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|, ou \verb|XLS|. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à un autre mécanisme : \verb|Apache Freemarker|.
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{screenOfbiZ.png}
+	\caption{L'exemple d'un Ecran de rendu OFBiz.}
+	\label{fig:screen}
+\end{figure}
+
 \subsection{Fonctionnel métier}
+Le méta-composant \emph{Applications} comporte des composants métier prédéfinis, qui ont pour vocation de fournir des application fonctionnelles "prêtes à l'emploi". 
+
+Ainsi on distingue parmi d'autres :
+\begin{labeling}{alligator}
+	\item [\textbf{accounting}] fournit l'ensemble de services et d'écrans de rendu pour la comptabilité.
+	\item [\textbf{datamodel}] s'occupe de la définition des entités et des relations entre elles.
+	\item [\textbf{humanres}] correspond à la gestion du personnel.
+	\item [\textbf{product}] permet la gestion du catalogue de produits et services fournis par l'organisme.
+\end{labeling}
 
 \newpage
 \section{Sujet de stage }
+Comme mentionné avant, le sujet de stage est divisé en deux parties. La première partie consiste à prendre en main l'outil de développement concerné, le framework OFBiz. La deuxième partie du stage est la modification de certains éléments du framework, notamment les mécanismes de gestion de services afin d'assurer la conformité au style architectural REST.  
 
-
+\subsection{Découverte OFBiz}
+Cette étape sert à se familiariser avec l'environnement du framework à travers des tutoriels et l'analyse des projets existants, afin de comprendre le fonctionnement général. Cela permet aussi repérer les points essentielles auxquelles il faut tenir compte lors de la deuxième phase de travail. 
 
 \subsection{API REST au sein d'OFBiz}
 
-Jira
+Finalement, l'intérêt principal du stage est la mise en place d'un système de gestion des services REST. L'idée a été évoquée pour la première fois dans une \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion communautaire} Apache OFBiz, car le système en cours nécessitait l'évolution. Cette discussion a suscité des nombreuses remarques en terme de faisabilité et qui m'a notamment permis de retrouver des pistes à poursuivre lors de l'implémentation.  
+
+Dans un premier temps on considère la possibilité d'intégration d'une solution externe notamment à travers des librairies JAX-RS de CXF, ainsi que Apache Camel. Malgré les premières prototypes fonctionnelles l'idée d'une solution externe a été abandonné pour des raisons expliqués plus tard. A sa place une implémentation de bas niveau a été adoptée. Une fois le système mis en route, l'étape suivante consistait à faire adopter la modification dans la branche principe du projet OFBiz. 
+
+Afin de prouver la conformité du nouveau système et démontrer les nouveaux fonctionnalités, la décision a été prise de modifier une partie front-end existante, notamment l'interface de gestion des entités \emph{entitymaint}. Finalement, l'ensemble de modification sous la forme des patchs a été soumis à la communauté afin d'être revus et potentiellement adoptés dans le framework. 
+
+
+
+
+
+
+
+
+
