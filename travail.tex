@@ -149,32 +149,28 @@ What is "fonctionnel", La prob
 \section{Etat de l'art}
 
 \subsection{Histoire et problématique des applications web}
-Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques être les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début il s'agissait des architectures très simples, avec une seule couche où une machine unique(\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais des nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
+Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques être les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais des nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
 \\
-L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi la couche application qui était désormais placés sur la machine des clients. Grâce a cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers que a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
+L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers que a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
 
 
-La manière d'évoquer ces services était définit par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
+La manière d'évoquer ces services était définie par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
 \\ 
-Cette approche avait certains inconvénients majeurs:
-Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appelles, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquait l'un avec l'autre, résultat - la complexité grandissante des clients. 
+Cependant, l'architecture 2-tiers avait présentait aussi des inconvénients majeurs:
+Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appelles, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
+
+
+L'arrivé d'une architecture à 3 tiers (voire N-tiers avec les couches sécurité, couche routage, etc...) et ainsi que de la notion de Middleware \footnote{Des intergiciels destinés à lier des systèmes informatique de nature différente }  ont apporté un certain nombre d'avantages en terme de réduction de complexité coté client et d'interopérabilité entre ces différentes couches. De plus, de nombreux standards appelées \href{https://fr.wikipedia.org/wiki/Liste_des_sp%C3%A9cifications_des_services_web_WS-*}{WS-*} 
+	ont été adoptés afin de combler les failles apparues suite à l'utilisation répandue de Middleware. 
+Suite à cela des dévélopeurs et des sociétés ont commencé à mettre en oeuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
 \\
+Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusieurs organismes qui partagent le même systeme d'information. Mais dès il s'agit de proposer des services à l'exterieur (à l'échelle mondiale via Internet), cela s'avèrait extêmemment compliqué. 
 
 
- Ainsi que 
-
-
-
-
-3-tiers N-tiers achitecture
-
-
-La solution : middleware.  
-
-RPC, 
  
 
 \subsection{Representational state transfer}
+La déviation du protocole HTTP
 \subsubsection{Histoire}
 Roy Fielding
 \subsubsection{Principe}
@@ -257,101 +253,3 @@ Jaques Le Roux Token en gardant la session.
 \subsubsection{Généralisation de code}
 \subsubsection{Correction d'incohérences}
 
-
-
-\iffalse
-\section{Besoins fonctionnels}
-
-Après une analyse des besoins fonctionnels du projet, nous avons défini deux sous catégories. D'un côté, les besoins [...], de l'autre, les besoins [...].
-
-\subsection{Sous-partie 1}
-
-Bla
-
-\subsection{Sous-partie 2}
-
-Bla
-
-\newpage
-
-\section{Besoins non-fonctionnels}
-
-Comme précédemment, nous avons choisi de distinguer deux catégories pour les besoins non-fonctionnels. D'une part, nous avons les besoins non-fonctionnels pour les [...], et d'autre part ceux pour [...]. Nous avons aussi pris en compte les contraintes de développement, que nous détaillerons à la fin de cette partie.
-
-\subsection{Sous-partie 1}
-
-Bla\\
-
-Aperçu du rendu souhaité :
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[height=10cm]{besoins/rendu}
-\end{center}
-\caption{Rendu attendu}
-\end{figure}
-
-\subsection{Sous-partie 2}
-
-Bla
-
-\newpage
-
-\section{Développement}
-
-Intro
-
-\subsection{Tâches}
-
-Bla\\
-
-
-%tableau à taille fixée sur certaines colonnes (param sur la ligne \begin{tabularx}, voir wiki pour plus d'info sur la syntaxe
-\begin{figure}[!h]
-\begin{center}
-\begin{tabularx}{17cm}{|c|p{6cm}|X|}
-  \hline
-  Priorité & Nom & Raison\\
-  \hline
-  1 & Tache 1 & Doit être vérifié en premier car sinon [...] \tabularnewline
-  2 & Tache 2 & On doit pouvoir [...] \tabularnewline
-  3 & Tache 3 & Comme les principales fonctionnalités permettant de tester sont opérationnelles, nous pouvons passer à cette tâche. \tabularnewline
-  4 & Tache 4 & Parce que [...] \tabularnewline
-  5 & Tache 5 & La tache 5 fait partie des principales [...]. \tabularnewline
-  6 & Tache 6 & Dernière fonctionnalité essentielle à mettre en place. \tabularnewline
-  7 & Tache 7 & Non-essentiel, mais apporterait un plus au projet. \tabularnewline
-  8 & Tache 8 & Non-essentiel, mais apporterait un plus au projet. \tabularnewline
-  \hline
-\end{tabularx}
-\end{center}
-\caption{Tableau récapitulatif des tâches}
-\end{figure}
-
-\subsection{Tests}
-
-Bla\\
-
-\begin{figure}[!h]
-\begin{center}
-\begin{tabularx}{17cm}{|p{6cm}|X|}
-  \hline
-  Fonctionnalité & Test\\
-  \hline
-  Fonction 1 & Quand [...], vérifier [...]. \tabularnewline
-  & Et quand [...], vérifier [...]. \tabularnewline
-  Fonction 2 & Vérifier [...]. \tabularnewline
-  Fonction 3 & Vérifier [...]. \tabularnewline
-  Fonction 4 & Avoir [...]. \tabularnewline
-  Fonction 5 & Accéder à [...]. \tabularnewline
-   & Vérifier que [...]. \tabularnewline
-  Fonction 6 & Accéder à [...]. \tabularnewline
-   & Et vérifier [...]. \tabularnewline
-  Fonction 7 & Installer [...]. \tabularnewline
-   & Vérifier [...]. \tabularnewline
-  Fonction 8 & Compter [...]. \tabularnewline
-  \hline
-\end{tabularx}
-\end{center}
-\caption{Tableau récapitulatif des tests}
-\end{figure}
-\fi
