@@ -5,40 +5,10 @@ Intro
 \section{Entreprise}
 
 \subsection{Presentation générale }
-Néréide est une société de services en logiciels libres crée en 2004  SCOP SARL \\
-parler de méthodes agiles. 
-transparence interne totale ;
-fonctionnement démocratique (SCOP, co-gérance tournante);
-implication des salariés dans tous les domaines de décision ;
-salaire unique
+Néréide est une société de services en logiciels libres crée en 2004 qui se spécialise dans l'intégration du progiciel de gestion intégré Apache OFBiz. Il s'agit d'une société coopérative et participative (SCOP) qui se situe à Tours. 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Domaine}
-Retail
 \subsection{Activité}
 \label{activite}
 Transparence libre entreprise \\
@@ -48,11 +18,14 @@ Integration(utilisation des briques en tant que telles) et
 Dévéloppement spécifique (adaptation d'OFBIZ pour les besoins ) plugins propres à la logique métier. Pas de forfait(contrat doit etre rempli, l'entreprise s'engage à ce qu'il soit livré dans les tepms), mais la régie (sont payé au temps de travail et pas à condition de remplir un contrat ).  Pareil avec Décath 6 pers font de la régie...
 Administration système
 \subsection{Projets}
-Décathlon
- rfid store, interface pour les achteurs et producteurs, dev front pour le store specifique au lieu d'écrans OFBiz, communication avec des API...
+\subsubsection{Décathlon}
+L'un des principaux clients de Néréide est le groupe Decathlon qui se spécialise en grande distribution de produits de sport et de loisirs. 
+Le projet représente une plateforme de vente de puces RFID(bookmark), qui assure l'intégralité du processus d'achat.
 
-Dejbox
-\\
+pour les achteurs et producteurs, dev front pour le store specifique au lieu d'écrans OFBiz, communication avec des API...
+
+\subsubsection{Déjbox}
+
 Dejbox est une société de la foodTech qui propose aux salariés d’entreprise de leur livrer des repas directement sur leur lieu de travail. L’ensemble des vente est réalisé au travers d’un site e-commerce par lequel le salarié commande un repas.
 
 Le projet a pour objectif de mettre en œuvre un outil de type ERP afin de gérer la chaîne de réapprovisionnement en produit frais vendu en ligne. Il s’agit donc de créer un référentiel d’article et de fournisseur et de pouvoir saisir des commandes qui seront envoyées aux fournisseurs et réceptionnées suite à leur livraison. Enfin, il s’agit de mettre en place la sortie de stock en intégrant les consommations de produit provenant du site de vente en ligne.
@@ -66,7 +39,7 @@ Dépuis 2013 les dev remontantes à la communauté , parce que besoin de support
 
 
 
-\newpage
+
 \section{Framework OFBiz}
 \subsection{Vue d'ensemble }
 \emph{Open For Business (OFBiz)} est une suite d'applications pour la gestion de l'entreprise qui se base sur une architecture très couramment utilisé \emph{(MVC)} et qui implémente des composantes classiques de gestion des donnés, de logique métier, et de traitement spécialisé. 
@@ -79,9 +52,9 @@ En plus d'une architecture qui encourage la customisation, OFBiz est entièremen
 \subsection{Architecture }
 D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spécifiques au domaine)}} basés sur des grammaires écrites en XML (mettre la bib). En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
 
-Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques, notamment en matière de  communication réseau et d'interaction entre les éléments qui forment OFBiz.
+Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques de bas niveau utilisés par les applications. Il fournit notamment des fonctionnalités présentes dans la plupart des frameworks de développement(couche données, logique métier,gestion des transactions, etc...).
 Les principaux composants métier tels que la comptabilité, la gestion des stock, ou la facturation se trouvent dans la partie \emph{applications}. 
-Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne interagit avec des nombreuses  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
+Finalement la notion du plugin  correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à un boutique en ligne interagit avec des nombreuses  \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
 
 \subsection{DSL XML}
 L'une des particularités d'OFBiz ce sont des fichiers XML qui servent à déclarer entre autres

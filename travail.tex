@@ -78,29 +78,44 @@ Voici la chronologie du travail réalisé en entreprise.\\
 \section{Environnement}
 
 \subsection{Installation de l'environnement}
-Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux \footnote{Une question qui a, apparemment, beaucoup d'importance.} , la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes \footnote{Contenaient, à mon avis, des information sensibles, mais cela s'explique par le principe de transparence \ref{activite} }
-IntelliJ qui facilite la navigation vu la spécificité d'OFBiz XML/JAVA
+Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux , la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes. Le choix d'IDE à été fait au faveur de IntelliJ car il possède des nombreux moyens de navigation qui sont incontournables dans la structure de OFBiz riche en dualité XML/Java. 
 
 
 
 
 \subsection{Formation générale}
-Découverte du fonctionnel basique, aperçu des techniques utilisés dans l'OFBIZ
+
+
+Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle| et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage Groovy et les raisons pour lesquelles il a été préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{déprécié}. }
+
 
 \subsection{Jira}
-Mécanisme de tickets pour les projets client, utilisé aussi par la communauté Apache...
+Un autre point intéressant était le système de gestion de tickets \verb|Jira | utilisé par l'entreprise qui permet de suivre et gérer les bugs tout en interagissant avec les clients. L'outil est utilisé également par la plupart des projet communautaires Apache, dont OFBiz.
+
 \subsection{Approfondissement de Git }
-dev à plusieurs
-git-branching.js
+Même si la gestion de versions de OFBiz était historiquement géré par l'outil Apache \href{https://subversion.apache.org/}{SVN}, dans la gestion de ses propres projets, l'entreprise a fait le choix pour un système plus moderne - \href{https://git-scm.com/}{Git}. 
+
+Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais eu l'occasion de travailler dans un projet qui comporte des dizaines de branches qui évoluent quotidiennement. Donc, pour monter en compétences sur ce point-là j'ai utilisé le site d'apprentissage conseillé par mon maître de stage: \href{https://learngitbranching.js.org/}{Learn Git Branching}
 
 \subsection{Découverte de communauté libre Apache}
- OFbiz est maintenu par des contributeurs commiteurs et PMC (what is), indépendants, les entreprise n'ont pas de pouvoir ni d'obligation de contribuer (mais elles ont l'interet), à vocation personnelle. Licence Apache et GPL (oblig legale de distribuer en libre)
+ OFbiz est un projet libre, maintenu par les intéresses qu'on peut catégoriser comme: 
+ \begin{labeling}{alligator}
+ 	\item [\textbf{Contributeurs}] ceux qui suggèrent des modifications utiles au projets mais ne modifient pas la branche principale.
+ 	\item [\textbf{Commiteurs}] sont des contributeurs responsables de la validation des modifications du framework ainsi que de leurs adoption dans le code source. 
+ 	\item [\textbf{Membres de PMC}] sont responsables des décision  sur la structure  générale du projet et sur la cohérence des modification vis-à-vis de cette dernière  \footnote{PMC acronyme de Project Management Committee (Comité de gestion du projet)}
+ \end{labeling}
+ 
+ 
 
 
 
 
 
 \newpage
+
+
+
+
 \section{Prise en main d'OFBiz}
 
 \subsection{Premier plugin}
@@ -114,27 +129,51 @@ Pierre et Antoine ont tout géré
 \subsection{Problématique vis-à-vis du développement}
 What is "fonctionnel", La prob
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 
-\section{Analyse de l'existant}
-\subsection{ControlServlet}
-\subsection{Mécanisme de résolution des URI}
-\subsection{Filtres}
-Delegateur et Dispatcher
+
+\section{Etat de l'art}
+
+\subsection{Histoire et problématique des applications web}
+Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques être les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début il s'agissait des architectures très simples, avec une seule couche où une machine unique(\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais des nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
+\\
+L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi la couche application qui était désormais placés sur la machine des clients. Grâce a cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers que a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
 
 
-\newpage
+La manière d'évoquer ces services était définit par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
+\\ 
+Cette approche avait certains inconvénients majeurs:
+Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appelles, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquait l'un avec l'autre, résultat - la complexité grandissante des clients. 
+\\
 
-\section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
-\subsection{Structure générale des application web}
-Les enjeux, les problématiques les solutions, *COURS MAURIZIO*
-\subsection{API en cours}
-RPC
-\subsection{Controleur}
-<request-map>...
-\subsection{Besoins d'évolution}
-Avenir
-*Discussion communautaire*
+
+ Ainsi que 
+
+
+
+
+3-tiers N-tiers achitecture
+
+
+La solution : middleware.  
+
+RPC, 
+ 
+
 \subsection{Representational state transfer}
 \subsubsection{Histoire}
 Roy Fielding
@@ -155,6 +194,40 @@ Particularités techniques (annotations) \\
 Conflit politique car n'est pas dans le même esprit de l'existant.\\
 
 
+
+
+\newpage
+
+\section{Analyse de l'existant}
+
+Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la gestion des échanges web afin de soulever les points importants relatives à l'implémentation des services REST. 
+
+
+\subsection{Gestion des application web dans OFBiz}
+\subsection{ControlServlet}
+\subsection{Controleur}
+<request-map>...
+\subsection{API en cours}
+RPC
+
+\subsection{Mécanisme de résolution des URI}
+\subsection{\textit{OverrideView()} et le conflit avec les URI segmentées}
+\subsection{Filtres}
+Delegateur et Dispatcher
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
+\subsection{Besoins d'évolution}
+Avenir
+*Discussion communautaire*
 
 \newpage
 
