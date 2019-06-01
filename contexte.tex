@@ -64,7 +64,7 @@ des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des servi
 \definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \subsection{Container}
 L'interface container représenté sur la figure \ref{container} permet de définir des objets qui correspondent à des processus qui peuvent être initialisés, démarrés et arrêtés. L'intérêt est de pouvoir lancer un daemon spécifique en parallèle de l'execution d'OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des testes unitaires grâce à un mécanisme propre au framework. 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}
 	\umlinterface[scale=0.8,x=0,y=5]{Container}{}{
@@ -173,7 +173,7 @@ Ainsi on distingue parmi d'autres :
 	\item [\textbf{product}] permet la gestion du catalogue des produits et des services fournis par l'organisme.
 \end{labeling}
 
-\newpage
+
 \section{Sujet de stage }
 Comme mentionné avant, le sujet de stage est divisé en deux parties. La première partie consiste à prendre en main l'outil de développement concerné, le framework OFBiz. La deuxième partie du stage est la modification de certains éléments du framework, notamment des mécanismes de gestion de services afin d'assurer la conformité au style architectural REST.  
 

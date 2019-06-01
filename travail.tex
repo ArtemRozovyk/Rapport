@@ -33,7 +33,7 @@ Voici la chronologie du travail réalisé en entreprise.\\
 \begin{ganttchart}[
 	hgrid={*1{black!30,dotted}},
 	vgrid={*1{black!30,dotted}},
-	x unit=3mm,
+	x unit=2.91mm,
 	time slot format=isodate,
 	inline,
 	bar/.append style={fill=blue!37},
@@ -111,11 +111,6 @@ Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais e
 
 
 
-\newpage
-
-
-
-
 \section{Prise en main d'OFBiz}
 
 \subsection{Premier plugin}
@@ -149,47 +144,183 @@ What is "fonctionnel", La prob
 \section{Etat de l'art}
 
 \subsection{Histoire et problématique des applications web}
-Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques être les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais des nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
+Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques entre les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
 \\
-L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers que a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
+L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers qu'a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
 
 
 La manière d'évoquer ces services était définie par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
 \\ 
 Cependant, l'architecture 2-tiers avait présentait aussi des inconvénients majeurs:
-Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appelles, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
+Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appels, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
 
 
 L'arrivé d'une architecture à 3 tiers (voire N-tiers avec les couches sécurité, couche routage, etc...) et ainsi que de la notion de Middleware \footnote{Des intergiciels destinés à lier des systèmes informatique de nature différente }  ont apporté un certain nombre d'avantages en terme de réduction de complexité coté client et d'interopérabilité entre ces différentes couches. De plus, de nombreux standards appelées \href{https://fr.wikipedia.org/wiki/Liste_des_sp%C3%A9cifications_des_services_web_WS-*}{WS-*} 
 	ont été adoptés afin de combler les failles apparues suite à l'utilisation répandue de Middleware. 
-Suite à cela des dévélopeurs et des sociétés ont commencé à mettre en oeuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
+Suite à cela des développeurs et des sociétés ont commencé à mettre en œuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
 \\
-Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusieurs organismes qui partagent le même systeme d'information. Mais dès il s'agit de proposer des services à l'exterieur (à l'échelle mondiale via Internet), cela s'avèrait extêmemment compliqué. 
+Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusieurs organismes qui partagent le même système d'information. Mais dès qu'il s'agit de proposer des services à l'extérieur (à l'échelle mondiale via Internet), cela s'avérait extrêmement compliqué. 
+\newpage
 
 
- 
+
+
 
 \subsection{Representational state transfer}
-La déviation du protocole HTTP
+Dans ce chapitre on va présenter le style architectural REST et comment il répond à des problématiques évoquées dans la section précédente. 
 \subsubsection{Histoire}
-Roy Fielding
+En 2000, alors que le nombre de site web dans le monde a atteint 17 millions, Roy Fielding, l'un des contributeurs du protocole HTTP et \href{https://tools.ietf.org/html/rfc3986}{URI}, définit REST dans sa thèse de doctorat intitulée \emph{Architectural Styles and the Design of Network-Based Software Architectures} \cite{roythesis}
+
+
+
+
+
+
 \subsubsection{Principe}
-*Détailles du cours de Maurizio: idempotence, navigabilité par hyperlink, 
-notion de ressource etc.
-\subsubsection{Avantages}
+Du point de vue abstrait ce style architectural se base sur les technologies fondamentales du World Wide Web: HTTP, Uniform Resource Identifier (URI),  les langages de balisage HTML et XML, ainsi que sur des formats adaptées web comme JSON.\\
+REST est un style architectural pour les applications qui interagissent via réseau. Il est définit par six contraintes suivantes: 
+\begin{labeling}{rest}
+	
+\item [\textbf{Uniformité d'interface}] Cette contrainte fondamentale à REST, oblige à manipuler et identifier des ressources uniquement vie leurs représentations(par exemple sous formats HTML, XML ou JSON). Ainsi, chaque représentation fournit suffisamment d'information au client, afin qu'il puisse la modifier ou supprimer.
+
+\item [\textbf{Client-Serveur}] Assure l'absence d'interdépendance entre les clients et les serveurs. Ainsi le serveur propose des services d'une manière générique sans dépendre des spécification du client (langage de programmation utilisé, plateforme, etc... ). Cela permet au client et au serveur d'évoluer indépendamment. 
+
+
+\item [\textbf{Sans état}] Les échanges entre le client et le serveur doivent s'effectuer sans conserver l'état de la session sur le serveur entre deux requêtes successives. Le but est d'améliorer les performances du serveur ainsi que l'extensibilité du système. 
+
+\item [\textbf{En couches}] Cette contrainte permet de séparer l'architecture en plusieurs niveaux, cela facilite la mise en échelle du système. 
+\item [\textbf{Code à la demande}] Ceci est une contrainte facultative qui permet aux serveurs d'étendre ou de modifier le fonctionnement du client grâce à l'envoie du code exécutable.
+\item [\textbf{Mise en cache}] Mise en cache de certains données accédées fréquemment afin d'augmenter les performances.
+
+\end{labeling}
+ En respectant ces contraintes on a pour le but de répondre aux mêmes problématiques couverts par les standards WS-* qui sont:
+\begin{itemize}
+	\item [- \textbf{Séparation des préoccupations}] issu de \emph{l’anglais separation of concerns (SoC)} est le fait de séparer un programme informatique en parties, afin d'isoler des composantes qui répondent à un problème spécifique de la problématique générale.  
+	\item [- \textbf{Visibilité}] Comment apprend-on l'existence d'un tel ou tel service? 
+	\item [- \textbf{Passage à l'échelle(\emph{scalability})}] Le système sera-il capable d'évoluer avec le temps?
+	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord?
+\end{itemize}
+
+
+\subsubsection{En pratique}
+Concrètement pour développer une API qui suit les principes REST il faut tout d'abord respecter des règles de nommage des URI. \\
+Pour manipuler des ressources, la règle générale est d'utiliser des noms au lieu des verbes.\\
+Ainsi, pour récupérer l'ensemble des produits on écrit:
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/products
+	\end{lstlisting}
+\end{figure}
+
+au lieu de 
+
+
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/getAllProducts
+	\end{lstlisting}
+\end{figure}
+ 
+Pour plus de simplicité, on peut diviser les ressources en 4 catégories : \emph{document}, \emph{collection}, \emph{stockage} et \emph{contrôleur}. 
+
+\textbf{Les documents} représentent des objets singulières qui  correspondent, par exemple, à une entrée en base de données. Il peut être vu comme une ressource dans une ressource de type collection. Pour nommer un document on utilise des noms en singulier : 
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/api/car-management/managed-cars/{car-id}
+example.com/api/client-management/clients/{id}
+example.com/api/user-management/users/admin
+	\end{lstlisting}
+\end{figure}
+
+\textbf{Les collections} sont des dossiers contenant d'autres ressources. Un client peut proposer l'ajout d'une nouvelle ressource pour être rajouté à la collection. C'est à la collection de décider si elle veut accepter la nouvelle ressource ou pas. Ainsi, pour désigner une collection on utilise des noms en pluriel: 
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/api/car-management/managed-cars
+example.com/api/client-management/clients
+example.com/api/user-management/users
+	\end{lstlisting}
+\end{figure}
+
+Quant aux \textbf{stockages}, ce sont des ressources gérés coté client et qui permet de stocker d'autres ressources d'une manière temporaire sans affecter le serveur. Le panier d'achat et la liste des favoris sont des exemples classiques des ressources de stockage: 
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/api/cart-management/users/{id}/cart
+example.com/api/song-management/users/{id}/playlist
+	\end{lstlisting}
+\end{figure}
+
+Finalement, les \textbf{contrôleurs} servent à exécuter des fonctions, avec les paramètres d'entrée et les valeurs de retour: 
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=single]
+example.com/api/cart-management/users/{id}/cart/checkout
+example.com/api/song-management/users/{id}/playlist/play-random
+	\end{lstlisting}
+\end{figure}
+
+\subsubsection{Utilisation des méthodes HTTP}
+Les URI ne doivent pas indiquer qu'une opération CRUD est en train d'être effectuée. Les URI doivent seulement identifier la ressource. Au lieu de cela on utilise des méthodes HTTP comme suit: \\
+\\
+\emph{//retourner tous les utilisateurs\\}
+\verb|GET /device-management/user-management/users|\\
+\emph{//creer un nouveau utilisateur\\}
+\verb|POST example.com/user-management/users|
+\\
+\\
+\emph{//retourne un utilisateur avec cet id\\}
+\verb|GET /car-management/users/{id}|\\
+\emph{//modifier un utilisateur connu\\}
+\verb|PUT /car-management/users/{id}|\\
+\emph{//supprimmer un utilisateur connu\\}
+\verb|DELETE /car-management/users/{id}|\\
+
+
+
 \subsubsection{Examples d'API du style REST}
-API REST de Twitter, SoundCloud, Wiktionnaire,\\
-les différences entre la définition de Roy Fielding et l'implémentation de ces dernières
+Afin de voir ce que cela donne en réalité, j'ai décidé d'analyser des services existantes qui suivent l'architecture REST. 
+L'un des premiers exemples d'API REST traités était celle de \href{https://twitter.com/}{twitter.com}. Ainsi j'ai découvert que twitter permet de concevoir des applications qui interagissent avec le site de manière autonome. 
+
+Par exemple on peut récupérer des statuts des gens en temps réel contenant un certain mot-clé: \\
+\verb|GET https://stream.twitter.com/1.1/statuses/filter.json?track=potatoe|\\
+
+Ou bien retourner l'ensemble de messages récents d'un utilisateur donnée:\\
+\verb|GET https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=43123|
+\\
+
+Un autre exemple intéressant est la navigation du site  \href{https://www.amnesty.org.uk/}{Amnesty International UK}\footnote{ Qui traite des sujets sur les droits de l'homme}:
+\\
+Ainsi la collection des blogs \\
+\verb|www.amnesty.org.uk/blogs/|\\
+regroupe des catégories (elles mêmes des collections): \\
+ \emph{Fin de la peine capitale:} \\
+ \verb|www.amnesty.org.uk/blogs/anti-death-penalty-project|\\
+ \emph{Action étudiante:}\\
+ \verb|www.amnesty.org.uk/blogs/student-action-network|\\
+ \emph{Réflexion au sujet du traité sur le commerce des armes comme la ressource de la collection "action étudiante":} \\
+ \verb|www.amnesty.org.uk/blogs/student-action-network/arms-trade-treaty-last-my-reflections| \\
+ et ainsi de suite...
+ 
 
 \subsection{Implementations existantes}
+Finalement, j'ai décidé d'analyser des framworks REST qui permettent de développer des API suivant ce style architectural. Cela avait pour le but soit d'intégrer ce système dans le contexte d'OFBiz, soit 
 \subsubsection{Camel}
+Apache Camel est un framework libre destiné à faciliter l'intégration des composantes dans le contexte d'entreprise. Il fournit un certain nombre de DSL dont \href{https://camel.apache.org/rest-dsl.html}{Rest DSL} qui est destiné à aider les développeurs à définir les API REST. 
+L'un des points particulièrement intéressant de Camel Rest DSL est sa similitude aux techniques utilisé dans l'OFBiz, notamment les DSL sont utilisées avec Java et XML à la fois. 
+Malgré ces avantages, la tache d'interrogation de ce framework s'avère trop coûteuse, car elle nécessiterai la réécriture d'une vaste parie relative aux \verb|HTTPServlet| dans l'OFBiz. 
 \subsubsection{JAX-RS}
-Tentative d'intégration ---\\
-ServletJaxRS fonctionnelle\\
-Particularités techniques (annotations) \\
-Conflit politique car n'est pas dans le même esprit de l'existant.\\
-
-
+Un autre framework permettant de concevoir des API REST est JAX-RS de Apache \href{http://cxf.apache.org/}{CXF}. La particularité de cet outil est la gestion des URI via les annotations : 
+\begin{figure}[h!]
+	\begin{lstlisting}[language=Java]
+@Path("/hello/world")
+public class Hello {	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sayPlainTextHello() {
+		return "Hello World";
+	}
+	\end{lstlisting}
+\end{figure}\\
+Après avoir réussi à intégrer la servlette de JAX-RS dans le framework OFBiz, 
+je me suis rendu compte que la technologie risque de ne pas être accepté par la communauté  car elle aussi implique un travail important de réécriture de l'existant. De plus, les annotation ne sont pas dans l'esprit du projet, donc cette idée a été abandonnée. 
 
 
 \newpage
@@ -200,11 +331,34 @@ Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la 
 
 
 \subsection{Gestion des application web dans OFBiz}
+
+
+Le groupe des classes d'OFBiz, responsables de la gestion des applications web se basent sur patrons de conception de   \href{http://www2.sys-con.com/itsg/virtualcd/java/archives/0701/malks/index.html}{"J2EE Presentation Tier"}. Notamment la classe \verb|ContextFilter| qui assure la sécurité des requêtes, implémente le pattern \verb|Decorating Filter|  les vues générées par les moteurs de widgets et les FTL correspondent quand à eux au pattern \verb|Composite View|.
 \subsection{ControlServlet}
-\subsection{Controleur}
-<request-map>...
+La classe qui est au cœur du traitement des requêtes, \verb|ControlServlete| correspond au pattern \verb|FrontController|.
+Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclue les \verb|Entity Delegator|, responsable de modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisé et tous les informations utiles sont stocké dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|
+
+\subsection{RequestHandler}
+Cette classe récupère l'ensemble des association des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des association entre les URI et les vues optionnelles. A part les vues, les URI peuvent être associées avec un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service à travers le moteur correspondant. 
+\\
+\\
+\\
+\subsection{Controleur.xml}
+La structure des \verb|request-map| est définie comme suit:
+\begin{figure}[h!]
+	\begin{lstlisting}[language=XML]
+<request-map uri="checkLogin" edit="false">
+<description>Verify a user is logged in.</description>
+<security https="false" auth="false"/>
+<event type="java" path="LoginEvents" invoke="checkLogin" />
+<response name="success" type="view" value="name" />
+<response name="error" type="view" value="login" />
+</request-map>
+	\end{lstlisting}
+\end{figure}\\
+\\
 \subsection{API en cours}
-RPC
+Après avoir analyse plusieurs application web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ces problèmes de performance et du passage à l'échelle. 
 
 \subsection{Mécanisme de résolution des URI}
 \subsection{\textit{OverrideView()} et le conflit avec les URI segmentées}
@@ -216,16 +370,12 @@ Delegateur et Dispatcher
 
 
 
-
-
-\newpage
-
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Besoins d'évolution}
 Avenir
 *Discussion communautaire*
 
-\newpage
+
 
 \section{Réalisations techniques}
 

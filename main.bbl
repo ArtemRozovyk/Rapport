@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cite2}
 Auteur Ailleurs.
@@ -27,6 +27,11 @@ Auteur Elle.
 \newblock Titre5.
 \newblock \url{<http://www.url4.org/>}, 2014.
 \newblock [Online; accessed 16-January-2014].
+
+\bibitem{roythesis}
+Roy~Thomas Fielding.
+\newblock Architectural styles and the design of network-based software
+  architectures.
 
 \bibitem{Groovy}
 groo.
