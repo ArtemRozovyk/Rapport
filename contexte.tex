@@ -115,7 +115,7 @@ Des composant OFBiz ne peuvent pas être accédés directement par les utilisate
 
 \lstset{language=XML}
 \begin{figure}
-\begin{lstlisting}
+\begin{lstlisting}[frame=leftline]
 <request-map uri="stock">
     <event type="service" invoke="getStock"/>
     <response name="success" type="view" value="stockScreen"/>
@@ -142,11 +142,15 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
 
 
 \begin{figure}
-\begin{lstlisting}
-<service name="getStock" engine="entity-auto" default-entity-name="Stock">
-  <auto-attributes include="pk" mode="IN" optional="false"/>
-  <attribute name="authKey" type="String" mode="IN" optional="true"/>
-  <attribute name="stockList" type="String" mode="OUT" optional="true"/>
+\begin{lstlisting}[frame=leftline,language=XML]
+<service name="getStock" engine="entity-auto"
+				 default-entity-name="Stock">
+  <auto-attributes include="pk" mode="IN"
+  				 optional="false"/>
+  <attribute name="authKey" type="String" mode="IN" 
+  				 optional="true"/>
+  <attribute name="stockList" type="String" mode="OUT"
+  			         optional="true"/>
 </service>
 \end{lstlisting}
 \caption{Définition d'un service}

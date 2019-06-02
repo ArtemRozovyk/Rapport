@@ -207,7 +207,7 @@ Concrètement pour développer une API qui suit les principes REST il faut tout 
 Pour manipuler des ressources, la règle générale est d'utiliser des noms au lieu des verbes.\\
 Ainsi, pour récupérer l'ensemble des produits on écrit:
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/products
 	\end{lstlisting}
 \end{figure}
@@ -216,7 +216,7 @@ au lieu de
 
 
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/getAllProducts
 	\end{lstlisting}
 \end{figure}
@@ -225,7 +225,7 @@ Pour plus de simplicité, on peut diviser les ressources en 4 catégories : \emp
 
 \textbf{Les documents} représentent des objets singulières qui  correspondent, par exemple, à une entrée en base de données. Il peut être vu comme une ressource dans une ressource de type collection. Pour nommer un document on utilise des noms en singulier : 
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/api/car-management/managed-cars/{car-id}
 example.com/api/client-management/clients/{id}
 example.com/api/user-management/users/admin
@@ -234,7 +234,7 @@ example.com/api/user-management/users/admin
 
 \textbf{Les collections} sont des dossiers contenant d'autres ressources. Un client peut proposer l'ajout d'une nouvelle ressource pour être rajouté à la collection. C'est à la collection de décider si elle veut accepter la nouvelle ressource ou pas. Ainsi, pour désigner une collection on utilise des noms en pluriel: 
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/api/car-management/managed-cars
 example.com/api/client-management/clients
 example.com/api/user-management/users
@@ -243,7 +243,7 @@ example.com/api/user-management/users
 
 Quant aux \textbf{stockages}, ce sont des ressources gérés coté client et qui permet de stocker d'autres ressources d'une manière temporaire sans affecter le serveur. Le panier d'achat et la liste des favoris sont des exemples classiques des ressources de stockage: 
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/api/cart-management/users/{id}/cart
 example.com/api/song-management/users/{id}/playlist
 	\end{lstlisting}
@@ -251,7 +251,7 @@ example.com/api/song-management/users/{id}/playlist
 
 Finalement, les \textbf{contrôleurs} servent à exécuter des fonctions, avec les paramètres d'entrée et les valeurs de retour: 
 \begin{figure}[h!]
-	\begin{lstlisting}[frame=single]
+	\begin{lstlisting}[frame=leftline]
 example.com/api/cart-management/users/{id}/cart/checkout
 example.com/api/song-management/users/{id}/playlist/play-random
 	\end{lstlisting}
@@ -309,7 +309,7 @@ Malgré ces avantages, la tache d'interrogation de ce framework s'avère trop co
 \subsubsection{JAX-RS}
 Un autre framework permettant de concevoir des API REST est JAX-RS de Apache \href{http://cxf.apache.org/}{CXF}. La particularité de cet outil est la gestion des URI via les annotations : 
 \begin{figure}[h!]
-	\begin{lstlisting}[language=Java]
+	\begin{lstlisting}[language=Java,frame=leftline]
 @Path("/hello/world")
 public class Hello {	
 	@GET
@@ -322,9 +322,6 @@ public class Hello {
 Après avoir réussi à intégrer la servlette de JAX-RS dans le framework OFBiz, 
 je me suis rendu compte que la technologie risque de ne pas être accepté par la communauté  car elle aussi implique un travail important de réécriture de l'existant. De plus, les annotation ne sont pas dans l'esprit du projet, donc cette idée a été abandonnée. 
 
-
-\newpage
-
 \section{Analyse de l'existant}
 
 Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la gestion des échanges web afin de soulever les points importants relatives à l'implémentation des services REST. 
@@ -335,8 +332,8 @@ Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la 
 
 Le groupe des classes d'OFBiz, responsables de la gestion des applications web se basent sur patrons de conception de   \href{http://www2.sys-con.com/itsg/virtualcd/java/archives/0701/malks/index.html}{"J2EE Presentation Tier"}. Notamment la classe \verb|ContextFilter| qui assure la sécurité des requêtes, implémente le pattern \verb|Decorating Filter|  les vues générées par les moteurs de widgets et les FTL correspondent quand à eux au pattern \verb|Composite View|.
 \subsection{ControlServlet}
-La classe qui est au cœur du traitement des requêtes, \verb|ControlServlete| correspond au pattern \verb|FrontController|.
-Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclue les \verb|Entity Delegator|, responsable de modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisé et tous les informations utiles sont stocké dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|
+La classe qui est au cœur du traitement des requêtes, \verb|ControlServlet| correspond au pattern \verb|FrontController|.
+Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclue les \verb|Entity Delegator|, responsable du modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisé et tous les informations utiles sont stocké dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|
 
 \subsection{RequestHandler}
 Cette classe récupère l'ensemble des association des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des association entre les URI et les vues optionnelles. A part les vues, les URI peuvent être associées avec un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service à travers le moteur correspondant. 
@@ -346,59 +343,158 @@ Cette classe récupère l'ensemble des association des requêtes(\verb|request-m
 \subsection{Controleur.xml}
 La structure des \verb|request-map| est définie comme suit:
 \begin{figure}[h!]
-	\begin{lstlisting}[language=XML]
+	\begin{lstlisting}[language=XML,frame=leftline]
 <request-map uri="checkLogin" edit="false">
-<description>Verify a user is logged in.</description>
-<security https="false" auth="false"/>
-<event type="java" path="LoginEvents" invoke="checkLogin" />
-<response name="success" type="view" value="name" />
-<response name="error" type="view" value="login" />
+    <description>Verify a user is logged in.</description>
+    <security https="false" auth="false"/>
+    <event type="java" path="LoginEvents" invoke="checkLogin"/>
+    <response name="success" type="view" value="name" />
+    <response name="error" type="view" value="login" />
 </request-map>
 	\end{lstlisting}
 \end{figure}\\
 \\
 \subsection{API en cours}
-Après avoir analyse plusieurs application web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ces problèmes de performance et du passage à l'échelle. 
+Après avoir analyse plusieurs application web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ses problèmes de performance et du passage à l'échelle. 
 
 \subsection{Mécanisme de résolution des URI}
+Les URI de \verb|requst-map| ne contiennent pas plus d'un seul mot (d'où RPC) comme par exemple:
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+uri="createEmptyShoppingList"
+	\end{lstlisting}
+\end{figure}\\
+ou bien \\
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+uri="removeFromShoppingList"
+	\end{lstlisting}
+\end{figure}\\
+Ainsi, la résolution d'URI consiste  tout simplement  à vérifier la présence de la clé dans l'objet \verb|Map| contenant l'ensemble des définitions du \verb|controller.xml|.
+    
+
+
 \subsection{\textit{OverrideView()} et le conflit avec les URI segmentées}
-\subsection{Filtres}
-Delegateur et Dispatcher
-
-
-
-
-
+Une des spécificités est la gestion des URI segmentés comme dans \\
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+/toto/titi/tata
+	\end{lstlisting}
+\end{figure}\\
+ sont traité par la méthode \emph{String getOverrideViewUri(String path)} qui permet d'appeler une vue sans effectuer des traitement. Le résultat de cela est que toute les URI segmentées, incontournables à la définition des API du style REST, déclenchent cette méthode qui, à son tour, retourne une erreur. 
 
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Besoins d'évolution}
-Avenir
-*Discussion communautaire*
+Avec la popularité du style architectural REST, plusieurs intégrateurs de OFBiz ont montrés leur l'intérêt à ce concept. 
+Donc afin de répondre aux besoins des utilisateurs et afin d'assurer un meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté à lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses suggestions de concept ont été proposées. 
+
+Après avoir analysé les tentatives et les problématique d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrais au mieux au besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est à dire sans provoquer le dysfonctionnement des mécanismes en cours. 
+
 
 
 
 \section{Réalisations techniques}
-
-\subsection{Librairie CXF}
-Problèmatique avec les dépendances supplementaires: 
-Tika contient déjà le CXF
 \subsection{Choix vers URITemplate}
-description de classe
-\subsection{\textit{OverrideView()} et le conflit avec les URI segmentées}
-\subsection{Choix d'intégration en parallèle avec le système existant }
-\subsection{Nouveau contrôleur}
-\subsubsection{Compromis pour les conflits d'URI}
+Même si après l'analyse de la librairie \href{http://cxf.apache.org/docs/jax-rs.html}{JAX-RS de CXF}, j'ai pris la décision de ne pas poursuivre ce chemin, certaines classes m'ont permis de trouver une inspiration en terme de concept qui peut être utilisé dans OFBiz. Ainsi, la classe \href{https://cxf.apache.org/javadoc/latest/org/apache/cxf/jaxrs/model/URITemplate.html}{URITemplate}  permet de créer des modèles de URI avec les variables. \\
+Exemple 1: 
+Supposons le modèle de URI suivant:
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+/foo/bar/{baz}/{qux}
+	\end{lstlisting}
+\end{figure}
+\\Est mis en correspondance à travers la méthode \emph{.match()} avec l'URI suivant:
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+/foo/bar/toto/titi
+	\end{lstlisting}
+\end{figure}\\
+Par conséquent, notre modèle contient désormais deux entrées de variables avec les clés \verb|[baz, qux]| qui correspondent aux valeurs \verb|[toto, titi]| respectivement. 
 
+Un autre point à noter est la possibilité d'avoir des variables adaptables au moyen d'une expression régulière. Ainsi le modèle 
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+/foo/{v1:\\d}/{v2} 
+	\end{lstlisting}
+\end{figure}\\
+Peut être mis en correspondance uniquement avec les URI qui ont un chiffre\footnote{La lettre "d" signifie le mot l'anglais \emph{digit} - "chiffre" en français} en premier argument \verb|v1|.
+\subsection{Librairie CXF}
+Donc, vu la flexibilité de \verb|URITemplate|, j'ai décidé de l'utiliser au sein d'OFBiz.
+Naturellement, l'ajout des dépendances dans un vaste projet comme OFBiz doit être fait avec précaution. La raison: des libraires deviennes souvent dépréciées ou changent à tel point que cela provoque la nécessité de réécrire des parties importantes du projet.  
+
+Après l'analyse des dépendances de OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans le OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la librairie CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
+
+\subsection{Intégration en parallèle avec le système existant}
+Finalement, j'ai intégré ce système de résolution des URI basé sur la classe \verb|URITemplate| dans le \verb|RequestHandler| de OFBiz. Cela était fait en modifiant légèrement le mécanisme existant. Concrètement, au début de la résolution d'une URI, l'ensemble des \verb|request-map| est délégué au nouveau mécanisme qui, en cas de succès\footnote{ Ayant validé l'URI de la requête avec via la méthode \emph{.match()} avec l'une des modèles construits à partir de l'ensemble de  "request-map"} redirige soit vers la vue, soit vers le \verb|Event| correspondant, indiqués dans la définition de \verb|request-map|. En cas d'absence de "match" via \verb|URITemplate|, la suite de la méthode exécute des traitement de manière traditionnelle.  
+
+
+\subsection{Nouveau controller.xml}
+Grâce à ces modifications, nous avons la possibilité de définir des points d'entrée d'une manière plus flexible:
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline]
+<request-map uri="products/pets/{product-id:\\d}" method="PUT">
+...
+   <response name="success" type="view" value="viewProduct"/>
+...
+</request-map>
+	\end{lstlisting}
+\end{figure}\\
+Qui permet de modifier d'un produit animalier identifié un son \emph{product-id} numérique, en appelant la méthode \verb|HTTP PUT|, par exemple. 
+\newpage
+\subsubsection{Les collisions d'URI}
+Cependant, suite à l'introduction du nouveau système, on a rencontré une difficulté mineure quant à la définition des modèles avec les variables.\\
+Par exemple lors de la définition de plusieurs \verb|request-map| successives dans un même controller.xml comme suit: \\
+\\
+\emph{//afficher un stock identifié par la valeur de sa clé primaire}
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline,language=xml]
+<request-map uri="stock/{primary-key-id}" 
+\end{lstlisting}
+\end{figure}\\   
+\emph{//retourner le formulaire de modification d'un stock}
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline,language=xml]
+<request-map uri="stock/form" 
+	\end{lstlisting}
+\end{figure}\\
+\emph{//afficher les relations entre les stock}
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline,language=xml]
+<request-map uri="stock/relations" >
+	\end{lstlisting}
+\end{figure}  \\
+Cette situation suppose que dans la première \verb|request-map| il est impossible d'avoir des clés primaires avec la valeur \verb|"form"| ou \verb|"relations"|. La solution pour ce genre d'exception \footnote{Qui doivent a priori être relativement rares} est l'exclusion des mots spécifiques via des expressions régulières: 
+ \begin{figure}[h!]
+ 	\begin{lstlisting}[frame=leftline,language=xml,frameround=tttt]
+... uri="stock/{primary-key-id:(?!(form)|(relations)).*}" 
+ 	\end{lstlisting}
+ \end{figure}  \\
+
+
+\subsubsection{Testes Mockito}
+Finalement, un point intéressant était l'écriture des testes unitaires en utilisant la librairie \href{https://site.mockito.org/}{Mockito}. Des principes et des bonnes pratiques de ces testes m'ont été montrés par mon tuteur de stage. 
 \subsection{Modification de la partie "Administration: gestion des entités"  (entitymaint)  }
+Afin de montrer l'utilité du nouveau système, j'ai décidé de modifier une partie front existante ainsi que les points d'entrée avec lesquelles elle interagissait.
 \subsubsection{Choix de la partie illustrative}
-\subsubsection{PUT vs POST}
+Pour pouvoir tester tout la puissance des méthodes classiques du protocole \verb|HTTP| j'ai du choisir une partie qui permettait d'effectuer l'ensemble des opérations CRUD. Par conséquent, le choix était porté sur la partie administrative qui correspond à la gestion des entités : \verb|entitymaint|.
+\subsubsection{Difficultés de modification} 
+Vu que l'OFBiz a été construit sans tenir compte du REST, ce genre de modification impliquent des changement profondes de la structure du code, allant jusqu'à la réécriture complète. Donc, disposant un temps limité, j'ai du avoir recours aux certains compromis comme utilisation d'un même formulaire pour la création et la modification d'une entité.
 \subsubsection{Clés composées}
-\subsubsection{Formulaires génériques }
-Create update dans un même formulaire.
-\subsection{Stateless}
-\subsubsection{Les réalisation par la communauté}
+Un autre compromis mineur qui devait être fait était la présence d'un nombre variable des clés primaires qui identifiait l'entité-ressource. Par conséquent, la variable qui correspond à l'ensemble des valeurs des clés primaires doit pouvoir accèpter un nombre quelconque des clés. Pour cela, on utilise une expression régulière: 
 
-Jaques Le Roux Token en gardant la session.
+\begin{figure}[h!]
+	\begin{lstlisting}[frame=leftline,language=xml,frameround=tttt]
+<request-map uri="entity/{entityName}/{pkValues: .*}" method="get">
+...
+<request-map uri="entity/{entityName}/{pkValues: .*}" method="delete">
+...
+
+	\end{lstlisting}
+\end{figure}  
+\subsection{Stateless}
+Un des concepts fondamentaux du REST est l'absence de stockage de l'état coté serveur. 
+\subsubsection{Les réalisation par la communauté}
+OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
 \subsection{RESTClient pour la communauté}
 \subsubsection{Généralisation de code}
 \subsubsection{Correction d'incohérences}
