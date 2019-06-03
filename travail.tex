@@ -3,6 +3,7 @@
 
 \section{Aperçu général}
 Voici la chronologie du travail réalisé en entreprise.\\
+
 \ganttset{%
 	calendar week text={%
 		\pgfcalendarmonthshortname{\startmonth}~\startday%
@@ -78,7 +79,7 @@ Voici la chronologie du travail réalisé en entreprise.\\
 \section{Environnement}
 
 \subsection{Installation de l'environnement}
-Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux , la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes. Le choix d'IDE à été fait au faveur de IntelliJ car il possède des nombreux moyens de navigation qui sont incontournables dans la structure de OFBiz riche en dualité XML/Java. 
+Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux. Ensuite, la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes. Le choix d'IDE à été fait en faveur de IntelliJ car il possède des nombreux moyens de navigation qui sont incontournables dans la structure de OFBiz riche en dualité XML/Java \ref{dsl}. 
 
 
 
@@ -86,23 +87,23 @@ Avant tout, mon intégration a commencé par l'installation du poste de travail 
 \subsection{Formation générale}
 
 
-Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle| et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage Groovy et les raisons pour lesquelles il a été préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{déprécié}. }
+Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle|\footnote{\href{https://gradle.org/}{Moteur de production fonctionnant sur la plateforme Java. }} et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage \href{http://groovy-lang.org/}{Groovy} et les raisons pour lesquelles il est préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{déprécié}. }
 
 
 \subsection{Jira}
-Un autre point intéressant était le système de gestion de tickets \verb|Jira | utilisé par l'entreprise qui permet de suivre et gérer les bugs tout en interagissant avec les clients. L'outil est utilisé également par la plupart des projet communautaires Apache, dont OFBiz.
+Un autre point intéressant était le système de gestion de tickets \verb|Jira | utilisé par l'entreprise qui permet de suivre et gérer les bugs tout en interagissant avec les clients. L'outil est utilisé également par la plupart des projets communautaires Apache, dont OFBiz.
 
 \subsection{Approfondissement de Git }
-Même si la gestion de versions de OFBiz était historiquement géré par l'outil Apache \href{https://subversion.apache.org/}{SVN}, dans la gestion de ses propres projets, l'entreprise a fait le choix pour un système plus moderne - \href{https://git-scm.com/}{Git}. 
+Même si la gestion de versions de OFBiz était historiquement gérée par l'outil Apache \href{https://subversion.apache.org/}{SVN}, dans la gestion de ses propres projets, l'entreprise a fait le choix pour un système plus moderne - \href{https://git-scm.com/}{Git}. 
 
 Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais eu l'occasion de travailler dans un projet qui comporte des dizaines de branches qui évoluent quotidiennement. Donc, pour monter en compétences sur ce point-là j'ai utilisé le site d'apprentissage conseillé par mon maître de stage: \href{https://learngitbranching.js.org/}{Learn Git Branching}
 
 \subsection{Découverte de communauté libre Apache}
- OFbiz est un projet libre, maintenu par les intéresses qu'on peut catégoriser comme: 
+ OFbiz est un projet libre, maintenu par des personnes intéressées qu'on peut catégoriser comme: 
  \begin{labeling}{alligator}
- 	\item [\textbf{Contributeurs}] ceux qui suggèrent des modifications utiles au projets mais ne modifient pas la branche principale.
- 	\item [\textbf{Commiteurs}] sont des contributeurs responsables de la validation des modifications du framework ainsi que de leurs adoption dans le code source. 
- 	\item [\textbf{Membres de PMC}] sont responsables des décision  sur la structure  générale du projet et sur la cohérence des modification vis-à-vis de cette dernière  \footnote{PMC acronyme de Project Management Committee (Comité de gestion du projet)}
+ 	\item [\textbf{Contributeurs}] ceux qui suggèrent des modifications utiles aux projets mais ne modifient pas la branche principale.
+ 	\item [\textbf{Commiteurs}] sont des contributeurs responsables de la validation des modifications du framework ainsi que de leur adoption dans le code source. 
+ 	\item [\textbf{Membres de PMC}] sont responsables des décisions sur la structure générale du projet et sur la cohérence des modifications vis-à-vis de cette dernière  \footnote{PMC acronyme de Project Management Committee (Comité de gestion du projet)}
  \end{labeling}
  
  
@@ -114,15 +115,16 @@ Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais e
 \section{Prise en main d'OFBiz}
 
 \subsection{Premier plugin}
-
+Grâce au tutoriel de développement d'une application de base avec OFBiz, j'ai appris à créer mes propres plugins \ref{architecture}. J'ai découvert notamment le mécanisme de définition des entités, ainsi que les moyens de remplissage de la table créée. Ensuite, j'ai défini des nombreux \verb|services| et \verb|events|, d'abord en se basant sur les moteurs par défaut, puis en les définissant moi-même avec Java ou Groovy. Finalement j'ai analysé les techniques qui permettent de visualiser les traitements effectués (front-end).  
 \subsection{Projets existants et leur structure}
+Tout les projets ont une structure définie dans \ref{architecture}, les projets existant se distinguent notamment par les plugins spécifiques au domaine traité. 
 \subsubsection{Décathlon}
 RFID et tout ça
 \subsubsection{Dejbox}
 Pierre et Antoine ont tout géré 
 
 \subsection{Problématique vis-à-vis du développement}
-What is "fonctionnel", La prob
+Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées au parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique de OFBiz (contenue dans le \emph{framework}).
 
 
 
@@ -144,18 +146,23 @@ What is "fonctionnel", La prob
 \section{Etat de l'art}
 
 \subsection{Histoire et problématique des applications web}
-Avec l'évolution des technologies du réseau, on a obtenu à la fin des annnées 60 - début des années 70,  la possibilité d'échanger des information numériques entre les machines. Cela a permis l'émergence des systèmes d'échange d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitement relatives et qui était accédé par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentais l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame.  
+Avec l'évolution des technologies du réseau, on a obtenu à la fin des années 60 - début des années 70,  la possibilité d'échanger des informations numériques entre les machines. Cela a permis l'émergence des systèmes d'échanges d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitements relatifs et qui était accédée par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentait l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame. \ref{fig:mainframe} 
+\begin{figure}[h!]
+	\includegraphics[scale=0.5]{Mainframe-Architecture.png}
+	\caption{Architecture MainFrame.}
+	\label{fig:mainframe}
+\end{figure}
 \\
-L'arrivé des ordinateurs personnelles a permis la séparation de la couché présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivé des architectures à 2-tiers qu'a fait l'apparition la notion de service - une fonctionnalité fournie par le serveur.
+L'arrivée des ordinateurs personnels a permis la séparation de la couche présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivée des architectures à 2-tiers que la notion de service a été introduite - il s'agit une fonctionnalité fournie par le serveur.
 
 
 La manière d'évoquer ces services était définie par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
 \\ 
-Cependant, l'architecture 2-tiers avait présentait aussi des inconvénients majeurs:
-Si le client interagissait avec plusieurs serveurs il devais comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appels, la cohérence et la combinaison des données reçues. S'ajoute à cela les serveurs qui pouvais pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
+Cependant, l'architecture 2-tiers comportait aussi des inconvénients majeurs:
+Si le client interagissait avec plusieurs serveurs il devait comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appels, la cohérence et la combinaison des données reçues. S'ajoutent à cela les serveurs qui pouvaient pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
 
 
-L'arrivé d'une architecture à 3 tiers (voire N-tiers avec les couches sécurité, couche routage, etc...) et ainsi que de la notion de Middleware \footnote{Des intergiciels destinés à lier des systèmes informatique de nature différente }  ont apporté un certain nombre d'avantages en terme de réduction de complexité coté client et d'interopérabilité entre ces différentes couches. De plus, de nombreux standards appelées \href{https://fr.wikipedia.org/wiki/Liste_des_sp%C3%A9cifications_des_services_web_WS-*}{WS-*} 
+L'arrivée d'une architecture à 3 tiers (voire N-tiers avec les couches sécurité, couche routage, etc...) et ainsi que de la notion de Middleware \footnote{Des intergiciels destinés à lier des systèmes informatique de nature différente }  ont apporté un certain nombre d'avantages en matière de réduction de complexité côté client et d'interopérabilité entre ces différentes couches. De plus, de nombreux standards appelées \href{https://fr.wikipedia.org/wiki/Liste_des_sp%C3%A9cifications_des_services_web_WS-*}{WS-*} 
 	ont été adoptés afin de combler les failles apparues suite à l'utilisation répandue de Middleware. 
 Suite à cela des développeurs et des sociétés ont commencé à mettre en œuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
 \\
@@ -169,7 +176,7 @@ Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusie
 \subsection{Representational state transfer}
 Dans ce chapitre on va présenter le style architectural REST et comment il répond à des problématiques évoquées dans la section précédente. 
 \subsubsection{Histoire}
-En 2000, alors que le nombre de site web dans le monde a atteint 17 millions, Roy Fielding, l'un des contributeurs du protocole HTTP et \href{https://tools.ietf.org/html/rfc3986}{URI}, définit REST dans sa thèse de doctorat intitulée \emph{Architectural Styles and the Design of Network-Based Software Architectures} \cite{roythesis}
+En 2000, alors que le nombre de sites web dans le monde a atteint 17 millions, Roy Fielding, l'un des contributeurs du protocole HTTP et \href{https://tools.ietf.org/html/rfc3986}{URI}, définit REST dans sa thèse de doctorat intitulée \emph{Architectural Styles and the Design of Network-Based Software Architectures} \cite{roythesis}
 
 
 
@@ -177,27 +184,27 @@ En 2000, alors que le nombre de site web dans le monde a atteint 17 millions, Ro
 
 
 \subsubsection{Principe}
-Du point de vue abstrait ce style architectural se base sur les technologies fondamentales du World Wide Web: HTTP, Uniform Resource Identifier (URI),  les langages de balisage HTML et XML, ainsi que sur des formats adaptées web comme JSON.\\
-REST est un style architectural pour les applications qui interagissent via réseau. Il est définit par six contraintes suivantes: 
+D'un point de vue abstrait ce style architectural se base sur les technologies fondamentales du World Wide Web: HTTP, Uniform Resource Identifier (URI),  les langages de balisage HTML et XML, ainsi que sur des formats adaptées web comme JSON.\\
+REST est un style architectural pour les applications qui interagissent via réseau. Il est défini par six contraintes suivantes: 
 \begin{labeling}{rest}
 	
 \item [\textbf{Uniformité d'interface}] Cette contrainte fondamentale à REST, oblige à manipuler et identifier des ressources uniquement vie leurs représentations(par exemple sous formats HTML, XML ou JSON). Ainsi, chaque représentation fournit suffisamment d'information au client, afin qu'il puisse la modifier ou supprimer.
 
-\item [\textbf{Client-Serveur}] Assure l'absence d'interdépendance entre les clients et les serveurs. Ainsi le serveur propose des services d'une manière générique sans dépendre des spécification du client (langage de programmation utilisé, plateforme, etc... ). Cela permet au client et au serveur d'évoluer indépendamment. 
+\item [\textbf{Client-Serveur}] Assure l'absence d'interdépendance entre les clients et les serveurs. Ainsi le serveur propose des services d'une manière générique sans dépendre des spécifications du client (langage de programmation utilisé, plateforme, etc... ). Cela permet au client et au serveur d'évoluer indépendamment. 
 
 
 \item [\textbf{Sans état}] Les échanges entre le client et le serveur doivent s'effectuer sans conserver l'état de la session sur le serveur entre deux requêtes successives. Le but est d'améliorer les performances du serveur ainsi que l'extensibilité du système. 
 
 \item [\textbf{En couches}] Cette contrainte permet de séparer l'architecture en plusieurs niveaux, cela facilite la mise en échelle du système. 
-\item [\textbf{Code à la demande}] Ceci est une contrainte facultative qui permet aux serveurs d'étendre ou de modifier le fonctionnement du client grâce à l'envoie du code exécutable.
-\item [\textbf{Mise en cache}] Mise en cache de certains données accédées fréquemment afin d'augmenter les performances.
+\item [\textbf{Code à la demande}] Ceci est une contrainte facultative qui permet aux serveurs d'étendre ou de modifier le fonctionnement du client grâce à l'envoi du code exécutable.
+\item [\textbf{Mise en cache}] Mise en cache de certaines données accédées fréquemment afin d'augmenter les performances.
 
 \end{labeling}
  En respectant ces contraintes on a pour le but de répondre aux mêmes problématiques couverts par les standards WS-* qui sont:
 \begin{itemize}
 	\item [- \textbf{Séparation des préoccupations}] issu de \emph{l’anglais separation of concerns (SoC)} est le fait de séparer un programme informatique en parties, afin d'isoler des composantes qui répondent à un problème spécifique de la problématique générale.  
 	\item [- \textbf{Visibilité}] Comment apprend-on l'existence d'un tel ou tel service? 
-	\item [- \textbf{Passage à l'échelle(\emph{scalability})}] Le système sera-il capable d'évoluer avec le temps?
+	\item [- \textbf{Passage à l'échelle(\emph{scalability})}] Le système sera-t-il capable d'évoluer avec le temps?
 	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord?
 \end{itemize}
 
@@ -223,7 +230,7 @@ example.com/getAllProducts
  
 Pour plus de simplicité, on peut diviser les ressources en 4 catégories : \emph{document}, \emph{collection}, \emph{stockage} et \emph{contrôleur}. 
 
-\textbf{Les documents} représentent des objets singulières qui  correspondent, par exemple, à une entrée en base de données. Il peut être vu comme une ressource dans une ressource de type collection. Pour nommer un document on utilise des noms en singulier : 
+\textbf{Les documents} représentent des objets singuliers qui  correspondent, par exemple, à une entrée en base de données. Il peut être vu comme une ressource dans une ressource de type collection. Pour nommer un document on utilise des noms en singulier : 
 \begin{figure}[h!]
 	\begin{lstlisting}[frame=leftline]
 example.com/api/car-management/managed-cars/{car-id}
@@ -241,7 +248,7 @@ example.com/api/user-management/users
 	\end{lstlisting}
 \end{figure}
 
-Quant aux \textbf{stockages}, ce sont des ressources gérés coté client et qui permet de stocker d'autres ressources d'une manière temporaire sans affecter le serveur. Le panier d'achat et la liste des favoris sont des exemples classiques des ressources de stockage: 
+Quant aux \textbf{stockages}, ce sont des ressources gérées côté client et qui permet de stocker d'autres ressources d'une manière temporaire sans affecter le serveur. Le panier d'achat et la liste des favoris sont des exemples classiques des ressources de stockage: 
 \begin{figure}[h!]
 	\begin{lstlisting}[frame=leftline]
 example.com/api/cart-management/users/{id}/cart
@@ -276,7 +283,7 @@ Les URI ne doivent pas indiquer qu'une opération CRUD est en train d'être effe
 
 
 \subsubsection{Examples d'API du style REST}
-Afin de voir ce que cela donne en réalité, j'ai décidé d'analyser des services existantes qui suivent l'architecture REST. 
+Afin de voir ce que cela donne en réalité, j'ai décidé d'analyser des services existants qui suivent l'architecture REST. 
 L'un des premiers exemples d'API REST traités était celle de \href{https://twitter.com/}{twitter.com}. Ainsi j'ai découvert que twitter permet de concevoir des applications qui interagissent avec le site de manière autonome. 
 
 Par exemple on peut récupérer des statuts des gens en temps réel contenant un certain mot-clé: \\
@@ -290,7 +297,7 @@ Un autre exemple intéressant est la navigation du site  \href{https://www.amnes
 \\
 Ainsi la collection des blogs \\
 \verb|www.amnesty.org.uk/blogs/|\\
-regroupe des catégories (elles mêmes des collections): \\
+regroupe des catégories (elles-mêmes des collections): \\
  \emph{Fin de la peine capitale:} \\
  \verb|www.amnesty.org.uk/blogs/anti-death-penalty-project|\\
  \emph{Action étudiante:}\\
@@ -304,8 +311,8 @@ regroupe des catégories (elles mêmes des collections): \\
 Finalement, j'ai décidé d'analyser des framworks REST qui permettent de développer des API suivant ce style architectural. Cela avait pour le but soit d'intégrer ce système dans le contexte d'OFBiz, soit 
 \subsubsection{Camel}
 Apache Camel est un framework libre destiné à faciliter l'intégration des composantes dans le contexte d'entreprise. Il fournit un certain nombre de DSL dont \href{https://camel.apache.org/rest-dsl.html}{Rest DSL} qui est destiné à aider les développeurs à définir les API REST. 
-L'un des points particulièrement intéressant de Camel Rest DSL est sa similitude aux techniques utilisé dans l'OFBiz, notamment les DSL sont utilisées avec Java et XML à la fois. 
-Malgré ces avantages, la tache d'interrogation de ce framework s'avère trop coûteuse, car elle nécessiterai la réécriture d'une vaste parie relative aux \verb|HTTPServlet| dans l'OFBiz. 
+L'un des points particulièrement intéressant de Camel Rest DSL est sa similitude aux techniques utilisées dans l'OFBiz, notamment les DSL sont utilisées avec Java et XML à la fois. 
+Malgré ces avantages, la tache d'interrogation de ce framework s'avère trop coûteuse, car elle nécessiterait la réécriture d'une vaste partie relative aux \verb|HTTPServlet| dans l'OFBiz. 
 \subsubsection{JAX-RS}
 Un autre framework permettant de concevoir des API REST est JAX-RS de Apache \href{http://cxf.apache.org/}{CXF}. La particularité de cet outil est la gestion des URI via les annotations : 
 \begin{figure}[h!]
@@ -324,19 +331,19 @@ je me suis rendu compte que la technologie risque de ne pas être accepté par l
 
 \section{Analyse de l'existant}
 
-Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la gestion des échanges web afin de soulever les points importants relatives à l'implémentation des services REST. 
+Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la gestion des échanges web afin de soulever les points importants relatifs à l'implémentation des services REST. 
 
 
 \subsection{Gestion des application web dans OFBiz}
 
 
-Le groupe des classes d'OFBiz, responsables de la gestion des applications web se basent sur patrons de conception de   \href{http://www2.sys-con.com/itsg/virtualcd/java/archives/0701/malks/index.html}{"J2EE Presentation Tier"}. Notamment la classe \verb|ContextFilter| qui assure la sécurité des requêtes, implémente le pattern \verb|Decorating Filter|  les vues générées par les moteurs de widgets et les FTL correspondent quand à eux au pattern \verb|Composite View|.
+Le groupe des classes d'OFBiz, responsables de la gestion des applications web se basent sur les patrons de conception de   \href{http://www2.sys-con.com/itsg/virtualcd/java/archives/0701/malks/index.html}{"J2EE Presentation Tier"}. Notamment la classe \verb|ContextFilter| qui assure la sécurité des requêtes, implémente le pattern \verb|Decorating Filter|  les vues générées par les moteurs de widgets et les FTL correspondent quand à eux au pattern \verb|Composite View|.
 \subsection{ControlServlet}
 La classe qui est au cœur du traitement des requêtes, \verb|ControlServlet| correspond au pattern \verb|FrontController|.
-Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclue les \verb|Entity Delegator|, responsable du modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisé et tous les informations utiles sont stocké dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|
+Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclut les \verb|Entity Delegator|, responsable du modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisée et toutes les informations utiles sont stockées dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|.
 
 \subsection{RequestHandler}
-Cette classe récupère l'ensemble des association des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des association entre les URI et les vues optionnelles. A part les vues, les URI peuvent être associées avec un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service à travers le moteur correspondant. 
+Cette classe récupère l'ensemble des associations des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des associations entre les URI et les vues optionnelles. À part les vues, les URI peuvent être associées à un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service à travers le moteur correspondant. 
 \\
 \\
 \\
@@ -355,7 +362,7 @@ La structure des \verb|request-map| est définie comme suit:
 \end{figure}\\
 \\
 \subsection{API en cours}
-Après avoir analyse plusieurs application web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ses problèmes de performance et du passage à l'échelle. 
+Après avoir analysé plusieurs applications web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ses problèmes de performance et du passage à l'échelle. 
 
 \subsection{Mécanisme de résolution des URI}
 Les URI de \verb|requst-map| ne contiennent pas plus d'un seul mot (d'où RPC) comme par exemple:
@@ -381,14 +388,14 @@ Une des spécificités est la gestion des URI segmentés comme dans \\
 /toto/titi/tata
 	\end{lstlisting}
 \end{figure}\\
- sont traité par la méthode \emph{String getOverrideViewUri(String path)} qui permet d'appeler une vue sans effectuer des traitement. Le résultat de cela est que toute les URI segmentées, incontournables à la définition des API du style REST, déclenchent cette méthode qui, à son tour, retourne une erreur. 
+ sont traités par la méthode \emph{String getOverrideViewUri(String path)} qui permet d'appeler une vue sans effectuer de traitement. Le résultat de cela est que toutes les URI segmentées, incontournables à la définition des API du style REST, déclenchent cette méthode qui, à son tour, retourne une erreur. 
 
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Besoins d'évolution}
-Avec la popularité du style architectural REST, plusieurs intégrateurs de OFBiz ont montrés leur l'intérêt à ce concept. 
-Donc afin de répondre aux besoins des utilisateurs et afin d'assurer un meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté à lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses suggestions de concept ont été proposées. 
+Avec la popularité du style architectural REST, plusieurs intégrateurs de OFBiz ont montré leur l'intérêt à ce concept. 
+Donc afin de répondre aux besoins des utilisateurs et afin d'assurer une meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté a lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses suggestions de concept ont été proposées. 
 
-Après avoir analysé les tentatives et les problématique d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrais au mieux au besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est à dire sans provoquer le dysfonctionnement des mécanismes en cours. 
+Après avoir analysé les tentatives et les problématiques d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrait au mieux aux besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est-à-dire sans provoquer le dysfonctionnement des mécanismes en cours. 
 
 
 
@@ -417,10 +424,10 @@ Un autre point à noter est la possibilité d'avoir des variables adaptables au 
 /foo/{v1:\\d}/{v2} 
 	\end{lstlisting}
 \end{figure}\\
-Peut être mis en correspondance uniquement avec les URI qui ont un chiffre\footnote{La lettre "d" signifie le mot l'anglais \emph{digit} - "chiffre" en français} en premier argument \verb|v1|.
+peut être mis en correspondance uniquement avec les URI qui ont un chiffre\footnote{La lettre "d" signifie le mot l'anglais \emph{digit} - "chiffre" en français} en premier argument \verb|v1|.
 \subsection{Librairie CXF}
 Donc, vu la flexibilité de \verb|URITemplate|, j'ai décidé de l'utiliser au sein d'OFBiz.
-Naturellement, l'ajout des dépendances dans un vaste projet comme OFBiz doit être fait avec précaution. La raison: des libraires deviennes souvent dépréciées ou changent à tel point que cela provoque la nécessité de réécrire des parties importantes du projet.  
+Naturellement, l'ajout des dépendances dans un vaste projet comme OFBiz doit être fait avec précaution. La raison: des libraires deviennent souvent dépréciées ou changent à tel point que cela provoque la nécessité de réécrire des parties importantes du projet.  
 
 Après l'analyse des dépendances de OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans le OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la librairie CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
 
@@ -472,15 +479,15 @@ Cette situation suppose que dans la première \verb|request-map| il est impossib
 
 
 \subsubsection{Testes Mockito}
-Finalement, un point intéressant était l'écriture des testes unitaires en utilisant la librairie \href{https://site.mockito.org/}{Mockito}. Des principes et des bonnes pratiques de ces testes m'ont été montrés par mon tuteur de stage. 
+Finalement, un point intéressant était l'écriture des testes unitaires en utilisant la librairie \href{https://site.mockito.org/}{Mockito}. Des principes et des bonnes pratiques de ces tests m'ont été montrés par mon tuteur de stage. 
 \subsection{Modification de la partie "Administration: gestion des entités"  (entitymaint)  }
 Afin de montrer l'utilité du nouveau système, j'ai décidé de modifier une partie front existante ainsi que les points d'entrée avec lesquelles elle interagissait.
 \subsubsection{Choix de la partie illustrative}
-Pour pouvoir tester tout la puissance des méthodes classiques du protocole \verb|HTTP| j'ai du choisir une partie qui permettait d'effectuer l'ensemble des opérations CRUD. Par conséquent, le choix était porté sur la partie administrative qui correspond à la gestion des entités : \verb|entitymaint|.
+Pour pouvoir tester toute la puissance des méthodes classiques du protocole \verb|HTTP| j'ai dû choisir une partie qui permettait d'effectuer l'ensemble des opérations CRUD. Par conséquent, le choix était porté sur la partie administrative qui correspond à la gestion des entités : \verb|entitymaint|.
 \subsubsection{Difficultés de modification} 
-Vu que l'OFBiz a été construit sans tenir compte du REST, ce genre de modification impliquent des changement profondes de la structure du code, allant jusqu'à la réécriture complète. Donc, disposant un temps limité, j'ai du avoir recours aux certains compromis comme utilisation d'un même formulaire pour la création et la modification d'une entité.
+Vu que l'OFBiz a été construit sans tenir compte du REST, ce genre de modification implique des changements profonds de la structure du code, allant jusqu'à la réécriture complète. Donc, disposant un temps limité, j'ai dû avoir recours aux certains compromis comme utilisation d'un même formulaire pour la création et la modification d'une entité.
 \subsubsection{Clés composées}
-Un autre compromis mineur qui devait être fait était la présence d'un nombre variable des clés primaires qui identifiait l'entité-ressource. Par conséquent, la variable qui correspond à l'ensemble des valeurs des clés primaires doit pouvoir accèpter un nombre quelconque des clés. Pour cela, on utilise une expression régulière: 
+Un autre compromis mineur qui devait être fait, était la présence d'un nombre variable des clés primaires qui identifiait l'entité-ressource. Par conséquent, la variable qui correspond à l'ensemble des valeurs des clés primaires doit pouvoir accepter un nombre quelconque des clés. Pour cela, on utilise une expression régulière: 
 
 \begin{figure}[h!]
 	\begin{lstlisting}[frame=leftline,language=xml,frameround=tttt]
@@ -492,7 +499,7 @@ Un autre compromis mineur qui devait être fait était la présence d'un nombre 
 	\end{lstlisting}
 \end{figure}  
 \subsection{Stateless}
-Un des concepts fondamentaux du REST est l'absence de stockage de l'état coté serveur. 
+Un des concepts fondamentaux du REST est l'absence de stockage de l'état côté serveur. 
 \subsubsection{Les réalisation par la communauté}
 OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
 \subsection{RESTClient pour la communauté}
