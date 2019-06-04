@@ -4,50 +4,51 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliographie.bib.bib
 Warning--entry type for "roythesis" isn't style-file defined
---line 28 of file bibliographie.bib.bib
-Warning--to sort, need author or key in chan2017servlet
-Warning--to sort, need author or key in JDBC
-Warning--empty journal in Groovy
-Warning--empty year in Groovy
-You've used 4 entries,
+--line 17 of file bibliographie.bib.bib
+Warning--empty publisher in restcook
+Warning--empty year in restcook
+Warning--empty publisher in JDBC
+Warning--empty publisher in rest
+Warning--empty year in rest
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            510 strings with 4248 characters,
-and the built_in function-call counts, 738 in all, are:
-= -- 65
-> -- 16
+            518 strings with 4471 characters,
+and the built_in function-call counts, 1093 in all, are:
+= -- 88
+> -- 41
 < -- 0
-+ -- 8
-- -- 4
-* -- 30
-:= -- 112
-add.period$ -- 8
-call.type$ -- 4
-change.case$ -- 14
++ -- 17
+- -- 12
+* -- 52
+:= -- 187
+add.period$ -- 12
+call.type$ -- 5
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 31
-empty$ -- 86
-format.name$ -- 4
-if$ -- 163
+cite$ -- 10
+duplicate$ -- 50
+empty$ -- 111
+format.name$ -- 12
+if$ -- 226
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 1
-newline$ -- 19
-num.names$ -- 4
-pop$ -- 32
+int.to.str$ -- 5
+missing$ -- 6
+newline$ -- 25
+num.names$ -- 10
+pop$ -- 48
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 16
 quote$ -- 0
-skip$ -- 30
+skip$ -- 35
 stack$ -- 0
-substring$ -- 20
-swap$ -- 3
+substring$ -- 25
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 4
-while$ -- 4
-width$ -- 5
-write$ -- 32
-(There were 5 warnings)
+type$ -- 14
+warning$ -- 5
+while$ -- 10
+width$ -- 6
+write$ -- 41
+(There were 6 warnings)

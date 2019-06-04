@@ -195,7 +195,7 @@ L'arrivée d'une architecture à 3 tiers (voire N-tiers avec les couches sécuri
 		%Lines
 		
 		\end{tikzpicture}
-		\caption{Middleware.}
+		\caption{Principe du Middleware.}
 		\label{fig:mainframe}
 	\end{figure}
 	\\
@@ -232,7 +232,7 @@ REST est un style architectural pour les applications qui interagissent via rés
 
 \item [\textbf{En couches}] Cette contrainte permet de séparer l'architecture en plusieurs niveaux, cela facilite la mise en échelle du système. 
 \item [\textbf{Code à la demande}] Ceci est une contrainte facultative qui permet aux serveurs d'étendre ou de modifier le fonctionnement du client grâce à l'envoi du code exécutable.
-\item [\textbf{Mise en cache}] Mise en cache de certaines données accédées fréquemment afin d'augmenter les performances.
+\item [\textbf{Mise en cache}] Mise en cache de certaines données accédées fréquemment afin d'augmenter les performances. \cite{restcook}
 
 \end{labeling}
  En respectant ces contraintes on a pour le but de répondre aux mêmes problématiques couverts par les standards WS-* qui sont:
@@ -240,7 +240,7 @@ REST est un style architectural pour les applications qui interagissent via rés
 	\item [- \textbf{Séparation des préoccupations}] issu de \emph{l’anglais separation of concerns (SoC)} est le fait de séparer un programme informatique en parties, afin d'isoler des composantes qui répondent à un problème spécifique de la problématique générale.  
 	\item [- \textbf{Visibilité}] Comment apprend-on l'existence d'un tel ou tel service? 
 	\item [- \textbf{Passage à l'échelle(\emph{scalability})}] Le système sera-t-il capable d'évoluer avec le temps?
-	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord?
+	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord? \cite{rest}
 \end{itemize}
 
 
@@ -539,7 +539,7 @@ Un des concepts fondamentaux du REST est l'absence de stockage de l'état côté
 OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
 \subsection{Divers}
 \subsubsection{REST dans un projet client}
-Les nouvelles fonctionnalités en matière de définition des API ont été adopté dans une partie fonctionnelle du projet \emph{Dejbox} \ref{dejbox}. Cela a également entraîné la correction de quelques fonctionnalités du framework. Notamment, l'association d'un code de retours \verb|HTTP| à une réponse spécifique d'un service OFBiz et l'adaptation de l'outil de transformation des objets en JSON.
+Les nouvelles fonctionnalités en matière de définition des API ont été adopté dans une partie fonctionnelle du projet \emph{Dejbox} \ref{dejbox}. Cela a également entraîné la correction de quelques fonctionnalités du framework. Notamment, l'association d'un code de retour \verb|HTTP| à une réponse spécifique d'un service OFBiz et l'adaptation de l'outil de transformation des objets en JSON.
 
 \subsubsection{Généralisation de code}
 Parmi les tâches qui m'ont été confiées, il y avait la généralisation du code spécifique au projet client, afin qu'il puisse être remonté vers la communauté Apache. Il s'agit d'un client qui "consommait" des services du type REST à partir d'une API extérieure. Le but était de rendre le client suffisamment générique pour qu'il puisse prendre en compte les spécificités d'interaction entre les API d'une nature différente (type d'authentification, réponse).

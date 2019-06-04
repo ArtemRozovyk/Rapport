@@ -1,20 +1,26 @@
 \begin{thebibliography}{1}
 
-\bibitem{chan2017servlet}
-Jdbc.
-\newblock https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/, date.
+\bibitem{restcook}
+Subbu Allamaraju.
+\newblock {\em RESTful Web Services Cookbook}.
 
 \bibitem{JDBC}
-Jdbc.
-\newblock https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/, date.
+Oracle Corporation.
+\newblock {\em Java Database Connectivity}.
+\newblock 2017.
+
+\bibitem{chan2017servlet}
+Java EE.
+\newblock Interface servlet.
+\newblock https://docs.oracle.com/javaee/6/api/javax/servlet/Servlet.html.
 
 \bibitem{roythesis}
 Roy~Thomas Fielding.
 \newblock Architectural styles and the design of network-based software
   architectures.
 
-\bibitem{Groovy}
-groo.
-\newblock groovy.
+\bibitem{rest}
+Leonard Richardson and Sam Ruby.
+\newblock {\em RESTful Web Services}.
 
 \end{thebibliography}
