@@ -45,23 +45,23 @@ On peut notamment distinguer des modules génériques destinés à la gestion de
 
 En plus d'une architecture qui favorise la personnalisation, l'intégralité du code d'OFBiz est disponible au téléchargement sous licence libre Apache 2.0\footnote{Licence \href{https://www.apache.org/licenses/LICENSE-2.0.html}{ASL2 (Apache License Version 2.0)} qui permet de personnaliser, d'étendre, de restructurer et de redistribuer sous licence propriétaire le système concerné. } Cela rend cette licence particulièrement permissive car le logiciel développé à base d'OFBiz n'est pas soumis à la condition d'être libre comme c'est le cas de la licence GPL  \footnote{\href{http://www.gnu.org/licenses/gpl-3.0.html}{GNU General Public Licence}} par exemple.
 
-\subsection{Architecture }
+\subsection{Architecture}
 \label{architecture}
-D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation des DSL\footnote{Domaine specific language \emph{(Langages spécifiques au domaine)}} basés sur des grammaires écrites en XML \footnote{ eXtensible Markup Language - \emph{langage de balisage extensible}}. En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentes par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
+D'un point de vue purement technique OFBiz se base sur la plateforme Java ainsi que sur l'utilisation de DSL\footnote{Domaine specific language \emph{(Langages spécifiques au domaine)}} basés sur des grammaires écrites en XML \footnote{ eXtensible Markup Language - \emph{langage de balisage extensible}}. En ce qui concerne la partie principale du framework, les échanges HTTP sont implémentés par une extension de la classe \verb=HTTPServlet= \cite{chan2017servlet} et la communication avec les bases de données se fait via l'API Java JDBC \cite{JDBC}.
 
-Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes techniques de bas niveau utilisés par les applications. Il fournit notamment des fonctionnalités présentes dans la plupart des frameworks de développement(couche données, logique métier, gestion des transactions, etc...).
+Dans sa structure on distingue \emph{le framework}, \emph{les applications} et \emph{les plugins}. Le \emph{framework} comporte l'ensemble des outils et des mécanismes de bas niveau utilisés par les applications. Il fournit notamment des fonctionnalités présentes dans la plupart des frameworks de développement(couche données, logique métier, gestion des transactions, etc...).
 Les principaux composants métier tels que la comptabilité, la gestion des stock, ou la facturation se trouvent dans la partie \emph{applications}. 
-Finalement la notion du plugin  correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à une boutique en ligne qui interagit avec des nombreuses \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
+Finalement la notion du plugin correspond à une application spécifique qui repose sur des composantes générales: par exemple le plugin \emph{eCommerce} correspond à une boutique en ligne qui interagit avec de nombreuses \emph{applications} comme \emph{la gestion du stock} ou \emph{la facturation}. 
 
 \subsection{DSL XML}
 \label{dsl}
-L'une des particularités de OFBiz ce sont des fichiers XML qui servent à déclarer entre autres
+L'une des particularités d'OFBiz ce sont des fichiers XML qui servent à déclarer entre autres
 des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des services. Le principe est de transformer des informations sous format XML facilement compréhensibles par le développeur, en objets Java correspondants. 
 
 
 \definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \subsection{Container}
-L'interface container représenté sur la figure \ref{container} permet de définir des objets qui correspondent à des procédures qui peuvent être initialisés, démarrés et arrêtés. L'intérêt est de pouvoir lancer un daemon\footnote{Programme informatique, un processus ou un ensemble de processus qui s'exécute en arrière-plan plutôt que sous le contrôle direct d'un utilisateur} spécifique en parallèle de l'exécution de OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des testes unitaires grâce à un mécanisme propre au framework. 
+L'interface \emph{Container} représentée sur la figure \ref{container} permet de définir des objets qui correspondent à des procédures qui peuvent être initialisées, démarrés et arrêtés. L'intérêt est de pouvoir lancer un \emph{daemon}\footnote{Programme informatique, un processus ou un ensemble de processus qui s'exécute en arrière-plan plutôt que sous le contrôle direct d'un utilisateur} spécifique en parallèle de l'exécution de OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des tests unitaires grâce à un mécanisme propre au framework. 
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}
@@ -102,12 +102,10 @@ Les éléments constitutifs de OFBiz sont des composants. Un composant est un re
 
 
 L'exemple classique d'un composant est celui de \verb|webtools|. Il assure la gestion technique de l'ensemble du système par l'administrateur via une application web. Cela implique le fait que ce composant regroupe la plupart des éléments majeurs du framework.
-Nous en tant que développeurs avons la possibilité de définir nos propres composants, notamment des \emph{plugins}. 
+Nous avons en tant que développeurs la possibilité de définir nos propres composants, notamment des \emph{plugins}. 
   
-
-
 \subsection{Web applications}
-Des composant OFBiz ne peuvent pas être accédés directement par les utilisateurs, ils servent simplement à organiser le framework en parties individuelles de chaque aspect de l'ERP\footnote{  \emph{ Enterprise Resource Planning }- un progiciel de gestion intégré ou PGI} afin de faciliter leur gestion. Les applications web \emph{(webapps)} sont destinées à fournir un front-end afin que les utilisateurs puissent interagir avec OFBiz. En ce qui concerne les routes HTTP, définis classiquement dans le fichier \verb|web.xml|, ont leur gestion déléguée à un ficher \verb|controller.xml| qui à son tour associe des traitements spécifiques à chaque point d'entrée HTTP ainsi que la valeur de retour qui peut être une vue \emph{(Écran)}, du type \verb|JSON| \footnote{ \emph{JavaScript Object Notation} est un format d'échange de données en texte lisible par l'être humain. } ou bien une redirection. Cela se fait au moyen d'une \verb|request-map| comme on peut voir sur l'extrait de code suivant \ref{reqmap}
+Des composant OFBiz ne peuvent pas être accédés directement par les utilisateurs, ils servent simplement à organiser le framework en parties individuelles de chaque aspect de l'ERP\footnote{  \emph{ Enterprise Resource Planning }- un progiciel de gestion intégré ou PGI} afin de faciliter leur gestion. Les applications web \emph{(webapps)} sont destinées à fournir un front-end afin que les utilisateurs puissent interagir avec OFBiz. En ce qui concerne les routes HTTP, définis classiquement dans le fichier \verb|web.xml|, ont leur gestion déléguée à un ficher \verb|controller.xml| qui à son tour associe des traitements spécifiques à chaque point d'entrée HTTP ainsi que la valeur de retour qui peut être une vue \emph{(Écran)}, du type JSON \footnote{ \emph{JavaScript Object Notation} est un format d'échange de données en texte lisible par l'être humain. } ou bien une redirection. Cela se fait au moyen d'une \verb|request-map| comme on peut voir sur l'extrait de code suivant \ref{reqmap}
 
 
 
@@ -126,13 +124,13 @@ Des composant OFBiz ne peuvent pas être accédés directement par les utilisate
 
 
 \subsection{Entity engine}
-Comme dans beaucoup d'autres frameworks, l'interaction avec les bases de données à une place principale dans le OFBiz. Le moteur d'entités (\emph{Entity engine}) se charge de la communication avec les  bases de données à travers les déclarations uniformes, c'est à dire qui changent pas peu importe le choix de l'outil externe de gestion.
+Comme dans beaucoup d'autres frameworks, l'interaction avec les bases de données a une place principale dans OFBiz. Le moteur d'entités (\emph{Entity engine}) se charge de la communication avec les bases de données à travers de déclarations uniformes, c'est à dire qui changent pas peu importe le choix de l'outil externe de gestion.
 
 
 
 \subsection{Service engine}
 Les services web assurent les échanges d'information être les applications, communément via le protocole\verb| HTTP|.   
-Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'évoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'informations tells que \verb|SOAP|. 
+Les services OFBiz fonctionnent dans une architecture orientée service (SOA). Non seulement ces services ont une capacité d'invoquer les autres intérieurement, mais peuvent aussi être appelés par une application extérieure en utilisant des protocoles d'échange d'informations tels que \verb|SOAP|. 
 
 Les services OFBiz sont appelés en passant un contexte \footnote{Définis souvent dans les paramètres de la requête HTTP } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
 
@@ -145,7 +143,7 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
   <auto-attributes include="pk" mode="IN"/>
   <attribute name="authKey" type="String" mode="IN"/>
   <attribute name="stockList" type="String" mode="OUT" >
-
+</service>
 \end{lstlisting}
 \caption{Définition d'un service}
 \label{servicedef}
