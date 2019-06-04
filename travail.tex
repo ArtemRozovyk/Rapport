@@ -140,10 +140,10 @@ Une majeure partie du développement spécifique consiste à adapter les briques
 \newpage
 
 
-\section{Etat de l'art}
+\section{État de l'art}
 
 \subsection{Histoire et problématique des applications web}
-Avec l'évolution des technologies du réseau, on a obtenu à la fin des années 60 - début des années 70,  la possibilité d'échanger des informations numériques entre les machines. Cela a permis l'émergence des systèmes d'échanges d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitements relatifs et qui était accédée par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentait l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame. \ref{fig:mainframe} 
+Avec l'évolution des technologies du réseau, on a obtenu à la fin des années 60 - début des années 70,  la possibilité d'échanger des informations numériques entre les machines. Cela a permis l'émergence des systèmes d'échanges d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitements relatifs et qui était accédée par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacité de calcul qui sert uniquement à afficher l'information reçue}. Cela présentait l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame. \ref{fig:mainframe} 
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}
@@ -158,10 +158,10 @@ Avec l'évolution des technologies du réseau, on a obtenu à la fin des années
 \label{fig:mainframe}
 \end{figure}
 \\
-L'arrivée des ordinateurs personnels a permis la séparation de la couche présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivée des architectures à 2-tiers que la notion de service a été introduite - il s'agit une fonctionnalité fournie par le serveur.
+L'arrivée des ordinateurs personnels a permis la séparation de la couche présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancés). C'est notamment avec l'arrivée des architectures 2-tiers que la notion de service a été introduite - il s'agit une fonctionnalité fournie par le serveur.
 
 
-La manière d'évoquer ces services était définie par une interface standardisée, d'où la notion de API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
+La manière d'invoquer ces services était définie par une interface standardisée, d'où la notion d'API (Application Programming Interface), ou bien interface de programmation applicative qui sert à proposer des points d'entrée pour un nombre de clients de nature différente (utilisateur humain ou une autre machine).
 \\ 
 Cependant, l'architecture 2-tiers comportait aussi des inconvénients majeurs:
 Si le client interagissait avec plusieurs serveurs il devait comprendre l'API de chacun d'entre eux. De plus, c'était dans la responsabilité du client de gérer l'ordre des appels, la cohérence et la combinaison des données reçues. S'ajoutent à cela les serveurs qui pouvaient pas communiquer l'un avec l'autre, résultat - la complexité grandissante des clients. 
@@ -199,7 +199,7 @@ L'arrivée d'une architecture à 3 tiers (voire N-tiers avec les couches sécuri
 		\label{fig:mainframe}
 	\end{figure}
 	\\
-Suite à cela des développeurs et des sociétés ont commencé à mettre en œuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
+Suite à cela des développeurs et des sociétés ont commencé à mettre en œuvre tout le stack WS-* même pour des tâches où l'utilisation du HTTP suffirait. Concrètement, HTTP était réduit au protocole de transport avec une énorme charge utile XML transmise pour caractériser l'échange. 
 \\
 Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusieurs organismes qui partagent le même système d'information. Mais dès qu'il s'agit de proposer des services à l'extérieur (à l'échelle mondiale via Internet), cela s'avérait extrêmement compliqué. 
 \newpage
@@ -211,7 +211,7 @@ Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusie
 \subsection{Representational state transfer}
 Dans ce chapitre on va présenter le style architectural REST et comment il répond à des problématiques évoquées dans la section précédente. 
 \subsubsection{Histoire}
-En 2000, alors que le nombre de sites web dans le monde a atteint 17 millions, Roy Fielding, l'un des contributeurs du protocole HTTP et \href{https://tools.ietf.org/html/rfc3986}{URI}, définit REST dans sa thèse de doctorat intitulée \emph{Architectural Styles and the Design of Network-Based Software Architectures} \cite{roythesis}
+En 2000, alors que le nombre de sites web dans le monde a atteint 17 millions, Roy Fielding, l'un des contributeurs du standard HTTP et \href{https://tools.ietf.org/html/rfc3986}{URI}, définit REST dans sa thèse de doctorat intitulée \emph{Architectural Styles and the Design of Network-Based Software Architectures} \cite{roythesis}
 
 
 
@@ -230,17 +230,17 @@ REST est un style architectural pour les applications qui interagissent via rés
 
 \item [\textbf{Sans état}] Les échanges entre le client et le serveur doivent s'effectuer sans conserver l'état de la session sur le serveur entre deux requêtes successives. Le but est d'améliorer les performances du serveur ainsi que l'extensibilité du système. 
 
-\item [\textbf{En couches}] Cette contrainte permet de séparer l'architecture en plusieurs niveaux, cela facilite la mise en échelle du système. 
+\item [\textbf{En couches}] Cette contrainte permet de séparer l'architecture en plusieurs niveaux, cela facilite la passager à l'échelle du système. 
 \item [\textbf{Code à la demande}] Ceci est une contrainte facultative qui permet aux serveurs d'étendre ou de modifier le fonctionnement du client grâce à l'envoi du code exécutable.
 \item [\textbf{Mise en cache}] Mise en cache de certaines données accédées fréquemment afin d'augmenter les performances. \cite{restcook}
 
 \end{labeling}
- En respectant ces contraintes on a pour le but de répondre aux mêmes problématiques couverts par les standards WS-* qui sont:
+ En respectant ces contraintes on a pour objectif de répondre aux mêmes problématiques couverts par les standards WS-* qui sont:
 \begin{itemize}
 	\item [- \textbf{Séparation des préoccupations}] issu de \emph{l’anglais separation of concerns (SoC)} est le fait de séparer un programme informatique en parties, afin d'isoler des composantes qui répondent à un problème spécifique de la problématique générale.  
 	\item [- \textbf{Visibilité}] Comment apprend-on l'existence d'un tel ou tel service? 
 	\item [- \textbf{Passage à l'échelle(\emph{scalability})}] Le système sera-t-il capable d'évoluer avec le temps?
-	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord? \cite{rest}
+	\item [- \textbf{Fiabilité}] Les opérations, ont-elle des effets de bord indésirables? \cite{rest}
 \end{itemize}
 
 
