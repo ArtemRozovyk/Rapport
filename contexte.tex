@@ -134,7 +134,7 @@ Les services OFBiz fonctionnent dans une architecture orientée service (SOA). N
 
 Les services OFBiz sont appelés en passant un contexte \footnote{Définis souvent dans les paramètres de la requête HTTP } et retournent une réponse parmi celles conventionnellement nommés: \emph{"success"}, comme on peut voir dans  \ref{reqmap} , \emph{"error"} ou \emph{"failure"} ainsi que l'ensemble des données retournées par le service. 
 
-On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui montre notamment la saisie des attributs attendus par le service qui peuvent être définies de deux manières: en utilisant le mécanisme de \verb|auto-attributes| qui génère des attributs\footnote{Qui sont en l'occurrence en entrée (de paramètre IN)} à partir de l'ensemble des clés primaires de l'entité \verb|Stock|. L'autre manière de faire est de rajouter des attributs manuellement comme on peut le voir dans la suite de l'exemple. 
+On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui montre notamment la saisie des attributs attendus par le service qui peuvent être définis de deux manières: en utilisant le mécanisme de \verb|auto-attributes| qui génère des attributs\footnote{Qui sont en l'occurrence en entrée (de paramètre IN)} à partir de l'ensemble des clés primaires de l'entité \verb|Stock|. L'autre manière de faire est de rajouter des attributs manuellement comme on peut le voir dans la suite de l'exemple. 
 
 \begin{figure}
 \begin{lstlisting}[frame=leftline,language=XML]
@@ -151,7 +151,7 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
 \newpage
 
 \subsection{Screen engine}
-La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkt| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à un autre mécanisme : \verb|Apache Freemarker| \footnote{\href{https://freemarker.apache.org/}{Le moteur de template Java.}}.
+La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkit| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à la bibliothèque de \emph{templating}~: \verb|Apache Freemarker| \footnote{\href{https://freemarker.apache.org/}{Le moteur de template Java.}}.
 \begin{figure}[h!]
 re	\includegraphics[width=\linewidth]{screenOfbiZ.png}
 	\caption{L'exemple d'un Ecran de rendu OFBiz.}
@@ -159,7 +159,7 @@ re	\includegraphics[width=\linewidth]{screenOfbiZ.png}
 \end{figure}
 
 \subsection{Fonctionnel métier}
-Le méta-composant \emph{Applications} comporte des composants métiers prédéfinis, qui ont pour vocation de fournir des solutions fonctionnelles "prêtes à l'emploi". 
+L'ensemble de composants \emph{Applications} comporte des composants métiers prédéfinis, qui ont pour vocation de fournir des solutions fonctionnelles "prêtes à l'emploi". 
 
 Ainsi on distingue parmi d'autres :
 \begin{labeling}{alligator}
@@ -180,7 +180,7 @@ Cette étape sert à se familiariser avec l'environnement du framework à traver
 
 Finalement, l'intérêt principal de ce stage est de mettre en place un système de gestion des services REST. L'idée a été évoquée pour la première fois dans une \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion communautaire} Apache OFBiz, car le mécanisme en cours avait besoin d'évoluer. Cette discussion a suscité des nombreuses remarques en matière de faisabilité et a permis de trouver des pistes à exploiter pour l'implémentation.
 
-Dans un premier temps on considère la possibilité d'intégrer une solution externe notamment à travers des librairies JAX-RS de CXF, ainsi que Apache Camel. Malgré les premières prototypes fonctionnels l'idée d'une solution externe a été abandonné pour des raisons expliquées plus loin dans le document. À sa place une implémentation de bas niveau a été adoptée. Une fois le système mis en route, l'étape suivante consistait à faire adopter la modification dans la branche principe du projet OFBiz. 
+Dans un premier temps on a considèré la possibilité d'intégrer une solution externe notamment au travers des bibliothèques JAX-RS de CXF, ainsi que Apache Camel. Malgré les premières prototypes fonctionnels l'idée d'une solution externe a été abandonné pour des raisons expliquées plus loin dans le document. À sa place une implémentation de bas niveau a été adoptée. Une fois le système mis en route, l'étape suivante consistait à faire adopter la modification dans la branche principe du projet OFBiz. 
 
 Afin de prouver la conformité du nouveau système et démontrer les nouvelles fonctionnalités, la décision a été prise de modifier une partie front-end existante, notamment l'interface de gestion des entités \emph{entitymaint}. Finalement, l'ensemble de modifications sous la forme des patchs a été soumis à la communauté afin d'être revus et potentiellement adoptés dans le framework. 
 
