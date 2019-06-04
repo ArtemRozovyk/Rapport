@@ -87,7 +87,7 @@ Avant tout, mon intégration a commencé par l'installation du poste de travail 
 \subsection{Formation générale}
 
 
-Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle|\footnote{\href{https://gradle.org/}{Moteur de production fonctionnant sur la plateforme Java. }} et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage \href{http://groovy-lang.org/}{Groovy} et les raisons pour lesquelles il est préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{déprécié}. }
+Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle|\footnote{\href{https://gradle.org/}{Moteur de production fonctionnant sur la plateforme Java. }} et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage \href{http://groovy-lang.org/}{Groovy} et les raisons pour lesquelles il est préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{remplacé}. }
 
 
 \subsection{Jira}
@@ -99,10 +99,10 @@ Même si la gestion de versions de OFBiz était historiquement gérée par l'out
 Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais eu l'occasion de travailler dans un projet qui comporte des dizaines de branches qui évoluent quotidiennement. Donc, pour monter en compétences sur ce point-là j'ai utilisé le site d'apprentissage conseillé par mon maître de stage: \href{https://learngitbranching.js.org/}{Learn Git Branching}
 
 \subsection{Découverte de communauté libre Apache}
- OFbiz est un projet libre, maintenu par des personnes intéressées qu'on peut catégoriser comme: 
+ OFBiz est un projet libre, maintenu par des personnes intéressées qu'on peut catégoriser comme~:
  \begin{labeling}{alligator}
  	\item [\textbf{Contributeurs}] ceux qui suggèrent des modifications utiles aux projets mais ne modifient pas la branche principale.
- 	\item [\textbf{Commiteurs}] sont des contributeurs responsables de la validation des modifications du framework ainsi que de leur adoption dans le code source. 
+ 	\item [\textbf{Committeurs}] sont des contributeurs responsables de la validation des modifications du framework ainsi que de leur intégration dans le code source du projet. 
  	\item [\textbf{Membres de PMC}] sont responsables des décisions sur la structure générale du projet et sur la cohérence des modifications vis-à-vis de cette dernière  \footnote{PMC acronyme de Project Management Committee (Comité de gestion du projet)}
  \end{labeling}
  
@@ -115,13 +115,13 @@ Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais e
 \section{Prise en main d'OFBiz}
 
 \subsection{Premier plugin}
-Grâce au tutoriel de développement d'une application de base avec OFBiz, j'ai appris à créer mes propres plugins \ref{architecture}. J'ai découvert notamment le mécanisme de définition des entités, ainsi que les moyens de remplissage de la table créée. Ensuite, j'ai défini des nombreux \verb|services| et \verb|events|, d'abord en se basant sur les moteurs par défaut, puis en les définissant moi-même avec Java ou Groovy. Finalement j'ai analysé les techniques qui permettent de visualiser les traitements effectués (front-end).  
+Grâce au tutoriel de développement d'une application de base avec OFBiz, j'ai appris à créer mes propres plugins \ref{architecture}. J'ai découvert notamment le mécanisme de définition des entités, ainsi que les moyens de remplissage de la table créée. Ensuite, j'ai défini des nombreux \verb|services| et \verb|events|, d'abord en me basant sur les moteurs par défaut, puis en les définissant moi-même avec Java ou Groovy. Finalement j'ai analysé les techniques qui permettent de visualiser les traitements effectués (front-end).  
 \subsection{Projets existants et leur structure}
-Tout les projets ont une structure définie dans \ref{architecture}, les projets existant se distinguent notamment par les plugins spécifiques au domaine traité. 
+Tout les projets ont une structure définie dans \ref{architecture}, les projets existant se distinguent notamment par des plugins spécifiques au domaine traité. 
 
 \subsection{Problématique vis-à-vis du développement}
 \label{probfonctionnel}
-Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées au parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique de OFBiz (contenue dans le \emph{framework}).
+Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées dans le parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique de OFBiz (contenue dans le \emph{framework}).
 
 
 
