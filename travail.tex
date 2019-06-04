@@ -118,10 +118,6 @@ Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais e
 Grâce au tutoriel de développement d'une application de base avec OFBiz, j'ai appris à créer mes propres plugins \ref{architecture}. J'ai découvert notamment le mécanisme de définition des entités, ainsi que les moyens de remplissage de la table créée. Ensuite, j'ai défini des nombreux \verb|services| et \verb|events|, d'abord en se basant sur les moteurs par défaut, puis en les définissant moi-même avec Java ou Groovy. Finalement j'ai analysé les techniques qui permettent de visualiser les traitements effectués (front-end).  
 \subsection{Projets existants et leur structure}
 Tout les projets ont une structure définie dans \ref{architecture}, les projets existant se distinguent notamment par les plugins spécifiques au domaine traité. 
-\subsubsection{Décathlon}
-RFID et tout ça
-\subsubsection{Dejbox}
-Pierre et Antoine ont tout géré 
 
 \subsection{Problématique vis-à-vis du développement}
 \label{probfonctionnel}
@@ -513,10 +509,9 @@ Un des concepts fondamentaux du REST est l'absence de stockage de l'état côté
 OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
 \subsection{Divers}
 \subsubsection{REST dans un projet client}
-dejbox , codes de retour
+Les nouvelles fonctionnalités en matière de définition des API ont été adopté dans une partie fonctionnelle du projet \emph{Dejbox} \ref{dejbox}. Cela a également entraîné la correction de quelques fonctionnalités du framework. Notamment, l'association d'un code de retours \verb|HTTP| à une réponse spécifique d'un service OFBiz et l'adaptation de l'outil de transformation des objets en JSON.
 
 \subsubsection{Généralisation de code}
-Communauté
-\subsubsection{Correction d'incohérences}
+Parmi les tâches qui m'ont été confiées, il y avait la généralisation du code spécifique au projet client, afin qu'il puisse être remonté vers la communauté Apache. Il s'agit d'un client qui "consommait" des services du type REST à partir d'une API extérieure. Le but était de rendre le client suffisamment générique pour qu'il puisse prendre en compte les spécificités d'interaction entre les API d'une nature différente (type d'authentification, réponse).
 
 

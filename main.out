@@ -33,53 +33,50 @@
 \BOOKMARK [1][-]{section.3.3}{Prise en main d'OFBiz}{chapter.3}% 33
 \BOOKMARK [2][-]{subsection.3.3.1}{Premier plugin}{section.3.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.2}{Projets existants et leur structure}{section.3.3}% 35
-\BOOKMARK [3][-]{subsubsection.3.3.2.1}{D\351cathlon}{subsection.3.3.2}% 36
-\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Dejbox}{subsection.3.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.3.3}{Probl\351matique vis-\340-vis du d\351veloppement}{section.3.3}% 38
-\BOOKMARK [1][-]{section.3.4}{Etat de l'art}{chapter.3}% 39
-\BOOKMARK [2][-]{subsection.3.4.1}{Histoire et probl\351matique des applications web}{section.3.4}% 40
-\BOOKMARK [2][-]{subsection.3.4.2}{Representational state transfer}{section.3.4}% 41
-\BOOKMARK [3][-]{subsubsection.3.4.2.1}{Histoire}{subsection.3.4.2}% 42
-\BOOKMARK [3][-]{subsubsection.3.4.2.2}{Principe}{subsection.3.4.2}% 43
-\BOOKMARK [3][-]{subsubsection.3.4.2.3}{En pratique}{subsection.3.4.2}% 44
-\BOOKMARK [3][-]{subsubsection.3.4.2.4}{Utilisation des m\351thodes HTTP}{subsection.3.4.2}% 45
-\BOOKMARK [3][-]{subsubsection.3.4.2.5}{Examples d'API du style REST}{subsection.3.4.2}% 46
-\BOOKMARK [2][-]{subsection.3.4.3}{Implementations existantes}{section.3.4}% 47
-\BOOKMARK [3][-]{subsubsection.3.4.3.1}{Camel}{subsection.3.4.3}% 48
-\BOOKMARK [3][-]{subsubsection.3.4.3.2}{JAX-RS}{subsection.3.4.3}% 49
-\BOOKMARK [1][-]{section.3.5}{Analyse de l'existant}{chapter.3}% 50
-\BOOKMARK [2][-]{subsection.3.5.1}{Gestion des application web dans OFBiz}{section.3.5}% 51
-\BOOKMARK [2][-]{subsection.3.5.2}{ControlServlet}{section.3.5}% 52
-\BOOKMARK [2][-]{subsection.3.5.3}{RequestHandler}{section.3.5}% 53
-\BOOKMARK [2][-]{subsection.3.5.4}{Controleur.xml}{section.3.5}% 54
-\BOOKMARK [2][-]{subsection.3.5.5}{API en cours}{section.3.5}% 55
-\BOOKMARK [2][-]{subsection.3.5.6}{M\351canisme de r\351solution des URI}{section.3.5}% 56
-\BOOKMARK [2][-]{subsection.3.5.7}{OverrideView\(\) et le conflit avec les URI segment\351es}{section.3.5}% 57
-\BOOKMARK [1][-]{section.3.6}{Analyse des besoins et attentes de la ma\356trise d'ouvrage}{chapter.3}% 58
-\BOOKMARK [2][-]{subsection.3.6.1}{Besoins d'\351volution}{section.3.6}% 59
-\BOOKMARK [1][-]{section.3.7}{R\351alisations techniques}{chapter.3}% 60
-\BOOKMARK [2][-]{subsection.3.7.1}{Choix vers URITemplate}{section.3.7}% 61
-\BOOKMARK [2][-]{subsection.3.7.2}{Librairie CXF}{section.3.7}% 62
-\BOOKMARK [2][-]{subsection.3.7.3}{Int\351gration en parall\350le avec le syst\350me existant}{section.3.7}% 63
-\BOOKMARK [2][-]{subsection.3.7.4}{Nouveau controller.xml}{section.3.7}% 64
-\BOOKMARK [3][-]{subsubsection.3.7.4.1}{Les collisions d'URI}{subsection.3.7.4}% 65
-\BOOKMARK [3][-]{subsubsection.3.7.4.2}{Testes Mockito}{subsection.3.7.4}% 66
-\BOOKMARK [2][-]{subsection.3.7.5}{Modification de la partie "Administration: gestion des entit\351s" \(entitymaint\) }{section.3.7}% 67
-\BOOKMARK [3][-]{subsubsection.3.7.5.1}{Choix de la partie illustrative}{subsection.3.7.5}% 68
-\BOOKMARK [3][-]{subsubsection.3.7.5.2}{Difficult\351s de modification}{subsection.3.7.5}% 69
-\BOOKMARK [3][-]{subsubsection.3.7.5.3}{Cl\351s compos\351es}{subsection.3.7.5}% 70
-\BOOKMARK [2][-]{subsection.3.7.6}{Stateless}{section.3.7}% 71
-\BOOKMARK [3][-]{subsubsection.3.7.6.1}{Les r\351alisation par la communaut\351}{subsection.3.7.6}% 72
-\BOOKMARK [2][-]{subsection.3.7.7}{Divers}{section.3.7}% 73
-\BOOKMARK [3][-]{subsubsection.3.7.7.1}{REST dans un projet client}{subsection.3.7.7}% 74
-\BOOKMARK [3][-]{subsubsection.3.7.7.2}{G\351n\351ralisation de code}{subsection.3.7.7}% 75
-\BOOKMARK [3][-]{subsubsection.3.7.7.3}{Correction d'incoh\351rences}{subsection.3.7.7}% 76
-\BOOKMARK [0][-]{chapter.4}{Conclusion}{}% 77
-\BOOKMARK [1][-]{section.4.1}{Lien avec les connaissences obtenu lors de la formation universitaire}{chapter.4}% 78
-\BOOKMARK [2][-]{subsection.4.1.1}{MVC}{section.4.1}% 79
-\BOOKMARK [2][-]{subsection.4.1.2}{Servlet}{section.4.1}% 80
-\BOOKMARK [2][-]{subsection.4.1.3}{FreeMarker -JSP}{section.4.1}% 81
-\BOOKMARK [2][-]{subsection.4.1.4}{Routage}{section.4.1}% 82
-\BOOKMARK [2][-]{subsection.4.1.5}{Notion d'enti\351 - Symfony}{section.4.1}% 83
-\BOOKMARK [2][-]{subsection.4.1.6}{Gradle - Maven}{section.4.1}% 84
-\BOOKMARK [2][-]{subsection.4.1.7}{Testes Unitaires}{section.4.1}% 85
+\BOOKMARK [2][-]{subsection.3.3.3}{Probl\351matique vis-\340-vis du d\351veloppement}{section.3.3}% 36
+\BOOKMARK [1][-]{section.3.4}{Etat de l'art}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.4.1}{Histoire et probl\351matique des applications web}{section.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.4.2}{Representational state transfer}{section.3.4}% 39
+\BOOKMARK [3][-]{subsubsection.3.4.2.1}{Histoire}{subsection.3.4.2}% 40
+\BOOKMARK [3][-]{subsubsection.3.4.2.2}{Principe}{subsection.3.4.2}% 41
+\BOOKMARK [3][-]{subsubsection.3.4.2.3}{En pratique}{subsection.3.4.2}% 42
+\BOOKMARK [3][-]{subsubsection.3.4.2.4}{Utilisation des m\351thodes HTTP}{subsection.3.4.2}% 43
+\BOOKMARK [3][-]{subsubsection.3.4.2.5}{Examples d'API du style REST}{subsection.3.4.2}% 44
+\BOOKMARK [2][-]{subsection.3.4.3}{Implementations existantes}{section.3.4}% 45
+\BOOKMARK [3][-]{subsubsection.3.4.3.1}{Camel}{subsection.3.4.3}% 46
+\BOOKMARK [3][-]{subsubsection.3.4.3.2}{JAX-RS}{subsection.3.4.3}% 47
+\BOOKMARK [1][-]{section.3.5}{Analyse de l'existant}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.5.1}{Gestion des application web dans OFBiz}{section.3.5}% 49
+\BOOKMARK [2][-]{subsection.3.5.2}{ControlServlet}{section.3.5}% 50
+\BOOKMARK [2][-]{subsection.3.5.3}{RequestHandler}{section.3.5}% 51
+\BOOKMARK [2][-]{subsection.3.5.4}{Controleur.xml}{section.3.5}% 52
+\BOOKMARK [2][-]{subsection.3.5.5}{API en cours}{section.3.5}% 53
+\BOOKMARK [2][-]{subsection.3.5.6}{M\351canisme de r\351solution des URI}{section.3.5}% 54
+\BOOKMARK [2][-]{subsection.3.5.7}{OverrideView\(\) et le conflit avec les URI segment\351es}{section.3.5}% 55
+\BOOKMARK [1][-]{section.3.6}{Analyse des besoins et attentes de la ma\356trise d'ouvrage}{chapter.3}% 56
+\BOOKMARK [2][-]{subsection.3.6.1}{Besoins d'\351volution}{section.3.6}% 57
+\BOOKMARK [1][-]{section.3.7}{R\351alisations techniques}{chapter.3}% 58
+\BOOKMARK [2][-]{subsection.3.7.1}{Choix vers URITemplate}{section.3.7}% 59
+\BOOKMARK [2][-]{subsection.3.7.2}{Librairie CXF}{section.3.7}% 60
+\BOOKMARK [2][-]{subsection.3.7.3}{Int\351gration en parall\350le avec le syst\350me existant}{section.3.7}% 61
+\BOOKMARK [2][-]{subsection.3.7.4}{Nouveau controller.xml}{section.3.7}% 62
+\BOOKMARK [3][-]{subsubsection.3.7.4.1}{Les collisions d'URI}{subsection.3.7.4}% 63
+\BOOKMARK [3][-]{subsubsection.3.7.4.2}{Testes Mockito}{subsection.3.7.4}% 64
+\BOOKMARK [2][-]{subsection.3.7.5}{Modification de la partie "Administration: gestion des entit\351s" \(entitymaint\) }{section.3.7}% 65
+\BOOKMARK [3][-]{subsubsection.3.7.5.1}{Choix de la partie illustrative}{subsection.3.7.5}% 66
+\BOOKMARK [3][-]{subsubsection.3.7.5.2}{Difficult\351s de modification}{subsection.3.7.5}% 67
+\BOOKMARK [3][-]{subsubsection.3.7.5.3}{Cl\351s compos\351es}{subsection.3.7.5}% 68
+\BOOKMARK [2][-]{subsection.3.7.6}{Stateless}{section.3.7}% 69
+\BOOKMARK [3][-]{subsubsection.3.7.6.1}{Les r\351alisation par la communaut\351}{subsection.3.7.6}% 70
+\BOOKMARK [2][-]{subsection.3.7.7}{Divers}{section.3.7}% 71
+\BOOKMARK [3][-]{subsubsection.3.7.7.1}{REST dans un projet client}{subsection.3.7.7}% 72
+\BOOKMARK [3][-]{subsubsection.3.7.7.2}{G\351n\351ralisation de code}{subsection.3.7.7}% 73
+\BOOKMARK [0][-]{chapter.4}{Conclusion}{}% 74
+\BOOKMARK [1][-]{section.4.1}{Lien avec les connaissences obtenu lors de la formation universitaire}{chapter.4}% 75
+\BOOKMARK [2][-]{subsection.4.1.1}{MVC}{section.4.1}% 76
+\BOOKMARK [2][-]{subsection.4.1.2}{Servlet}{section.4.1}% 77
+\BOOKMARK [2][-]{subsection.4.1.3}{FreeMarker -JSP}{section.4.1}% 78
+\BOOKMARK [2][-]{subsection.4.1.4}{Routage}{section.4.1}% 79
+\BOOKMARK [2][-]{subsection.4.1.5}{Notion d'enti\351 - Symfony}{section.4.1}% 80
+\BOOKMARK [2][-]{subsection.4.1.6}{Gradle - Maven}{section.4.1}% 81
+\BOOKMARK [2][-]{subsection.4.1.7}{Testes Unitaires}{section.4.1}% 82
