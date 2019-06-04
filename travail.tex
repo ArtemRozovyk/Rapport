@@ -148,9 +148,9 @@ Avec l'évolution des technologies du réseau, on a obtenu à la fin des années
 	\centering
 	\begin{tikzpicture}
 	\def \radius {3cm}
-	\node[draw,thick,minimum width=1cm,minimum height=1cm] at (300:0mm) (center) {MainFrame};
+	\node[draw=purple!50,thick,minimum width=1cm,minimum height=1.5cm,fill=red!5] at (300:0mm) (center) {MainFrame};
 	\foreach \i  in {0,...,4}{
-		\node[draw, circle] at ({\i*70}:\radius) (u\i) {Terminal};
+		\node[draw=black!60, fill=blue!5, circle] at ({\i*70}:\radius) (u\i) {Terminal};
 		\draw (center)--(u\i);
 	}
 	\end{tikzpicture}
@@ -169,6 +169,36 @@ Si le client interagissait avec plusieurs serveurs il devait comprendre l'API de
 
 L'arrivée d'une architecture à 3 tiers (voire N-tiers avec les couches sécurité, couche routage, etc...) et ainsi que de la notion de Middleware \footnote{Des intergiciels destinés à lier des systèmes informatique de nature différente }  ont apporté un certain nombre d'avantages en matière de réduction de complexité côté client et d'interopérabilité entre ces différentes couches. De plus, de nombreux standards appelées \href{https://fr.wikipedia.org/wiki/Liste_des_sp%C3%A9cifications_des_services_web_WS-*}{WS-*} 
 	ont été adoptés afin de combler les failles apparues suite à l'utilisation répandue de Middleware. 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+		[client/.style={circle, draw=red!60, fill=red!5, very thick, minimum size=8mm},
+		middleware/.style={rectangle, draw=black!60, fill=black!5, very thick, minimum size=30mm},
+		serveur/.style={rectangle, draw=green!90, fill=green!5, very thick, minimum size=8mm}
+		]
+		%Nodes
+		\node[client]      (client)                              {Client};
+		\node[middleware]        (middleware)       [right=of client] {Middleware};
+		\node[serveur]      (serveur)       [right=of middleware] {Server};
+		\node[serveur]      (serveur2)       [above right=of serveur] {Server};
+		\node[serveur]      (serveur3)       [below right=of serveur] {Server};
+		\node[serveur]      (serveur4)       [above left=of serveur2] {Server};
+		\node[serveur]      (serveur5)       [below left=of serveur3] {Server};
+		\
+		
+		\draw[->] (middleware.east) .. controls +(up:7mm) and +(left:20mm) ..   (serveur2.west);
+		\draw[->] (client.east) -> (middleware.west);
+		\draw[->] (middleware.east) .. controls +(up:10mm) and +(left:5mm) .. (serveur4.west);
+		\draw[->] (middleware.east) -> (serveur.west);
+		\draw[->] (middleware.east) .. controls +(down:10mm) and +(left:5mm) .. (serveur3.west);
+		\draw[->] (middleware.east) .. controls +(down:10mm) and +(left:5mm) ..   (serveur5.west);
+		%Lines
+		
+		\end{tikzpicture}
+		\caption{Middleware.}
+		\label{fig:mainframe}
+	\end{figure}
+	\\
 Suite à cela des développeurs et des sociétés ont commencé à mettre en œuvre tout le stack WS-* même pour des taches où l'utilisation du HTTP suffirait. Concrètement,  le HTTP était réduit au protocole de transport avec une énorme charge XML transmise qui définissait l'échange. 
 \\
 Cette approche fonctionne relativement bien dans le contexte d'un seul ou plusieurs organismes qui partagent le même système d'information. Mais dès qu'il s'agit de proposer des services à l'extérieur (à l'échelle mondiale via Internet), cela s'avérait extrêmement compliqué. 
