@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  3 JUN 2019 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  4 JUN 2019 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1117,7 +1117,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count297
 (./title.tex
-<./logo.png, id=368, 1927.2pt x 1113.15875pt>
+<./logo.png, id=372, 1927.2pt x 1113.15875pt>
 File: ./logo.png Graphic file (type png)
 <use ./logo.png>
 Package pdftex.def Info: ./logo.png  used on input line 5.
@@ -1190,7 +1190,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) [5] [6]
-<screenOfbiZ.png, id=542, 708.39656pt x 288.3272pt>
+<screenOfbiZ.png, id=547, 708.39656pt x 288.3272pt>
 File: screenOfbiZ.png Graphic file (type png)
 <use screenOfbiZ.png>
 Package pdftex.def Info: screenOfbiZ.png  used on input line 158.
@@ -1210,14 +1210,8 @@ Overfull \hbox (67.33759pt too wide) in paragraph at lines 67--68
 
 [9
 
-] [10] [11]
-<Mainframe-Architecture.png, id=578, 475.7775pt x 416.55624pt>
-File: Mainframe-Architecture.png Graphic file (type png)
-<use Mainframe-Architecture.png>
-Package pdftex.def Info: Mainframe-Architecture.png  used on input line 151.
-(pdftex.def)             Requested size: 237.88815pt x 208.2776pt.
- [12 <./Mainframe-Architecture.png (PNG copy)>] [13]
-Overfull \hbox (19.2835pt too wide) in paragraph at lines 199--200
+] [10] [11] [12] [13]
+Overfull \hbox (19.2835pt too wide) in paragraph at lines 208--209
 []\T1/cmr/m/n/12 Ceci est une contrainte fa-cul-ta-tive qui per-met aux ser-veu
 rs d'étendre
  []
@@ -1227,38 +1221,38 @@ rs d'étendre
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 268--282
+Underfull \hbox (badness 10000) in paragraph at lines 277--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--282
+Underfull \hbox (badness 10000) in paragraph at lines 277--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--282
+Underfull \hbox (badness 10000) in paragraph at lines 277--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
 
-Overfull \hbox (7.08647pt too wide) in paragraph at lines 292--295
+Overfull \hbox (7.08647pt too wide) in paragraph at lines 301--304
 [][]\T1/cmtt/m/n/12 GET https://api.twitter.com/1.1/statuses/user_timeline.json
 ?user_id=43123 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--295
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
 
  []
 
 
-Overfull \hbox (81.16838pt too wide) in paragraph at lines 296--308
+Overfull \hbox (81.16838pt too wide) in paragraph at lines 305--317
 [][]\T1/cmtt/m/n/12 www.amnesty.org.uk/blogs/student-action-network/arms-trade-
 treaty-last-my-reflections 
  []
@@ -1266,27 +1260,27 @@ treaty-last-my-reflections
 [16] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [17]
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--364
+Underfull \hbox (badness 10000) in paragraph at lines 360--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--364
+Underfull \hbox (badness 10000) in paragraph at lines 360--373
 
  []
 
@@ -1294,7 +1288,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 351--364
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18] [19]
-Overfull \hbox (3.06418pt too wide) in paragraph at lines 393--393
+Overfull \hbox (3.06418pt too wide) in paragraph at lines 402--402
 []\T1/cmr/bx/n/17.28 Analyse des be-soins et at-tentes de la maî-trise d'ou-
  []
 
@@ -1302,44 +1296,44 @@ Overfull \hbox (3.06418pt too wide) in paragraph at lines 393--393
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [20]
-Overfull \hbox (14.45688pt too wide) in paragraph at lines 435--436
+Overfull \hbox (14.45688pt too wide) in paragraph at lines 444--445
 []\T1/cmr/m/n/12 Finalement, j'ai in-té-gré ce sys-tème de ré-so-lu-tion des UR
 I basé sur la classe [][]\T1/cmtt/m/n/12 URITemplate
  []
 
 [21]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 476.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 485.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 476.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 485.
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--479
+Underfull \hbox (badness 10000) in paragraph at lines 461--488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--479
+Underfull \hbox (badness 10000) in paragraph at lines 461--488
 
  []
 
 [22]
-Overfull \hbox (28.6603pt too wide) in paragraph at lines 494--495
+Overfull \hbox (28.6603pt too wide) in paragraph at lines 503--504
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (49.80531pt too wide) in paragraph at lines 496--497
+Overfull \hbox (49.80531pt too wide) in paragraph at lines 505--506
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) (./autre_partie.tex [23] [24]
+[23]) (./autre_partie.tex [24]
 Chapitre 4.
 ) [25
 
-] (./main.bbl) [26
+] [26] (./main.bbl) [27
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
@@ -1348,17 +1342,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4937AE0ADCF0C926C688513F3605F2BB;6372.
+(rerunfilecheck)             Checksum: 73DC5B411CAAF309CA919BD7B1CEFBD0;6436.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 29369 strings out of 492982
- 565165 string characters out of 6134896
- 750443 words of memory out of 5000000
- 32186 multiletter control sequences out of 15000+600000
+ 29416 strings out of 492982
+ 565978 string characters out of 6134896
+ 750957 words of memory out of 5000000
+ 32238 multiletter control sequences out of 15000+600000
  24613 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,85p,1002b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,85p,1084b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfbi1200.pfb></usr/share/texmf/fonts/type1/public/cm-supe
@@ -1375,10 +1369,10 @@ frm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ti1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (31 pages, 665044 bytes).
+Output written on main.pdf (32 pages, 652281 bytes).
 PDF statistics:
- 879 PDF objects out of 1000 (max. 8388607)
- 797 compressed objects within 8 object streams
- 223 named destinations out of 1000 (max. 500000)
- 796 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 875 PDF objects out of 1000 (max. 8388607)
+ 793 compressed objects within 8 object streams
+ 219 named destinations out of 1000 (max. 500000)
+ 799 words of extra memory for PDF output out of 10000 (max. 10000000)
 

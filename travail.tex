@@ -124,6 +124,7 @@ RFID et tout ça
 Pierre et Antoine ont tout géré 
 
 \subsection{Problématique vis-à-vis du développement}
+\label{probfonctionnel}
 Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées au parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique de OFBiz (contenue dans le \emph{framework}).
 
 
@@ -148,9 +149,17 @@ Une majeure partie du développement spécifique consiste à adapter les briques
 \subsection{Histoire et problématique des applications web}
 Avec l'évolution des technologies du réseau, on a obtenu à la fin des années 60 - début des années 70,  la possibilité d'échanger des informations numériques entre les machines. Cela a permis l'émergence des systèmes d'échanges d'information de plus en plus efficaces. Au début, il s'agissait des architectures très simples, avec une seule couche où une machine unique (\emph{le serveur MainFrame}) effectuait tous les traitements relatifs et qui était accédée par un terminal passif\footnote{Le terme français pour l'équivalent anglais moins gentil, \emph{Dumb terminal} - une machine sans capacités de calcul qui sert uniquement à afficher l'information reçue}. Cela présentait l'avantage d'un système centralisé et homogène facile à implémenter, mais de nombreux inconvénients comme la complexité de maintenance du code monolithique et panne générale en cas d'indisponibilité du MainFrame. \ref{fig:mainframe} 
 \begin{figure}[h!]
-	\includegraphics[scale=0.5]{Mainframe-Architecture.png}
-	\caption{Architecture MainFrame.}
-	\label{fig:mainframe}
+	\centering
+	\begin{tikzpicture}
+	\def \radius {3cm}
+	\node[draw,thick,minimum width=1cm,minimum height=1cm] at (300:0mm) (center) {MainFrame};
+	\foreach \i  in {0,...,4}{
+		\node[draw, circle] at ({\i*70}:\radius) (u\i) {Terminal};
+		\draw (center)--(u\i);
+	}
+	\end{tikzpicture}
+\caption{Architecture MainFrame.}
+\label{fig:mainframe}
 \end{figure}
 \\
 L'arrivée des ordinateurs personnels a permis la séparation de la couche présentation et parfois aussi  de la couche application qui étaient désormais placés sur la machine des clients. Grâce à cela on a pu proposer des affichages plus sophistiqués (des clients lourds et légers avancées). C'est notamment avec l'arrivée des architectures à 2-tiers que la notion de service a été introduite - il s'agit une fonctionnalité fournie par le serveur.
@@ -502,7 +511,12 @@ Un autre compromis mineur qui devait être fait, était la présence d'un nombre
 Un des concepts fondamentaux du REST est l'absence de stockage de l'état côté serveur. 
 \subsubsection{Les réalisation par la communauté}
 OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
-\subsection{RESTClient pour la communauté}
+\subsection{Divers}
+\subsubsection{REST dans un projet client}
+dejbox , codes de retour
+
 \subsubsection{Généralisation de code}
+Communauté
 \subsubsection{Correction d'incohérences}
+
 
