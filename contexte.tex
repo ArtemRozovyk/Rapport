@@ -61,7 +61,7 @@ des routes HTTP, des pages de rendu appelés \emph{Écrans}, ainsi que des servi
 
 \definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \subsection{Container}
-L'interface \emph{Container} représentée sur la figure \ref{container} permet de définir des objets qui correspondent à des procédures qui peuvent être initialisées, démarrés et arrêtés. L'intérêt est de pouvoir lancer un \emph{daemon}\footnote{Programme informatique, un processus ou un ensemble de processus qui s'exécute en arrière-plan plutôt que sous le contrôle direct d'un utilisateur} spécifique en parallèle de l'exécution de OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des tests unitaires grâce à un mécanisme propre au framework. 
+L'interface \emph{Container} représentée sur la figure \ref{container} permet de définir des objets qui correspondent à des procédures qui peuvent être initialisées, démarrés et arrêtés. L'intérêt est de pouvoir lancer un \emph{daemon}\footnote{Programme informatique, un processus ou un ensemble de processus qui s'exécute en arrière-plan plutôt que sous le contrôle direct d'un utilisateur} spécifique en parallèle de l'exécution d'OFBiz comme c'est le cas de \verb|EntityDataLoadContainer| qui est responsable du chargement des données et leur mise à jour en cas de modification du modèle. Quand à \verb|TestRunContainer| il s'assure du lancement des tests unitaires grâce à un mécanisme propre au framework. 
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}
@@ -98,7 +98,7 @@ L'interface \emph{Container} représentée sur la figure \ref{container} permet 
 	\label{container}
 \end{figure}
 \subsection{Composants}
-Les éléments constitutifs de OFBiz sont des composants. Un composant est un regroupement des containers, des entités, des services, des vues (\emph{Écrans}) et des applications Web.
+Les éléments constitutifs d'OFBiz sont des composants. Un composant est un regroupement des containers, des entités, des services, des vues (\emph{Écrans}) et des applications Web.
 
 
 L'exemple classique d'un composant est celui de \verb|webtools|. Il assure la gestion technique de l'ensemble du système par l'administrateur via une application web. Cela implique le fait que ce composant regroupe la plupart des éléments majeurs du framework.
@@ -151,7 +151,7 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
 \newpage
 
 \subsection{Screen engine}
-La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkit| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à la bibliothèque de \emph{templating}~: \verb|Apache Freemarker| \footnote{\href{https://freemarker.apache.org/}{Le moteur de template Java.}}.
+La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkit| \footnote{Boite d'outil de composant d'interface graphique} d'OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à la bibliothèque de \emph{templating}~: \verb|Apache Freemarker| \footnote{\href{https://freemarker.apache.org/}{Le moteur de template Java.}}.
 \begin{figure}[h!]
 re	\includegraphics[width=\linewidth]{screenOfbiZ.png}
 	\caption{L'exemple d'un Ecran de rendu OFBiz.}

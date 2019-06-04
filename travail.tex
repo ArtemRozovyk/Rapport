@@ -79,7 +79,7 @@ Voici la chronologie du travail réalisé en entreprise.\\
 \section{Environnement}
 
 \subsection{Installation de l'environnement}
-Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux. Ensuite, la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes. Le choix d'IDE à été fait en faveur de IntelliJ car il possède des nombreux moyens de navigation qui sont incontournables dans la structure de OFBiz riche en dualité XML/Java \ref{dsl}. 
+Avant tout, mon intégration a commencé par l'installation du poste de travail suivi par une discussion sur le choix de distribution Linux. Ensuite, la configuration des outils utilisés par l'entreprise ainsi que par la mise en place des accès aux ressources internes. Le choix d'IDE à été fait en faveur de IntelliJ car il possède des nombreux moyens de navigation qui sont incontournables dans la structure d'OFBiz riche en dualité XML/Java \ref{dsl}. 
 
 
 
@@ -87,14 +87,14 @@ Avant tout, mon intégration a commencé par l'installation du poste de travail 
 \subsection{Formation générale}
 
 
-Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique de OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle|\footnote{\href{https://gradle.org/}{Moteur de production fonctionnant sur la plateforme Java. }} et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage \href{http://groovy-lang.org/}{Groovy} et les raisons pour lesquelles il est préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{remplacé}. }
+Lors de la formation générale, traditionnellement prévue pour tout les nouveau venus de Néréide, j'ai pu découvrir le fonctionnement basique d'OFBiz à travers les démonstration des projets existants. Les points soulevés comportait la gestion des dépendances à travers \verb|Gradle|\footnote{\href{https://gradle.org/}{Moteur de production fonctionnant sur la plateforme Java. }} et \verb|Ant|\footnote{Ant étant déprécié depuis la version 16.11 de OFBiz mais certains projets client l'utilisent toujours car ils se basent sur une version antérieure.  }, une introduction au langage \href{http://groovy-lang.org/}{Groovy} et les raisons pour lesquelles il est préféré au DSL propre à OFBiz \footnote{Pour remplacer le DSL en XML  sous le nom Mini lang, en train d'être entièrement \href{https://cwiki.apache.org/confluence/display/OFBIZ/Mini+Lang+Deprecation}{remplacé}. }
 
 
 \subsection{Jira}
 Un autre point intéressant était le système de gestion de tickets \verb|Jira | utilisé par l'entreprise qui permet de suivre et gérer les bugs tout en interagissant avec les clients. L'outil est utilisé également par la plupart des projets communautaires Apache, dont OFBiz.
 
 \subsection{Approfondissement de Git }
-Même si la gestion de versions de OFBiz était historiquement gérée par l'outil Apache \href{https://subversion.apache.org/}{SVN}, dans la gestion de ses propres projets, l'entreprise a fait le choix pour un système plus moderne - \href{https://git-scm.com/}{Git}. 
+Même si la gestion de versions d'OFBiz était historiquement gérée par l'outil Apache \href{https://subversion.apache.org/}{SVN}, dans la gestion de ses propres projets, l'entreprise a fait le choix pour un système plus moderne - \href{https://git-scm.com/}{Git}. 
 
 Alors que j'avais déjà une certaine maîtrise basique de Git, je n'ai jamais eu l'occasion de travailler dans un projet qui comporte des dizaines de branches qui évoluent quotidiennement. Donc, pour monter en compétences sur ce point-là j'ai utilisé le site d'apprentissage conseillé par mon maître de stage: \href{https://learngitbranching.js.org/}{Learn Git Branching}
 
@@ -121,7 +121,7 @@ Tout les projets ont une structure définie dans \ref{architecture}, les projets
 
 \subsection{Problématique vis-à-vis du développement}
 \label{probfonctionnel}
-Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées dans le parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique de OFBiz (contenue dans le \emph{framework}).
+Une majeure partie du développement spécifique consiste à adapter les briques métiers (\emph{application}) combinant des notions de comptabilité, des ressources humaines et les autres aspects qui ne sont pas adaptés à ma formation \footnote{Certaines de ces notions sont enseignées dans le parcours MIAGE.} universitaire. Par conséquent, vu que je ne disposais pas de suffisamment de temps pour les apprendre, j'ai dû me concentrer uniquement sur la partie technique d'OFBiz (contenue dans le \emph{framework}).
 
 
 
@@ -366,7 +366,7 @@ je me suis rendu compte que la technologie risque de ne pas être accepté par l
 
 \section{Analyse de l'existant}
 
-Lors de la découverte de OFBiz j'ai prêté particulièrement attention à la gestion des échanges web afin d'identitifier les points importants relatifs à l'implémentation des services REST. 
+Lors de la découverte d'OFBiz j'ai prêté particulièrement attention à la gestion des échanges web afin d'identitifier les points importants relatifs à l'implémentation des services REST. 
 
 
 \subsection{Gestion des application web dans OFBiz}
@@ -427,7 +427,7 @@ Une des spécificités est la gestion des URI segmentés comme dans \\
 
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Besoins d'évolution}
-Avec la popularité du style architectural REST, plusieurs intégrateurs de OFBiz ont montré leur l'intérêt à ce concept. 
+Avec la popularité du style architectural REST, plusieurs intégrateurs d'OFBiz ont montré leur l'intérêt à ce concept. 
 Donc afin de répondre aux besoins des utilisateurs et afin d'assurer une meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté a lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses propositions de design ont été faites. 
 
 Après avoir analysé les tentatives et les problématiques d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrait au mieux aux besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est-à-dire sans provoquer de dysfonctionnement au niveau de l'existant.
@@ -464,10 +464,10 @@ peut être mis en correspondance uniquement avec les URI qui ont un chiffre\foot
 Donc, vu la flexibilité de \verb|URITemplate|, j'ai décidé de l'utiliser au sein d'OFBiz.
 Naturellement, l'ajout des dépendances dans un vaste projet comme OFBiz doit être fait avec précaution. La raison: des libraires deviennent souvent dépréciées ou changent à tel point que cela provoque la nécessité de réécrire des parties importantes du projet.  
 
-Après l'analyse des dépendances de OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans le OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la bibliothèque CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
+Après l'analyse des dépendances d'OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la bibliothèque CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
 
 \subsection{Intégration en parallèle avec le système existant}
-Finalement, j'ai intégré ce système de résolution des URI basé sur la classe \verb|URITemplate| dans le \verb|RequestHandler| de OFBiz. Cela était fait en modifiant légèrement le mécanisme existant. Concrètement, au début de la résolution d'une URI, l'ensemble des \verb|request-map| est délégué au nouveau mécanisme qui, en cas de succès\footnote{ Ayant validé l'URI de la requête avec via la méthode \emph{.match()} avec l'une des modèles construits à partir de l'ensemble de  "request-map"} redirige soit vers la vue, soit vers le \verb|Event| correspondant, indiqués dans la définition de \verb|request-map|. En cas d'absence de "match" via \verb|URITemplate|, la suite de la méthode exécute des traitement de manière traditionnelle.  
+Finalement, j'ai intégré ce système de résolution des URI basé sur la classe \verb|URITemplate| dans le \verb|RequestHandler| d'OFBiz. Cela était fait en modifiant légèrement le mécanisme existant. Concrètement, au début de la résolution d'une URI, l'ensemble des \verb|request-map| est délégué au nouveau mécanisme qui, en cas de succès\footnote{ Ayant validé l'URI de la requête avec via la méthode \emph{.match()} avec l'une des modèles construits à partir de l'ensemble de  "request-map"} redirige soit vers la vue, soit vers le \verb|Event| correspondant, indiqués dans la définition de \verb|request-map|. En cas d'absence de "match" via \verb|URITemplate|, la suite de la méthode exécute des traitement de manière traditionnelle.  
 
 
 \subsection{Nouveau controller.xml}
