@@ -153,9 +153,9 @@ On peut voir l'exemple de la définition d'un service sur \ref{servicedef} , qui
 \newpage
 
 \subsection{Screen engine}
-La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkt| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à un autre mécanisme : \verb|Apache Freemarker|.
+La partie Vue du MVC est représentée par des \emph{Écrans} ou les \verb|Screen| qui font partie du \verb|Widget toolkt| \footnote{Boite d'outil de composant d'interface graphique} de OFBiz. Le principe de fonctionnement d'un écran se base toujours sur un DSL qui interagit avec un mécanisme de rendu générique capable de gérer différents formats de sortie comme \verb|HTML|, \verb|XML|, \verb|CSV|\footnote{\emph{Comma-Separated Values}  un fichier informatique de type tableur, dont les valeurs sont séparées par des virgules. }, ou \verb|XLS|\footnote{ Un autre format de fichiers tableurs de Microsoft Excel}. Le cas d'utilisation le plus commun est celui d'une réponse HTML qui est éventuellement générée en déléguant le rendu à un autre mécanisme : \verb|Apache Freemarker| \footnote{\href{https://freemarker.apache.org/}{Le moteur de template Java.}}.
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{screenOfbiZ.png}
+re	\includegraphics[width=\linewidth]{screenOfbiZ.png}
 	\caption{L'exemple d'un Ecran de rendu OFBiz.}
 	\label{fig:screen}
 \end{figure}
