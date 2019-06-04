@@ -343,7 +343,7 @@ regroupe des catégories (elles-mêmes des collections): \\
  
 
 \subsection{Implementations existantes}
-Finalement, j'ai décidé d'analyser des framworks REST qui permettent de développer des API suivant ce style architectural. Cela avait pour le but soit d'intégrer ce système dans le contexte d'OFBiz, soit 
+Finalement, j'ai décidé d'analyser des framworks REST qui permettent de développer des API suivant ce style architectural. Cela avait pour le but soit d'intégrer ce système dans le contexte d'OFBiz.
 \subsubsection{Camel}
 Apache Camel est un framework libre destiné à faciliter l'intégration des composantes dans le contexte d'entreprise. Il fournit un certain nombre de DSL dont \href{https://camel.apache.org/rest-dsl.html}{Rest DSL} qui est destiné à aider les développeurs à définir les API REST. 
 L'un des points particulièrement intéressant de Camel Rest DSL est sa similitude aux techniques utilisées dans l'OFBiz, notamment les DSL sont utilisées avec Java et XML à la fois. 
@@ -366,7 +366,7 @@ je me suis rendu compte que la technologie risque de ne pas être accepté par l
 
 \section{Analyse de l'existant}
 
-Lors de la découverte de OFBiz j'ai prêté  particulièrement attention à la gestion des échanges web afin de soulever les points importants relatifs à l'implémentation des services REST. 
+Lors de la découverte de OFBiz j'ai prêté particulièrement attention à la gestion des échanges web afin d'identitifier les points importants relatifs à l'implémentation des services REST. 
 
 
 \subsection{Gestion des application web dans OFBiz}
@@ -378,7 +378,7 @@ La classe qui est au cœur du traitement des requêtes, \verb|ControlServlet| co
 Une fois la requête a franchi les filtres de sécurité, la \verb|ControlServlet| initialise l'environnement d'OFBiz, cela inclut les \verb|Entity Delegator|, responsable du modèle de données, ainsi que  \verb|Service Dispatcher| qui exécute les services. Finalement, la session est initialisée et toutes les informations utiles sont stockées dans cette dernière. Une fois l'environnement en place la classe délègue le traitement au \verb|RequestHandler|.
 
 \subsection{RequestHandler}
-Cette classe récupère l'ensemble des associations des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des associations entre les URI et les vues optionnelles. À part les vues, les URI peuvent être associées à un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service à travers le moteur correspondant. 
+Cette classe récupère l'ensemble des associations des requêtes(\verb|request-map|) définis sous format XML dans le fichier controller.xml. Il s'agit des associations entre les URI et les vues optionnelles. À part les vues, les URI peuvent être associées à un certain \verb|Event|. Les \verb|events| traitent la logique spécifique, en interagissant avec le moteur des entités ou en appelant un service au travers du moteur correspondant. 
 \\
 \\
 \\
@@ -397,10 +397,10 @@ La structure des \verb|request-map| est définie comme suit:
 \end{figure}\\
 \\
 \subsection{API en cours}
-Après avoir analysé plusieurs applications web dans l'OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ses problèmes de performance et du passage à l'échelle. 
+Après avoir analysé plusieurs applications web dans OFBiz je me suis rendu compte que le style actuel correspond à celui de \emph{Remote Procedure Call }(RPC), connu pour ses problèmes de performance et du passage à l'échelle. 
 
 \subsection{Mécanisme de résolution des URI}
-Les URI de \verb|requst-map| ne contiennent pas plus d'un seul mot (d'où RPC) comme par exemple:
+Les URI de \verb|request-map| ne contiennent pas plus d'un seul mot (d'où RPC) comme par exemple:
 \begin{figure}[h!]
 	\begin{lstlisting}[frame=leftline]
 uri="createEmptyShoppingList"
@@ -428,16 +428,16 @@ Une des spécificités est la gestion des URI segmentés comme dans \\
 \section{Analyse des besoins et attentes de la maîtrise d'ouvrage}
 \subsection{Besoins d'évolution}
 Avec la popularité du style architectural REST, plusieurs intégrateurs de OFBiz ont montré leur l'intérêt à ce concept. 
-Donc afin de répondre aux besoins des utilisateurs et afin d'assurer une meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté a lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses suggestions de concept ont été proposées. 
+Donc afin de répondre aux besoins des utilisateurs et afin d'assurer une meilleure évolutivité des projets basés sur OFBiz à l'avenir, la communauté a lancé une  \href{https://issues.apache.org/jira/browse/OFBIZ-4274}{discussion Jira} où des nombreuses propositions de design ont été faites. 
 
-Après avoir analysé les tentatives et les problématiques d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrait au mieux aux besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est-à-dire sans provoquer le dysfonctionnement des mécanismes en cours. 
+Après avoir analysé les tentatives et les problématiques d'implémentation de services REST dans OFBiz je suis arrivé à la conclusion qu'une solution de bas niveau répondrait au mieux aux besoins des intéressés. De plus il était évident que la solution doit être développé en parallèle du système actuel, c'est-à-dire sans provoquer de dysfonctionnement au niveau de l'existant.
 
 
 
 
 \section{Réalisations techniques}
 \subsection{Choix vers URITemplate}
-Même si après l'analyse de la librairie \href{http://cxf.apache.org/docs/jax-rs.html}{JAX-RS de CXF}, j'ai pris la décision de ne pas poursuivre ce chemin, certaines classes m'ont permis de trouver une inspiration en terme de concept qui peut être utilisé dans OFBiz. Ainsi, la classe \href{https://cxf.apache.org/javadoc/latest/org/apache/cxf/jaxrs/model/URITemplate.html}{URITemplate}  permet de créer des modèles de URI avec les variables. \\
+Même si après l'analyse de la bibliothèque \href{http://cxf.apache.org/docs/jax-rs.html}{JAX-RS de CXF}, j'ai pris la décision de ne pas poursuivre ce chemin, certaines classes m'ont permis de trouver une inspiration en terme de concept qui peut être utilisé dans OFBiz. Ainsi, la classe \href{https://cxf.apache.org/javadoc/latest/org/apache/cxf/jaxrs/model/URITemplate.html}{URITemplate}  permet de créer des modèles de URI avec les variables. \\
 Exemple 1: 
 Supposons le modèle de URI suivant:
 \begin{figure}[h!]
@@ -460,11 +460,11 @@ Un autre point à noter est la possibilité d'avoir des variables adaptables au 
 	\end{lstlisting}
 \end{figure}\\
 peut être mis en correspondance uniquement avec les URI qui ont un chiffre\footnote{La lettre "d" signifie le mot l'anglais \emph{digit} - "chiffre" en français} en premier argument \verb|v1|.
-\subsection{Librairie CXF}
+\subsection{Bibliothèque CXF}
 Donc, vu la flexibilité de \verb|URITemplate|, j'ai décidé de l'utiliser au sein d'OFBiz.
 Naturellement, l'ajout des dépendances dans un vaste projet comme OFBiz doit être fait avec précaution. La raison: des libraires deviennent souvent dépréciées ou changent à tel point que cela provoque la nécessité de réécrire des parties importantes du projet.  
 
-Après l'analyse des dépendances de OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans le OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la librairie CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
+Après l'analyse des dépendances de OFBiz, j'ai remarqué la présence  de l'outil \href{https://tika.apache.org/}{Apache Tika} qui est utilisé dans le OFBiz pour produire et analyser des fichiers du type XLS ou PDF. Ainsi, Tika contient la bibliothèque CXF ce qui m'a donné la liberté d'utiliser cette dernière. 
 
 \subsection{Intégration en parallèle avec le système existant}
 Finalement, j'ai intégré ce système de résolution des URI basé sur la classe \verb|URITemplate| dans le \verb|RequestHandler| de OFBiz. Cela était fait en modifiant légèrement le mécanisme existant. Concrètement, au début de la résolution d'une URI, l'ensemble des \verb|request-map| est délégué au nouveau mécanisme qui, en cas de succès\footnote{ Ayant validé l'URI de la requête avec via la méthode \emph{.match()} avec l'une des modèles construits à partir de l'ensemble de  "request-map"} redirige soit vers la vue, soit vers le \verb|Event| correspondant, indiqués dans la définition de \verb|request-map|. En cas d'absence de "match" via \verb|URITemplate|, la suite de la méthode exécute des traitement de manière traditionnelle.  
@@ -514,15 +514,15 @@ Cette situation suppose que dans la première \verb|request-map| il est impossib
 
 
 \subsubsection{Testes Mockito}
-Finalement, un point intéressant était l'écriture des testes unitaires en utilisant la librairie \href{https://site.mockito.org/}{Mockito}. Des principes et des bonnes pratiques de ces tests m'ont été montrés par mon tuteur de stage. 
+Finalement, un point intéressant était l'écriture des testes unitaires en utilisant la bibliothèque \href{https://site.mockito.org/}{Mockito}. Des principes et des bonnes pratiques de ces tests m'ont été montrés par mon tuteur de stage. 
 \subsection{Modification de la partie "Administration: gestion des entités"  (entitymaint)  }
 Afin de montrer l'utilité du nouveau système, j'ai décidé de modifier une partie front existante ainsi que les points d'entrée avec lesquelles elle interagissait.
 \subsubsection{Choix de la partie illustrative}
-Pour pouvoir tester toute la puissance des méthodes classiques du protocole \verb|HTTP| j'ai dû choisir une partie qui permettait d'effectuer l'ensemble des opérations CRUD. Par conséquent, le choix était porté sur la partie administrative qui correspond à la gestion des entités : \verb|entitymaint|.
+Pour pouvoir tester toute la puissance des méthodes classiques du protocole \verb|HTTP| j'ai dû choisir une partie qui permettait d'effectuer l'ensemble des opérations CRUD. Par conséquent, le choix était porté sur la partie d'administration d'OFBiz qui correspond à la gestion des entités : \verb|entitymaint|.
 \subsubsection{Difficultés de modification} 
-Vu que l'OFBiz a été construit sans tenir compte du REST, ce genre de modification implique des changements profonds de la structure du code, allant jusqu'à la réécriture complète. Donc, disposant un temps limité, j'ai dû avoir recours aux certains compromis comme utilisation d'un même formulaire pour la création et la modification d'une entité.
+Vu qu'OFBiz a été construit sans tenir compte de REST, ce genre de modifications impliquent des changements profonds de la structure du code, allant jusqu'à la réécriture complète. Donc, disposant d'un temps limité, j'ai dû avoir recours aux certains compromis comme utilisation d'un même formulaire pour la création et la modification d'une entité.
 \subsubsection{Clés composées}
-Un autre compromis mineur qui devait être fait, était la présence d'un nombre variable des clés primaires qui identifiait l'entité-ressource. Par conséquent, la variable qui correspond à l'ensemble des valeurs des clés primaires doit pouvoir accepter un nombre quelconque des clés. Pour cela, on utilise une expression régulière: 
+Un autre compromis mineur qui devait être fait, était la présence d'un nombre variable des clés primaires qui identifie une entité-ressource. Par conséquent, la variable qui correspond à l'ensemble des valeurs des clés primaires doit pouvoir accepter un nombre quelconque des clés. Pour cela, on utilise une expression régulière: 
 
 \begin{figure}[h!]
 	\begin{lstlisting}[frame=leftline,language=xml,frameround=tttt]
@@ -534,12 +534,12 @@ Un autre compromis mineur qui devait être fait, était la présence d'un nombre
 	\end{lstlisting}
 \end{figure}  
 \subsection{Stateless}
-Un des concepts fondamentaux du REST est l'absence de stockage de l'état côté serveur. 
+Un des concepts fondamentaux de REST est l'absence de stockage de l'état côté serveur. 
 \subsubsection{Les réalisation par la communauté}
-OFBiz, n'étant pas Stateless\footnote{Sans état - sans conserver des informations} utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
+OFBiz, n'étant pas \emph{stateless}\footnote{Sans état - sans conserver des informations} il utilise la session comme un moyen d'authentifier les utilisateurs. Ainsi, les tentatives de supprimer la notion d'état ont été faites par la communauté. Malheureusement, des nombreux concepts se basent sur la  session et la suppression serait trop coûteuse. Au lieu de la supprimer, la communauté à \href{https://issues.apache.org/jira/browse/OFBIZ-9833}{implémenté} l'authentification en utilisant les \href{https://jwt.io/introduction/}{JSON Web Tokens}, mais derrière, la session est toujours utilisée.
 \subsection{Divers}
 \subsubsection{REST dans un projet client}
-Les nouvelles fonctionnalités en matière de définition des API ont été adopté dans une partie fonctionnelle du projet \emph{Dejbox} \ref{dejbox}. Cela a également entraîné la correction de quelques fonctionnalités du framework. Notamment, l'association d'un code de retour \verb|HTTP| à une réponse spécifique d'un service OFBiz et l'adaptation de l'outil de transformation des objets en JSON.
+Les nouvelles fonctionnalités en matière de définition des API ont été adoptées dans une partie fonctionnelle du projet \emph{Dejbox} \ref{dejbox}. Cela a également entraîné la correction de quelques fonctionnalités du framework. Notamment, l'association d'un code de retour \verb|HTTP| à une réponse spécifique d'un service OFBiz et l'adaptation de l'outil de transformation des objets en JSON.
 
 \subsubsection{Généralisation de code}
 Parmi les tâches qui m'ont été confiées, il y avait la généralisation du code spécifique au projet client, afin qu'il puisse être remonté vers la communauté Apache. Il s'agit d'un client qui "consommait" des services du type REST à partir d'une API extérieure. Le but était de rendre le client suffisamment générique pour qu'il puisse prendre en compte les spécificités d'interaction entre les API d'une nature différente (type d'authentification, réponse).
