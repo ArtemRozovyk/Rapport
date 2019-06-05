@@ -1,0 +1,6 @@
+\beamer@sectionintoc {2}{La soci\IeC {\'e}t\IeC {\'e}}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Travail}{4}{0}{1}
+\beamer@sectionintoc {3}{OFbiz}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{OFBiz}{6}{0}{2}
+\beamer@sectionintoc {4}{REST}{8}{0}{3}
+\beamer@subsectionintoc {4}{1}{De quoi parle rest}{9}{0}{3}
