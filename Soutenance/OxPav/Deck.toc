@@ -1,6 +1,7 @@
-\beamer@sectionintoc {2}{La soci\IeC {\'e}t\IeC {\'e}}{3}{0}{1}
-\beamer@subsectionintoc {2}{1}{Travail}{4}{0}{1}
-\beamer@sectionintoc {3}{OFbiz}{5}{0}{2}
-\beamer@subsectionintoc {3}{1}{OFBiz}{6}{0}{2}
-\beamer@sectionintoc {4}{REST}{8}{0}{3}
-\beamer@subsectionintoc {4}{1}{De quoi parle rest}{9}{0}{3}
+\beamer@sectionintoc {1}{Plan}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{La soci\IeC {\'e}t\IeC {\'e}}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{OFBiz}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Probl\IeC {\'e}matique des syst\IeC {\`e}mes distribu\IeC {\'e}es }{5}{0}{1}
+\beamer@subsectionintoc {1}{4}{Welcome}{5}{0}{1}
+\beamer@subsectionintoc {1}{5}{R\IeC {\'e}alisation techniques}{6}{0}{1}
+\beamer@subsectionintoc {1}{6}{Conclusion}{6}{0}{1}
